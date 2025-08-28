@@ -11,11 +11,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "prettier --write .",
     "serve:ssr": "node dist/vishal-portfolio/server/server.mjs",
     "build:ssr": "ng build --configuration production",
-    "preview-prod": "ng build --configuration production && ng serve --configuration production",
-    "analyze": "ng build --configuration production --stats-json && npx webpack-bundle-analyzer dist/vishal-portfolio/stats.json",
     "hosting": "ng build && firebase deploy --only hosting"
   },
   "prettier": {

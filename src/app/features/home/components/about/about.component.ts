@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -15,15 +15,15 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
 })
 export class AboutComponent implements OnInit, AfterViewInit {
   @ViewChild('aboutSection') aboutSection!: ElementRef;
-  
+
   personalInfo = signal<any>(null);
   isVisible = signal(false);
   private hasAnimated = false;
 
-  constructor(
-    private contentService: ContentService,
-    private intersectionObserver: IntersectionObserverService
-  ) {
+  private contentService = inject(ContentService);
+  private intersectionObserver = inject(IntersectionObserverService);
+
+  constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
   }
 
@@ -49,7 +49,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   private animateCounters(): void {
     const statNumbers = this.aboutSection.nativeElement.querySelectorAll('.stat-number');
-    
+
     statNumbers.forEach((element: HTMLElement) => {
       const target = parseInt(element.getAttribute('data-target') || '0');
       const duration = 2000; // 2 seconds

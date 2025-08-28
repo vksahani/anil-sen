@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, HostListener, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, HostListener, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from '../../../core/services/theme.service';
@@ -17,10 +17,10 @@ export class NavigationComponent implements OnInit {
   isMenuOpen = signal(false);
   personalInfo: any = null;
 
-  constructor(
-    public themeService: ThemeService,
-    private contentService: ContentService
-  ) {
+  public themeService = inject(ThemeService);
+  private contentService = inject(ContentService);
+
+  constructor() {
     this.personalInfo = this.contentService.personalInfo;
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContentService } from '../../../../core/services/content.service';
@@ -295,11 +295,11 @@ export class ContactComponent implements OnInit, AfterViewInit {
   isSubmitting = signal(false);
   showSuccessMessage = signal(false);
 
-  constructor(
-    private contentService: ContentService,
-    private intersectionObserver: IntersectionObserverService,
-    private fb: FormBuilder
-  ) {
+  private contentService = inject(ContentService);
+  private intersectionObserver = inject(IntersectionObserverService);
+  private fb = inject(FormBuilder);
+
+  constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
     this.contactForm = this.fb.group({
       name: ['', [Validators.required]],

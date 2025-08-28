@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, signal, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, signal, AfterViewInit, ElementRef, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations/animations';
@@ -20,7 +20,9 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   private typedInstance: any;
   private animationFrameId: number | null = null;
 
-  constructor(private contentService: ContentService) {
+  private contentService = inject(ContentService);
+
+  constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../core/services/content.service';
 
@@ -17,7 +17,9 @@ export class FooterComponent implements OnInit {
   currentYear = new Date().getFullYear();
   angularVersion = '20';
 
-  constructor(private contentService: ContentService) {
+  private contentService = inject(ContentService);
+
+  constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
     // Listen for scroll events to show/hide back to top button
     if (typeof window !== 'undefined') {

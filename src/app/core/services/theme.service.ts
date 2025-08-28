@@ -1,4 +1,4 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -10,8 +10,9 @@ export type Theme = 'light' | 'dark';
 export class ThemeService {
   private readonly THEME_KEY = 'portfolio-theme';
   private themeSubject = new BehaviorSubject<Theme>('light');
+  private platformId = inject(PLATFORM_ID);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor() {
     this.initializeTheme();
   }
 

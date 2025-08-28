@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Skill } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -133,10 +133,10 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     'Git': '📚'
   };
 
-  constructor(
-    private contentService: ContentService,
-    private intersectionObserver: IntersectionObserverService
-  ) {
+  private contentService = inject(ContentService);
+  private intersectionObserver = inject(IntersectionObserverService);
+
+  constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
   }
 

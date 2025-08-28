@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Education } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -112,10 +112,10 @@ export class EducationComponent implements OnInit, AfterViewInit {
   education = signal<Education[]>([]);
   isVisible = signal(false);
 
-  constructor(
-    private contentService: ContentService,
-    private intersectionObserver: IntersectionObserverService
-  ) {}
+  private contentService = inject(ContentService);
+  private intersectionObserver = inject(IntersectionObserverService);
+
+  constructor() {}
 
   ngOnInit(): void {
     this.contentService.education$.subscribe(education => {

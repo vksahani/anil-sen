@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
@@ -127,7 +127,9 @@ import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
 export class ResumeInviteComponent implements OnInit {
   personalInfo = signal<any>(null);
 
-  constructor(private contentService: ContentService) {
+  private contentService = inject(ContentService);
+
+  constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
   }
 
