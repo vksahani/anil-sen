@@ -15,7 +15,8 @@
     "serve:ssr": "node dist/vishal-portfolio/server/server.mjs",
     "build:ssr": "ng build --configuration production",
     "preview-prod": "ng build --configuration production && ng serve --configuration production",
-    "analyze": "ng build --configuration production --stats-json && npx webpack-bundle-analyzer dist/vishal-portfolio/stats.json"
+    "analyze": "ng build --configuration production --stats-json && npx webpack-bundle-analyzer dist/vishal-portfolio/stats.json",
+    "hosting": "ng build && firebase deploy --only hosting"
   },
   "prettier": {
     "printWidth": 100,
