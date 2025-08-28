@@ -1,13 +1,21 @@
 {
   "name": "vishal-portfolio",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Vishal Kumar - Web & Application Developer",
+  "author": "Vishal Kumar",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:vishal-portfolio": "node dist/vishal-portfolio/server/server.mjs"
+    "lint": "ng lint",
+    "format": "prettier --write .",
+    "serve:ssr": "node dist/vishal-portfolio/server/server.mjs",
+    "build:ssr": "ng build --configuration production",
+    "preview-prod": "ng build --configuration production && ng serve --configuration production",
+    "analyze": "ng build --configuration production --stats-json && npx webpack-bundle-analyzer dist/vishal-portfolio/stats.json"
   },
   "prettier": {
     "printWidth": 100,
@@ -23,6 +31,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^20.2.2",
     "@angular/common": "^20.2.0",
     "@angular/compiler": "^20.2.0",
     "@angular/core": "^20.2.0",
@@ -31,23 +40,39 @@
     "@angular/platform-server": "^20.2.0",
     "@angular/router": "^20.2.0",
     "@angular/ssr": "^20.2.0",
+    "bootstrap": "^5.3.8",
     "express": "^5.1.0",
+    "intersection-observer": "^0.12.2",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
+    "@angular-eslint/builder": "^18.4.1",
+    "@angular-eslint/eslint-plugin": "^18.4.1",
+    "@angular-eslint/eslint-plugin-template": "^18.4.1",
+    "@angular-eslint/schematics": "^18.4.1",
+    "@angular-eslint/template-parser": "^18.4.1",
     "@angular/build": "^20.2.0",
     "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.2.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "eslint": "^9.15.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.3.3",
     "typescript": "~5.9.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

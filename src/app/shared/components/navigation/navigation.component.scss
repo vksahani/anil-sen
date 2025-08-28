@@ -1,0 +1,212 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--neutral-200);
+  transition: all var(--transition-normal);
+
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-md);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .nav-brand {
+    .brand-link {
+      text-decoration: none;
+      color: var(--neutral-900);
+      font-weight: 700;
+      font-size: 1.5rem;
+      transition: color var(--transition-fast);
+
+      &:hover {
+        color: var(--primary-blue);
+      }
+    }
+
+    .brand-text {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+
+    .nav-link {
+      color: var(--neutral-700);
+      text-decoration: none;
+      font-weight: 500;
+      padding: var(--spacing-sm) 0;
+      position: relative;
+      transition: color var(--transition-fast);
+
+      &:hover {
+        color: var(--primary-blue);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-primary);
+        transition: width var(--transition-fast);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--neutral-300);
+      border-radius: var(--radius-full);
+      padding: var(--spacing-sm);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+
+      &:hover {
+        background: var(--neutral-100);
+        border-color: var(--primary-blue);
+      }
+
+      .theme-icon {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    gap: 4px;
+
+    .hamburger {
+      width: 25px;
+      height: 3px;
+      background: var(--neutral-700);
+      transition: all var(--transition-fast);
+      border-radius: 2px;
+    }
+
+    &[aria-expanded="true"] {
+      .hamburger:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: fixed;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      flex-direction: column;
+      padding: var(--spacing-xl);
+      gap: var(--spacing-lg);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-100%);
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+
+      &.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+        padding: var(--spacing-md) 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+}
+
+// Dark theme styles
+[data-theme="dark"] .navbar {
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom-color: var(--neutral-700);
+
+  &.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+  }
+
+  .nav-brand .brand-link {
+    color: var(--neutral-100);
+  }
+
+  .nav-menu {
+    .nav-link {
+      color: var(--neutral-300);
+
+      &:hover {
+        color: var(--primary-blue);
+      }
+    }
+
+    .theme-toggle {
+      border-color: var(--neutral-600);
+      color: var(--neutral-300);
+
+      &:hover {
+        background: var(--neutral-800);
+        border-color: var(--primary-blue);
+      }
+    }
+
+    @media (max-width: 768px) {
+      background: var(--neutral-900);
+    }
+  }
+
+  .menu-toggle .hamburger {
+    background: var(--neutral-300);
+  }
+}
