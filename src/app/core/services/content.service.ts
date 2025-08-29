@@ -3,7 +3,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 export type Skill = {
   name: string;
-  level: number;
   category: 'frontend' | 'backend' | 'devops' | 'tools';
   description: string;
   icon?: string;
@@ -20,6 +19,7 @@ export type Experience = {
   achievements: string[];
   technologies: string[];
   location: string;
+  companyUrl?: string;
 };
 
 export type Project = {
@@ -45,6 +45,7 @@ export type Education = {
   startYear: number;
   endYear: number;
   grade?: string;
+  location?: string;
   coursework?: string[];
   honors?: string[];
 };
@@ -84,60 +85,80 @@ export class ContentService {
   });
 
   private skillsSubject = new BehaviorSubject<Skill[]>([
-    { name: 'Angular', level: 95, category: 'frontend', description: 'Expert in Angular framework for building dynamic web applications', icon: 'angular' },
-    { name: 'Ionic', level: 90, category: 'frontend', description: 'Proficient in cross-platform mobile app development', icon: 'ionic' },
-    { name: 'TypeScript', level: 92, category: 'frontend', description: 'Strong typing and modern JavaScript features', icon: 'typescript' },
-    { name: 'JavaScript', level: 88, category: 'frontend', description: 'Core language for web development', icon: 'javascript' },
-    { name: 'HTML/CSS', level: 90, category: 'frontend', description: 'Semantic markup and responsive design', icon: 'html5' },
-    { name: 'Node.js', level: 85, category: 'backend', description: 'Server-side JavaScript runtime', icon: 'nodejs' },
-    { name: 'Firebase', level: 80, category: 'backend', description: 'Backend-as-a-Service platform', icon: 'firebase' },
-    { name: 'MongoDB', level: 75, category: 'backend', description: 'NoSQL database management', icon: 'mongodb' },
-    { name: 'RxJS', level: 88, category: 'frontend', description: 'Reactive programming with observables', icon: 'rxjs' },
-    { name: 'Git', level: 85, category: 'tools', description: 'Version control and collaboration', icon: 'git' }
+    { name: 'NodeJS', category: 'backend', description: 'Server-side JavaScript runtime', icon: 'nodejs' },
+    { name: 'HTML', category: 'frontend', description: 'Markup language for web pages', icon: 'html5' },
+    { name: 'CSS', category: 'frontend', description: 'Styling language for web pages', icon: 'css3' },
+    { name: 'SCSS', category: 'frontend', description: 'CSS preprocessor', icon: 'sass' },
+    { name: 'Bootstrap', category: 'frontend', description: 'CSS framework', icon: 'bootstrap' },
+    { name: 'JavaScript', category: 'frontend', description: 'Programming language for web', icon: 'javascript' },
+    { name: 'TypeScript', category: 'frontend', description: 'Typed JavaScript', icon: 'typescript' },
+    { name: 'VS Code', category: 'tools', description: 'Code editor', icon: 'vscode' },
+    { name: 'JSON Server', category: 'tools', description: 'Mock REST API', icon: 'json' },
+    { name: 'Ionic', category: 'frontend', description: 'Cross-platform mobile framework', icon: 'ionic' },
+    { name: 'MongoDB', category: 'backend', description: 'NoSQL database', icon: 'mongodb' },
+    { name: 'Firebase', category: 'backend', description: 'Backend-as-a-Service platform', icon: 'firebase' },
+    { name: 'Angular', category: 'frontend', description: 'Web application framework', icon: 'angular' },
+    { name: 'MVC', category: 'backend', description: 'Architectural pattern', icon: 'mvc' },
+    { name: 'Capacitor', category: 'tools', description: 'Native mobile app runtime', icon: 'capacitor' },
+    { name: 'Firebase Cloud', category: 'backend', description: 'Cloud functions and hosting', icon: 'firebase' },
+    { name: 'Cordova', category: 'tools', description: 'Mobile app development platform', icon: 'cordova' },
+    { name: 'GitHub', category: 'tools', description: 'Version control platform', icon: 'github' },
+    { name: 'JWT', category: 'backend', description: 'JSON Web Tokens', icon: 'jwt' },
+    { name: 'Express', category: 'backend', description: 'Node.js web framework', icon: 'express' },
+    { name: 'Mongoose', category: 'backend', description: 'MongoDB object modeling', icon: 'mongoose' },
+    { name: 'AnalogJS', category: 'frontend', description: 'Angular meta-framework', icon: 'analog' },
+    { name: 'Xcode', category: 'tools', description: 'iOS development IDE', icon: 'xcode' },
+    { name: 'Angular Material', category: 'frontend', description: 'Material Design components', icon: 'material' },
+    { name: 'Android Studio', category: 'tools', description: 'Android development IDE', icon: 'android' }
   ]);
 
   private experienceSubject = new BehaviorSubject<Experience[]>([
     {
       id: '1',
       company: 'Quadralyst Pvt Ltd',
-      position: 'Senior Web Developer',
-      startDate: '2021-03',
+      position: 'Junior Developer',
+      startDate: '2022-12',
       endDate: null,
-      description: 'Leading frontend development initiatives and mentoring junior developers',
+      description: 'A company providing software development services',
       responsibilities: [
-        'Architected and developed scalable web applications using Angular and TypeScript',
-        'Implemented responsive designs and optimized application performance',
-        'Collaborated with cross-functional teams to deliver high-quality solutions',
-        'Mentored junior developers and conducted code reviews'
+        'Design and develop high-performance web and mobile applications using Angular and Ionic',
+        'Collaborate with cross-functional teams to deliver innovative software solutions and features',
+        'Optimize application performance, scalability, and user experience',
+        'Implement secure authentication systems and access controls (Firebase Auth, JWT)',
+        'Integrate Google GenAI for dynamic content generation and document analysis workflows',
+        'Develop responsive UI components ensuring seamless experience across devices'
       ],
       achievements: [
-        'Improved application performance by 40% through optimization techniques',
-        'Successfully delivered 15+ projects on time and within budget',
-        'Reduced bug reports by 60% through comprehensive testing strategies'
+        'Played an integral role in designing and developing high-performance web applications',
+        'Collaborated closely with cross-functional teams to create innovative software solutions',
+        'Optimized performance, scalability, and user experience'
       ],
-      technologies: ['Angular', 'TypeScript', 'RxJS', 'Angular Material', 'Firebase'],
-      location: 'Remote'
+      technologies: ['Angular', 'Ionic', 'TypeScript', 'Firebase', 'JWT', 'Google GenAI'],
+      location: 'Indore',
+      companyUrl: 'https://quadralyst.com/'
     },
     {
       id: '2',
-      company: 'The Stepping Stone',
-      position: 'Frontend Developer',
-      startDate: '2019-06',
-      endDate: '2021-02',
-      description: 'Developed user interfaces and enhanced user experience for web applications',
+      company: 'The Stepping Stone (Training Institute)',
+      position: 'Angular Developer Intern',
+      startDate: '2022-06',
+      endDate: '2022-10',
+      description: 'A training institute focusing on software development',
       responsibilities: [
-        'Built responsive web applications using Angular and modern CSS frameworks',
-        'Integrated RESTful APIs and managed application state',
-        'Collaborated with designers to implement pixel-perfect UI components',
-        'Participated in agile development processes and sprint planning'
+        'Contributed to feature implementation across multiple Angular projects',
+        'Assisted in transforming design mockups into functional UI components',
+        'Participated in code reviews and debugging to improve code quality and performance',
+        'Conducted manual testing and bug-fixing to ensure reliability and adherence to requirements',
+        'Gained exposure to the entire development lifecycle, from concept to deployment'
       ],
       achievements: [
-        'Delivered 10+ successful web applications',
-        'Improved user engagement by 35% through UX enhancements',
-        'Reduced development time by 25% through reusable component library'
+        'Honed development skills through practical, real-world project involvement',
+        'Contributed to the successful implementation of various features',
+        'Gained comprehensive understanding of the development lifecycle'
       ],
-      technologies: ['Angular', 'JavaScript', 'Bootstrap', 'SCSS', 'Node.js'],
-      location: 'Hybrid'
+      technologies: ['Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
+      location: 'Indore',
+      companyUrl: 'https://steppingstone.in/'
     }
   ]);
 
@@ -187,14 +208,23 @@ export class ContentService {
   private educationSubject = new BehaviorSubject<Education[]>([
     {
       id: '1',
-      institution: 'University of Technology',
-      degree: 'Bachelor of Technology',
-      field: 'Computer Science Engineering',
+      institution: 'ShriRam College Of Engineering and Management',
+      degree: 'Bachelor of Engineering',
+      field: 'Mechanical Engineering',
+      startYear: 2016,
+      endYear: 2020,
+      grade: '8.52/10 CGPA',
+      location: 'Banmore'
+    },
+    {
+      id: '2',
+      institution: 'Bright Convent Higher Secondary School',
+      degree: 'Higher Secondary',
+      field: 'Science',
       startYear: 2015,
-      endYear: 2019,
-      grade: '8.2 CGPA',
-      coursework: ['Data Structures', 'Algorithms', 'Web Development', 'Database Systems', 'Software Engineering'],
-      honors: ['Dean\'s List', 'Best Project Award']
+      endYear: 2016,
+      grade: '81.2/100',
+      location: 'Banmore'
     }
   ]);
 

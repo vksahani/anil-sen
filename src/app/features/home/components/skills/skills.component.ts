@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChi
 import { CommonModule } from '@angular/common';
 import { ContentService, Skill } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
-import { fadeInUp, staggerAnimation, progressBarAnimation } from '../../../../shared/animations/animations';
+import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animations';
 
 @Component({
   selector: 'app-skills',
@@ -12,8 +12,8 @@ import { fadeInUp, staggerAnimation, progressBarAnimation } from '../../../../sh
     <section class="skills section" #skillsSection>
       <div class="container">
         <div class="section-header" [@fadeInUp]>
-          <h2 class="section-title">Skills & Expertise</h2>
-          <p class="section-subtitle">Technologies and tools I work with to bring ideas to life</p>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-subtitle">Technologies and tools I work with</p>
         </div>
 
         <div class="skills-filter" [@fadeInUp]>
@@ -34,74 +34,18 @@ import { fadeInUp, staggerAnimation, progressBarAnimation } from '../../../../sh
             class="skill-card"
             [class.visible]="isVisible()">
             
-            <div class="skill-header">
-              <div class="skill-info">
-                <h3 class="skill-name">{{ skill.name }}</h3>
-                <span class="skill-level">{{ skill.level }}%</span>
-              </div>
-              
-              <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
-                {{ getSkillIcon(skill.name) }}
-              </div>
+            <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
+              {{ getSkillIcon(skill.name) }}
             </div>
-
-            <div class="skill-description">
-              {{ skill.description }}
-            </div>
-
-            <div class="skill-progress">
-              <div class="progress-track">
-                <div 
-                  class="progress-fill" 
-                  [style.width.%]="isVisible() ? skill.level : 0"
-                  [@progressBar]="{ value: isVisible(), params: { width: skill.level } }"
-                  [attr.aria-valuenow]="skill.level"
-                  [attr.aria-valuemin]="0"
-                  [attr.aria-valuemax]="100"
-                  role="progressbar"
-                  [attr.aria-label]="skill.name + ' proficiency: ' + skill.level + '%'">
-                </div>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <span class="category-badge" [attr.data-category]="skill.category">
-                {{ getCategoryLabel(skill.category) }}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skills-summary" [@fadeInUp]>
-          <div class="summary-card">
-            <h3>Technical Proficiency</h3>
-            <p>
-              With {{ personalInfo()?.yearsOfExperience }}+ years of experience, I've mastered a comprehensive 
-              stack of modern web technologies. My expertise spans from frontend frameworks like Angular 
-              and Ionic to backend technologies including Node.js and Firebase.
-            </p>
             
-            <div class="proficiency-stats">
-              <div class="stat">
-                <span class="stat-label">Frontend</span>
-                <span class="stat-value">{{ getFrontendAverage() }}%</span>
-              </div>
-              <div class="stat">
-                <span class="stat-label">Backend</span>
-                <span class="stat-value">{{ getBackendAverage() }}%</span>
-              </div>
-              <div class="stat">
-                <span class="stat-label">Tools</span>
-                <span class="stat-value">{{ getToolsAverage() }}%</span>
-              </div>
-            </div>
+            <h3 class="skill-name">{{ skill.name }}</h3>
           </div>
         </div>
       </div>
     </section>
   `,
   styleUrls: ['./skills.component.scss'],
-  animations: [fadeInUp, staggerAnimation, progressBarAnimation],
+  animations: [fadeInUp, staggerAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent implements OnInit, AfterViewInit {
@@ -121,16 +65,31 @@ export class SkillsComponent implements OnInit, AfterViewInit {
   ];
 
   private skillIcons: { [key: string]: string } = {
-    'Angular': '🅰️',
-    'Ionic': '⚡',
-    'TypeScript': '📘',
+    'NodeJS': '🟢',
+    'HTML': '🌐',
+    'CSS': '🎨',
+    'SCSS': '💅',
+    'Bootstrap': '🅱️',
     'JavaScript': '📜',
-    'HTML/CSS': '🎨',
-    'Node.js': '🟢',
-    'Firebase': '🔥',
+    'TypeScript': '📘',
+    'VS Code': '💻',
+    'JSON Server': '📊',
+    'Ionic': '⚡',
     'MongoDB': '🍃',
-    'RxJS': '🔄',
-    'Git': '📚'
+    'Firebase': '🔥',
+    'Angular': '🅰️',
+    'MVC': '🏗️',
+    'Capacitor': '📱',
+    'Firebase Cloud': '☁️',
+    'Cordova': '📲',
+    'GitHub': '🐙',
+    'JWT': '🔐',
+    'Express': '🚀',
+    'Mongoose': '🦫',
+    'AnalogJS': '⚡',
+    'Xcode': '🍎',
+    'Angular Material': '🎯',
+    'Android Studio': '🤖'
   };
 
   private contentService = inject(ContentService);
@@ -190,24 +149,5 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     return categoryMap[category] || category;
   }
 
-  getFrontendAverage(): number {
-    const frontendSkills = this.skills().filter(skill => skill.category === 'frontend');
-    if (frontendSkills.length === 0) return 0;
-    const total = frontendSkills.reduce((sum, skill) => sum + skill.level, 0);
-    return Math.round(total / frontendSkills.length);
-  }
 
-  getBackendAverage(): number {
-    const backendSkills = this.skills().filter(skill => skill.category === 'backend');
-    if (backendSkills.length === 0) return 0;
-    const total = backendSkills.reduce((sum, skill) => sum + skill.level, 0);
-    return Math.round(total / backendSkills.length);
-  }
-
-  getToolsAverage(): number {
-    const toolsSkills = this.skills().filter(skill => skill.category === 'tools' || skill.category === 'devops');
-    if (toolsSkills.length === 0) return 0;
-    const total = toolsSkills.reduce((sum, skill) => sum + skill.level, 0);
-    return Math.round(total / toolsSkills.length);
-  }
 }
