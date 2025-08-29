@@ -17,73 +17,153 @@
   "skills": [
     {
       "name": "Angular",
-      "level": 95,
       "category": "frontend",
-      "description": "Expert in Angular framework for building dynamic web applications",
+      "description": "Web application framework for building dynamic applications",
       "icon": "angular"
     },
     {
       "name": "Ionic",
-      "level": 90,
       "category": "frontend",
-      "description": "Proficient in cross-platform mobile app development",
+      "description": "Cross-platform mobile app development framework",
       "icon": "ionic"
     },
     {
       "name": "TypeScript",
-      "level": 92,
       "category": "frontend",
-      "description": "Strong typing and modern JavaScript features",
+      "description": "Typed JavaScript for better development experience",
       "icon": "typescript"
     },
     {
       "name": "JavaScript",
-      "level": 88,
       "category": "frontend",
-      "description": "Core language for web development",
+      "description": "Core programming language for web development",
       "icon": "javascript"
     },
     {
-      "name": "HTML/CSS",
-      "level": 90,
+      "name": "HTML",
       "category": "frontend",
-      "description": "Semantic markup and responsive design",
+      "description": "Markup language for web pages",
       "icon": "html5"
     },
     {
-      "name": "Node.js",
-      "level": 85,
+      "name": "CSS",
+      "category": "frontend",
+      "description": "Styling language for web pages",
+      "icon": "css3"
+    },
+    {
+      "name": "SCSS",
+      "category": "frontend",
+      "description": "CSS preprocessor with enhanced features",
+      "icon": "sass"
+    },
+    {
+      "name": "Bootstrap",
+      "category": "frontend",
+      "description": "CSS framework for responsive design",
+      "icon": "bootstrap"
+    },
+    {
+      "name": "Angular Material",
+      "category": "frontend",
+      "description": "Material Design components for Angular",
+      "icon": "material"
+    },
+    {
+      "name": "NodeJS",
       "category": "backend",
-      "description": "Server-side JavaScript runtime",
+      "description": "Server-side JavaScript runtime environment",
       "icon": "nodejs"
     },
     {
+      "name": "Express",
+      "category": "backend",
+      "description": "Node.js web application framework",
+      "icon": "express"
+    },
+    {
+      "name": "MongoDB",
+      "category": "backend",
+      "description": "NoSQL database for modern applications",
+      "icon": "mongodb"
+    },
+    {
+      "name": "Mongoose",
+      "category": "backend",
+      "description": "MongoDB object modeling for Node.js",
+      "icon": "mongoose"
+    },
+    {
       "name": "Firebase",
-      "level": 80,
       "category": "backend",
       "description": "Backend-as-a-Service platform",
       "icon": "firebase"
     },
     {
-      "name": "MongoDB",
-      "level": 75,
+      "name": "Firebase Cloud",
       "category": "backend",
-      "description": "NoSQL database management",
-      "icon": "mongodb"
+      "description": "Cloud functions and hosting services",
+      "icon": "firebase"
     },
     {
-      "name": "RxJS",
-      "level": 88,
-      "category": "frontend",
-      "description": "Reactive programming with observables",
-      "icon": "rxjs"
+      "name": "JWT",
+      "category": "backend",
+      "description": "JSON Web Tokens for authentication",
+      "icon": "jwt"
     },
     {
-      "name": "Git",
-      "level": 85,
+      "name": "MVC",
+      "category": "backend",
+      "description": "Model-View-Controller architectural pattern",
+      "icon": "mvc"
+    },
+    {
+      "name": "VS Code",
       "category": "tools",
-      "description": "Version control and collaboration",
-      "icon": "git"
+      "description": "Code editor for development",
+      "icon": "vscode"
+    },
+    {
+      "name": "GitHub",
+      "category": "tools",
+      "description": "Version control and collaboration platform",
+      "icon": "github"
+    },
+    {
+      "name": "Xcode",
+      "category": "tools",
+      "description": "iOS development IDE",
+      "icon": "xcode"
+    },
+    {
+      "name": "Android Studio",
+      "category": "tools",
+      "description": "Android development IDE",
+      "icon": "android"
+    },
+    {
+      "name": "Capacitor",
+      "category": "tools",
+      "description": "Native mobile app runtime",
+      "icon": "capacitor"
+    },
+    {
+      "name": "Cordova",
+      "category": "tools",
+      "description": "Mobile app development platform",
+      "icon": "cordova"
+    },
+    {
+      "name": "JSON Server",
+      "category": "tools",
+      "description": "Mock REST API for development",
+      "icon": "json"
+    },
+    {
+      "name": "AnalogJS",
+      "category": "frontend",
+      "description": "Angular meta-framework for full-stack development",
+      "icon": "analog"
     }
   ],
   "experience": [
@@ -105,7 +185,13 @@
         "Successfully delivered 15+ projects on time and within budget",
         "Reduced bug reports by 60% through comprehensive testing strategies"
       ],
-      "technologies": ["Angular", "TypeScript", "RxJS", "Angular Material", "Firebase"],
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "Angular Material",
+        "Firebase"
+      ],
       "location": "Remote"
     },
     {
@@ -126,7 +212,13 @@
         "Improved user engagement by 35% through UX enhancements",
         "Reduced development time by 25% through reusable component library"
       ],
-      "technologies": ["Angular", "JavaScript", "Bootstrap", "SCSS", "Node.js"],
+      "technologies": [
+        "Angular",
+        "JavaScript",
+        "Bootstrap",
+        "SCSS",
+        "Node.js"
+      ],
       "location": "Hybrid"
     }
   ],
@@ -136,40 +228,84 @@
       "title": "PartyTambola",
       "description": "Interactive online tambola game platform with real-time multiplayer functionality",
       "longDescription": "A comprehensive online tambola (bingo) platform that allows users to create and join games, with real-time synchronization and interactive gameplay features.",
-      "technologies": ["Angular", "Socket.io", "Node.js", "MongoDB", "Express"],
-      "features": ["Real-time multiplayer", "Custom game rooms", "Voice chat integration", "Responsive design"],
+      "technologies": [
+        "Angular",
+        "Socket.io",
+        "Node.js",
+        "MongoDB",
+        "Express"
+      ],
+      "features": [
+        "Real-time multiplayer",
+        "Custom game rooms",
+        "Voice chat integration",
+        "Responsive design"
+      ],
       "imageUrl": "/assets/images/projects/partytambola.jpg",
       "demoUrl": "https://partytambola.com",
       "githubUrl": "https://github.com/vishalkumar/partytambola",
       "status": "completed",
       "category": "web",
-      "highlights": ["500+ active users", "Real-time synchronization", "Cross-platform compatibility"]
+      "highlights": [
+        "500+ active users",
+        "Real-time synchronization",
+        "Cross-platform compatibility"
+      ]
     },
     {
       "id": "2",
       "title": "Durud",
       "description": "E-commerce platform for local artisans and craftsmen",
       "longDescription": "A marketplace connecting local artisans with customers, featuring product catalogs, order management, and payment integration.",
-      "technologies": ["Angular", "Ionic", "Firebase", "Stripe"],
-      "features": ["Product catalog", "Order management", "Payment integration", "Vendor dashboard"],
+      "technologies": [
+        "Angular",
+        "Ionic",
+        "Firebase",
+        "Stripe"
+      ],
+      "features": [
+        "Product catalog",
+        "Order management",
+        "Payment integration",
+        "Vendor dashboard"
+      ],
       "imageUrl": "/assets/images/projects/durud.jpg",
       "demoUrl": "https://durud.com",
       "status": "completed",
       "category": "fullstack",
-      "highlights": ["100+ vendors onboarded", "Mobile-first design", "Secure payment processing"]
+      "highlights": [
+        "100+ vendors onboarded",
+        "Mobile-first design",
+        "Secure payment processing"
+      ]
     },
     {
       "id": "3",
       "title": "Bhautiki Plus",
       "description": "Educational platform for physics learning with interactive simulations",
       "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
-      "technologies": ["Angular", "Three.js", "WebGL", "TypeScript", "Material Design"],
-      "features": ["Interactive simulations", "Progress tracking", "Quiz system", "Responsive design"],
+      "technologies": [
+        "Angular",
+        "Three.js",
+        "WebGL",
+        "TypeScript",
+        "Material Design"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
       "imageUrl": "/assets/images/projects/bhautiki.jpg",
       "demoUrl": "https://bhautikiplus.com",
       "status": "completed",
       "category": "web",
-      "highlights": ["1000+ students enrolled", "3D physics simulations", "Gamified learning"]
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
     }
   ],
   "education": [
@@ -181,8 +317,17 @@
       "startYear": 2015,
       "endYear": 2019,
       "grade": "8.2 CGPA",
-      "coursework": ["Data Structures", "Algorithms", "Web Development", "Database Systems", "Software Engineering"],
-      "honors": ["Dean's List", "Best Project Award"]
+      "coursework": [
+        "Data Structures",
+        "Algorithms",
+        "Web Development",
+        "Database Systems",
+        "Software Engineering"
+      ],
+      "honors": [
+        "Dean's List",
+        "Best Project Award"
+      ]
     }
   ]
 }
