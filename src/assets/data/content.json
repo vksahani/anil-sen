@@ -9,7 +9,7 @@
     "linkedin": "https://www.linkedin.com/in/vishal-kumar-2ab7ab146",
     "github": "https://github.com/vishal-quadralyst",
     "website": "https://vishalkumar.dev",
-    "bio": "Results-driven Angular and Ionic Developer with 2.5 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
+    "bio": "Results-driven Angular and Ionic Developer with 3 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
     "profileImage": "/assets/images/profile.jpg",
     "resumeUrl": "/assets/documents/vishal-kumar-resume.pdf",
     "yearsOfExperience": 3
@@ -222,7 +222,13 @@
         "JavaScript",
         "Bootstrap",
         "SCSS",
-        "Node.js"
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "MVC",
+        "JSON Server"
       ],
       "location": "Hybrid"
     }
@@ -235,10 +241,12 @@
       "longDescription": "A comprehensive online tambola (bingo) platform that allows users to create and join games, with real-time synchronization and interactive gameplay features.",
       "technologies": [
         "Angular",
-        "Socket.io",
-        "Node.js",
-        "MongoDB",
-        "Express"
+        "Android Studio",
+        "Ionic",
+        "Firebase",
+        "Firebase Cloud",
+        "Capacitor",
+        "RxJS"
       ],
       "features": [
         "Real-time multiplayer",
@@ -247,8 +255,10 @@
         "Responsive design"
       ],
       "imageUrl": "/assets/images/projects/partytambola.jpg",
-      "demoUrl": "https://partytambola.com",
-      "githubUrl": "https://github.com/vishalkumar/partytambola",
+      "adminUrl": "https://bhautikiplus.com",
+      "userUrl": "https://bhautikiplus.com",
+      "playStoreUrl": "https://bhautikiplus.com",
+      "appStoreUrl": "https://bhautikiplus.com",
       "status": "completed",
       "category": "web",
       "highlights": [
@@ -264,9 +274,9 @@
       "longDescription": "A marketplace connecting local artisans with customers, featuring product catalogs, order management, and payment integration.",
       "technologies": [
         "Angular",
-        "Ionic",
         "Firebase",
-        "Stripe"
+        "Firebase Cloud",
+        "AnalogJS"
       ],
       "features": [
         "Product catalog",
@@ -275,7 +285,10 @@
         "Vendor dashboard"
       ],
       "imageUrl": "/assets/images/projects/durud.jpg",
-      "demoUrl": "https://durud.com",
+      "adminUrl": "https://bhautikiplus.com",
+      "userUrl": "https://bhautikiplus.com",
+      "playStoreUrl": "https://bhautikiplus.com",
+      "appStoreUrl": "https://bhautikiplus.com",
       "status": "completed",
       "category": "fullstack",
       "highlights": [
@@ -291,8 +304,12 @@
       "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
       "technologies": [
         "Angular",
-        "Three.js",
-        "WebGL",
+        "Android Studio",
+        "Capacitor",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "Ionic",
         "TypeScript",
         "Material Design"
       ],
@@ -303,7 +320,10 @@
         "Responsive design"
       ],
       "imageUrl": "/assets/images/projects/bhautiki.jpg",
-      "demoUrl": "https://bhautikiplus.com",
+      "adminUrl": "https://bhautikiplus.com",
+      "userUrl": "https://bhautikiplus.com",
+      "playStoreUrl": "https://bhautikiplus.com",
+      "appStoreUrl": "https://bhautikiplus.com",
       "status": "completed",
       "category": "web",
       "highlights": [

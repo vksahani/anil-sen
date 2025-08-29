@@ -87,38 +87,9 @@ export class ContentService {
     private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.initializeWithDefaults();
     if (isPlatformBrowser(this.platformId)) {
       this.loadContent();
     }
-  }
-
-  private initializeWithDefaults(): void {
-    // Initialize with default data for SSR
-    this.personalInfoSubject.next({
-      name: 'Vishal Kumar',
-      title: 'Web & Application Developer',
-      email: 'vishalkumarbanmore@gmail.com',
-      phone: '+91-8269423244',
-      location: 'Indore (M.P.)',
-      dateOfBirth: '08-07-1998',
-      linkedin: 'https://www.linkedin.com/in/vishal-kumar-2ab7ab146',
-      github: 'https://github.com/vishal-quadralyst',
-      website: 'https://vishalkumar.dev',
-      bio: 'Results-driven Angular and Ionic Developer with 2.5 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications.',
-      profileImage: '/assets/images/profile.jpg',
-      resumeUrl: '/assets/documents/vishal-kumar-resume.pdf',
-      yearsOfExperience: 2.5
-    });
-
-    // Initialize with default skills
-    this.skillsSubject.next([
-      { name: 'Angular', category: 'frontend', description: 'Expert in Angular framework', icon: 'angular' },
-      { name: 'TypeScript', category: 'frontend', description: 'Strong typing and modern JavaScript', icon: 'typescript' },
-      { name: 'Ionic', category: 'frontend', description: 'Cross-platform mobile development', icon: 'ionic' },
-      { name: 'Node.js', category: 'backend', description: 'Server-side JavaScript runtime', icon: 'nodejs' },
-      { name: 'Firebase', category: 'backend', description: 'Backend-as-a-Service platform', icon: 'firebase' }
-    ]);
   }
 
   private loadContent(): void {
@@ -130,6 +101,8 @@ export class ContentService {
     ).subscribe({
       next: (data) => {
         if (data) {
+          console.log('data-----------', data);
+          
           if (data.personalInfo) {
             this.personalInfoSubject.next(data.personalInfo);
           }

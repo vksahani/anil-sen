@@ -60,7 +60,6 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     { key: 'all', label: 'All Skills' },
     { key: 'frontend', label: 'Frontend' },
     { key: 'backend', label: 'Backend' },
-    { key: 'devops', label: 'DevOps' },
     { key: 'tools', label: 'Tools' }
   ];
 
