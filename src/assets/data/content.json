@@ -2,16 +2,17 @@
   "personalInfo": {
     "name": "Vishal Kumar",
     "title": "Web & Application Developer",
-    "email": "vishal@example.com",
-    "phone": "+91 9876543210",
-    "location": "India",
-    "linkedin": "https://linkedin.com/in/vishalkumar",
-    "github": "https://github.com/vishalkumar",
+    "email": "vishalkumarbanmore@gmail.com",
+    "phone": "+91-8269423244",
+    "location": "Indore (M.P.)",
+    "dateOfBirth": "08-07-1998",
+    "linkedin": "https://www.linkedin.com/in/vishal-kumar-2ab7ab146",
+    "github": "https://github.com/vishal-quadralyst",
     "website": "https://vishalkumar.dev",
-    "bio": "Passionate Web & Application Developer with 5+ years of experience in building scalable web applications using Angular, Ionic, Node.js, and modern web technologies. Specialized in creating user-centric solutions that drive business growth.",
+    "bio": "Results-driven Angular and Ionic Developer with 2.5 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
     "profileImage": "/assets/images/profile.jpg",
     "resumeUrl": "/assets/documents/vishal-kumar-resume.pdf",
-    "yearsOfExperience": 5
+    "yearsOfExperience": 2.5
   },
   "skills": [
     {
