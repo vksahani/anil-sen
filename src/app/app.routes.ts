@@ -13,6 +13,10 @@ export const routes: Routes = [
     path: 'experience',
     loadComponent: () => import('./features/experience/experience.component').then(m => m.ExperienceComponent)
   },
+  {
+    path: 'resume',
+    loadComponent: () => import('./features/resume/resume.component').then(m => m.ResumeComponent)
+  },
 
   {
     path: '**',

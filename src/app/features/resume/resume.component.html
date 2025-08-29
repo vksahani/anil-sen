@@ -1,0 +1,198 @@
+<div class="resume-container">
+  @if (!loading && !error && resumeData) {
+  <!-- Print Controls -->
+  <div class="print-controls no-print">
+    <button class="btn btn-primary" (click)="printResume()">
+      <i class="fas fa-print"></i> Print Resume
+    </button>
+    <button class="btn btn-secondary" (click)="downloadPDF()">
+      <i class="fas fa-download"></i> Download PDF
+    </button>
+  </div>
+
+  <!-- Resume Content -->
+  <div class="resume-content">
+    <!-- Header Section -->
+    <header class="resume-header">
+      <h1 class="name">{{ resumeData.personalInfo.name }}</h1>
+      <h2 class="title">{{ resumeData.personalInfo.title }}</h2>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-label">Email:</span>
+          <span class="contact-value">{{ resumeData.personalInfo.email }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Phone:</span>
+          <span class="contact-value">{{ resumeData.personalInfo.phone }}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Location:</span>
+          <span class="contact-value">{{ resumeData.personalInfo.location }}</span>
+        </div>
+        @if (resumeData.personalInfo.linkedin) {
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn:</span>
+          <span class="contact-value">{{ resumeData.personalInfo.linkedin }}</span>
+        </div>
+        }
+        @if (resumeData.personalInfo.github) {
+        <div class="contact-item">
+          <span class="contact-label">GitHub:</span>
+          <span class="contact-value">{{ resumeData.personalInfo.github }}</span>
+        </div>
+        }
+        @if (resumeData.personalInfo.website) {
+        <div class="contact-item">
+          <span class="contact-label">Website:</span>
+          <span class="contact-value">{{ resumeData.personalInfo.website }}</span>
+        </div>
+        }
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="resume-section">
+      <h3 class="section-title">PROFESSIONAL SUMMARY</h3>
+      <p class="summary-text">{{ resumeData.summary }}</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="resume-section">
+      <h3 class="section-title">PROFESSIONAL EXPERIENCE</h3>
+      <div class="experience-list">
+        @for (exp of resumeData.experience; track exp) {
+        <div class="experience-item">
+          <div class="experience-header">
+            <div class="position-company">
+              <h4 class="position">{{ exp.position }}</h4>
+              <h5 class="company">{{ exp.company }}</h5>
+            </div>
+            <div class="location-dates">
+              <span class="location">{{ exp.location }}</span>
+              <span class="dates">{{ formatDate(exp.startDate) }} - {{ formatDate(exp.endDate) }}</span>
+            </div>
+          </div>
+          <ul class="responsibilities">
+            @for (responsibility of exp.responsibilities; track responsibility) {
+            <li>{{ responsibility }}</li>
+            }
+          </ul>
+        </div>
+        }
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="resume-section">
+      <h3 class="section-title">EDUCATION</h3>
+      <div class="education-list">
+        @for (edu of resumeData.education; track edu) {
+        <div class="education-item">
+          <div class="education-header">
+            <div class="degree-institution">
+              <h4 class="degree">{{ edu.degree }}</h4>
+              <h5 class="institution">{{ edu.institution }}</h5>
+            </div>
+            <div class="location-date">
+              <span class="location">{{ edu.location }}</span>
+              <span class="graduation-date">{{ formatDate(edu.graduationDate) }}</span>
+            </div>
+          </div>
+          @if (edu.gpa) {
+          <div class="gpa">
+            <span>GPA: {{ edu.gpa }}</span>
+          </div>
+          }
+        </div>
+        }
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="resume-section">
+      <h3 class="section-title">TECHNICAL SKILLS</h3>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4 class="skill-category-title">Programming Languages:</h4>
+          <span class="skill-list">{{ resumeData.skills.technical.join(', ') }}</span>
+        </div>
+        <div class="skill-category">
+          <h4 class="skill-category-title">Frameworks & Libraries:</h4>
+          <span class="skill-list">{{ resumeData.skills.frameworks.join(', ') }}</span>
+        </div>
+        <div class="skill-category">
+          <h4 class="skill-category-title">Databases:</h4>
+          <span class="skill-list">{{ resumeData.skills.databases.join(', ') }}</span>
+        </div>
+        <div class="skill-category">
+          <h4 class="skill-category-title">Tools & Technologies:</h4>
+          <span class="skill-list">{{ resumeData.skills.tools.join(', ') }}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="resume-section">
+      <h3 class="section-title">KEY PROJECTS</h3>
+      <div class="projects-list">
+        @for (project of resumeData.projects; track project) {
+        <div class="project-item">
+          <div class="project-header">
+            <h4 class="project-name">{{ project.name }}</h4>
+            <span class="project-technologies">{{ project.technologies.join(', ') }}</span>
+          </div>
+          <p class="project-description">{{ project.description }}</p>
+          <ul class="project-highlights">
+            @for (highlight of project.highlights; track highlight) {
+            <li>{{ highlight }}</li>
+            }
+          </ul>
+        </div>
+        }
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    @if (resumeData.certifications.length > 0) {
+    <section class="resume-section">
+      <h3 class="section-title">CERTIFICATIONS</h3>
+      <div class="certifications-list">
+        @for (cert of resumeData.certifications; track cert) {
+        <div class="certification-item">
+          <div class="certification-header">
+            <h4 class="certification-name">{{ cert.name }}</h4>
+            <div class="certification-details">
+              <span class="issuer">{{ cert.issuer }}</span>
+              <span class="cert-date">{{ formatDate(cert.date) }}</span>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </section>
+    }
+  </div>
+  }
+
+  <!-- Loading State -->
+  @if (loading) {
+  <div class="loading-container">
+    <div class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading resume data...</p>
+    </div>
+  </div>
+  }
+
+  <!-- Error State -->
+  @if (error) {
+  <div class="error-container">
+    <div class="error-message">
+      <h3>Error Loading Resume</h3>
+      <p>{{ error }}</p>
+      <button class="btn btn-primary" (click)="loadResumeData()">Retry</button>
+    </div>
+  </div>
+  }
+</div>
