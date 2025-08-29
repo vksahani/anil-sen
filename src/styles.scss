@@ -1,9 +1,6 @@
 // Import Bootstrap grid system
 @use 'bootstrap/scss/bootstrap-grid';
 
-// Import dark mode utilities
-@use 'app/shared/styles/dark-mode-utilities';
-
 // Global theme variables
 :root {
   // Primary colors
@@ -74,38 +71,7 @@
   --text-secondary-rgb: 100, 116, 139;
 }
 
-// Dark theme variables
-[data-theme="dark"] {
-  --neutral-50: #0f172a;
-  --neutral-100: #1e293b;
-  --neutral-200: #334155;
-  --neutral-300: #475569;
-  --neutral-400: #64748b;
-  --neutral-500: #94a3b8;
-  --neutral-600: #cbd5e1;
-  --neutral-700: #e2e8f0;
-  --neutral-800: #f1f5f9;
-  --neutral-900: #f8fafc;
-  
-  // Dark theme specific colors
-  --bg-primary: var(--neutral-50);
-  --bg-secondary: var(--neutral-100);
-  --text-primary: var(--neutral-900);
-  --text-secondary: var(--neutral-700);
-  --border-color: var(--neutral-200);
-  
-  // RGB values for opacity usage
-  --bg-primary-rgb: 15, 23, 42;
-  --bg-secondary-rgb: 30, 41, 59;
-  --text-primary-rgb: 248, 250, 252;
-  --text-secondary-rgb: 226, 232, 240;
-  
-  // Enhanced shadows for dark mode
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
-}
+
 
 // Global reset and base styles
 * {

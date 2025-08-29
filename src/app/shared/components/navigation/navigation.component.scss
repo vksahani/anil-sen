@@ -148,36 +148,3 @@
   }
 }
 
-// Dark theme styles
-[data-theme="dark"] .navbar {
-  background: rgba(15, 23, 42, 0.95);
-  border-bottom-color: var(--neutral-700);
-
-  &.scrolled {
-    background: rgba(15, 23, 42, 0.98);
-  }
-
-  .nav-brand .brand-link {
-    color: var(--neutral-100);
-  }
-
-  .nav-menu {
-    .nav-link {
-      color: var(--neutral-300);
-
-      &:hover {
-        color: var(--primary-blue);
-      }
-    }
-
-
-
-    @media (max-width: 768px) {
-      background: var(--neutral-900);
-    }
-  }
-
-  .menu-toggle .hamburger {
-    background: var(--neutral-300);
-  }
-}

@@ -1,14 +1,12 @@
 import { Component, ChangeDetectionStrategy, OnInit, HostListener, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ThemeService } from '../../../core/services/theme.service';
 import { ContentService } from '../../../core/services/content.service';
-import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [CommonModule, RouterModule, ThemeToggleComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -18,7 +16,6 @@ export class NavigationComponent implements OnInit {
   isMenuOpen = signal(false);
   personalInfo: any = null;
 
-  public themeService = inject(ThemeService);
   private contentService = inject(ContentService);
 
   constructor() {
@@ -49,9 +46,5 @@ export class NavigationComponent implements OnInit {
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
-  }
-
-  toggleTheme(): void {
-    this.themeService.toggleTheme();
   }
 }
