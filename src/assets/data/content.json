@@ -12,7 +12,7 @@
     "bio": "Results-driven Angular and Ionic Developer with 2.5 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
     "profileImage": "/assets/images/profile.jpg",
     "resumeUrl": "/assets/documents/vishal-kumar-resume.pdf",
-    "yearsOfExperience": 2.5
+    "yearsOfExperience": 3
   },
   "skills": [
     {
@@ -188,9 +188,14 @@
       "technologies": [
         "Angular",
         "TypeScript",
+        "Ionic",
+        "Capacitor",
+        "Cordova",
         "RxJS",
         "Angular Material",
-        "Firebase"
+        "Firebase",
+        "Firebase Cloud",
+        "Android Studio"
       ],
       "location": "Remote"
     },
@@ -311,23 +316,23 @@
   "education": [
     {
       "id": "1",
-      "institution": "University of Technology",
-      "degree": "Bachelor of Technology",
-      "field": "Computer Science Engineering",
+      "institution": "ShriRam College Of Engineering and Management",
+      "degree": "Bachelor of Engineering",
+      "field": "Mechanical Engineering",
+      "startYear": 2016,
+      "endYear": 2020,
+      "grade": "8.52/10 CGPA",
+      "location": "Banmore"
+    },
+    {
+      "id": "2",
+      "institution": "Bright Convent Higher Secondary School",
+      "degree": "Higher Secondary",
+      "field": "Science",
       "startYear": 2015,
-      "endYear": 2019,
-      "grade": "8.2 CGPA",
-      "coursework": [
-        "Data Structures",
-        "Algorithms",
-        "Web Development",
-        "Database Systems",
-        "Software Engineering"
-      ],
-      "honors": [
-        "Dean's List",
-        "Best Project Award"
-      ]
+      "endYear": 2016,
+      "grade": "81.2/100",
+      "location": "Banmore"
     }
   ]
 }

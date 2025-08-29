@@ -66,34 +66,34 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
           <div class="summary-content">
             <h3>Academic Excellence</h3>
             <p>
-              My educational journey has provided me with a strong foundation in computer science 
-              principles, software engineering practices, and modern development methodologies. 
+              My educational journey has provided me with a strong foundation in engineering 
+              principles, analytical thinking, and problem-solving methodologies. 
               The combination of theoretical knowledge and practical application has shaped my 
-              approach to problem-solving and technical innovation.
+              approach to software development and technical innovation.
             </p>
             
             <div class="education-stats">
-              <div class="stat-item">
+              <div class="stat-item" *ngIf="education()[0]">
                 <div class="stat-icon">📚</div>
                 <div class="stat-content">
                   <span class="stat-label">Degree</span>
-                  <span class="stat-value">B.Tech CSE</span>
+                  <span class="stat-value">{{ education()[0].degree }}</span>
                 </div>
               </div>
               
-              <div class="stat-item">
+              <div class="stat-item" *ngIf="education()[0]">
                 <div class="stat-icon">🏆</div>
                 <div class="stat-content">
-                  <span class="stat-label">CGPA</span>
-                  <span class="stat-value">8.2/10</span>
+                  <span class="stat-label">Grade</span>
+                  <span class="stat-value">{{ education()[0].grade }}</span>
                 </div>
               </div>
               
-              <div class="stat-item">
+              <div class="stat-item" *ngIf="education()[0]">
                 <div class="stat-icon">📅</div>
                 <div class="stat-content">
                   <span class="stat-label">Graduated</span>
-                  <span class="stat-value">2019</span>
+                  <span class="stat-value">{{ education()[0].endYear }}</span>
                 </div>
               </div>
             </div>
