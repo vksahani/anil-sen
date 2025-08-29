@@ -13,13 +13,7 @@
       <a href="#projects" class="nav-link" (click)="closeMenu()" aria-label="Projects section">Projects</a>
       <a href="#contact" class="nav-link" (click)="closeMenu()" aria-label="Contact section">Contact</a>
       
-      <button 
-        class="theme-toggle" 
-        (click)="toggleTheme()" 
-        [attr.aria-label]="themeService.isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
-        type="button">
-        <span class="theme-icon">{{ themeService.isDarkMode() ? '☀️' : '🌙' }}</span>
-      </button>
+      <app-theme-toggle></app-theme-toggle>
     </div>
 
     <button 

@@ -1,6 +1,9 @@
 // Import Bootstrap grid system
 @use 'bootstrap/scss/bootstrap-grid';
 
+// Import dark mode utilities
+@import 'src/app/shared/styles/dark-mode-utilities';
+
 // Global theme variables
 :root {
   // Primary colors
@@ -56,6 +59,19 @@
   --transition-fast: 150ms ease-in-out;
   --transition-normal: 300ms ease-in-out;
   --transition-slow: 500ms ease-in-out;
+  
+  // Light theme specific colors
+  --bg-primary: var(--neutral-50);
+  --bg-secondary: white;
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --border-color: var(--neutral-200);
+  
+  // RGB values for opacity usage
+  --bg-primary-rgb: 248, 250, 252;
+  --bg-secondary-rgb: 255, 255, 255;
+  --text-primary-rgb: 15, 23, 42;
+  --text-secondary-rgb: 100, 116, 139;
 }
 
 // Dark theme variables
@@ -70,6 +86,25 @@
   --neutral-700: #e2e8f0;
   --neutral-800: #f1f5f9;
   --neutral-900: #f8fafc;
+  
+  // Dark theme specific colors
+  --bg-primary: var(--neutral-50);
+  --bg-secondary: var(--neutral-100);
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-700);
+  --border-color: var(--neutral-200);
+  
+  // RGB values for opacity usage
+  --bg-primary-rgb: 15, 23, 42;
+  --bg-secondary-rgb: 30, 41, 59;
+  --text-primary-rgb: 248, 250, 252;
+  --text-secondary-rgb: 226, 232, 240;
+  
+  // Enhanced shadows for dark mode
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
 }
 
 // Global reset and base styles
@@ -87,10 +122,11 @@ html {
 body {
   font-family: var(--font-primary);
   line-height: 1.6;
-  color: var(--neutral-800);
-  background-color: var(--neutral-50);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 // Typography
@@ -98,7 +134,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.2;
-  color: var(--neutral-900);
+  color: var(--text-primary);
 }
 
 h1 { font-size: 3rem; }
@@ -110,7 +146,7 @@ h6 { font-size: 1.125rem; }
 
 p {
   margin-bottom: var(--spacing-md);
-  color: var(--neutral-600);
+  color: var(--text-secondary);
 }
 
 a {
@@ -181,12 +217,13 @@ a {
   }
   
   &.btn-secondary {
-    background: var(--neutral-100);
-    color: var(--neutral-800);
-    border: 1px solid var(--neutral-300);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
     
     &:hover {
-      background: var(--neutral-200);
+      background: var(--neutral-100);
+      border-color: var(--primary-blue);
     }
   }
   
@@ -203,7 +240,8 @@ a {
 
 // Card styles
 .card {
-  background: white;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: var(--spacing-xl);

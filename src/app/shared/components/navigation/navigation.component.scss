@@ -77,28 +77,7 @@
       }
     }
 
-    .theme-toggle {
-      background: none;
-      border: 1px solid var(--neutral-300);
-      border-radius: var(--radius-full);
-      padding: var(--spacing-sm);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
 
-      &:hover {
-        background: var(--neutral-100);
-        border-color: var(--primary-blue);
-      }
-
-      .theme-icon {
-        font-size: 1.2rem;
-      }
-    }
   }
 
   .menu-toggle {
@@ -191,15 +170,7 @@
       }
     }
 
-    .theme-toggle {
-      border-color: var(--neutral-600);
-      color: var(--neutral-300);
 
-      &:hover {
-        background: var(--neutral-800);
-        border-color: var(--primary-blue);
-      }
-    }
 
     @media (max-width: 768px) {
       background: var(--neutral-900);

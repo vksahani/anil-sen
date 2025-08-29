@@ -1,0 +1,357 @@
+// Dark Mode Utility Classes and Mixins
+
+// Smooth theme transition mixin
+@mixin theme-transition($properties: all) {
+  transition: #{$properties} var(--transition-normal);
+}
+
+// Dark mode utility classes
+.theme-aware {
+  @include theme-transition(background-color, color, border-color, box-shadow);
+}
+
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+  @include theme-transition(background-color);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+  @include theme-transition(background-color);
+}
+
+.text-theme-primary {
+  color: var(--text-primary);
+  @include theme-transition(color);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+  @include theme-transition(color);
+}
+
+.border-theme {
+  border-color: var(--border-color);
+  @include theme-transition(border-color);
+}
+
+// Enhanced card component for dark mode
+.card-theme-aware {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  @include theme-transition();
+  
+  &:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+  }
+}
+
+// Form elements dark mode support
+.form-control-theme {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  @include theme-transition();
+  
+  &:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  }
+  
+  &::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+  }
+}
+
+// Button variants for dark mode
+.btn-theme-outline {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  @include theme-transition();
+  
+  &:hover {
+    background: var(--bg-secondary);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+  }
+}
+
+// Navigation and header utilities
+.navbar-theme {
+  background: rgba(var(--bg-primary-rgb), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  @include theme-transition();
+  
+  &.scrolled {
+    background: rgba(var(--bg-primary-rgb), 0.98);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+// Modal and overlay utilities
+.modal-theme {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  @include theme-transition();
+}
+
+.overlay-theme {
+  background: rgba(0, 0, 0, 0.5);
+  
+  [data-theme="dark"] & {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+// Code block styling for dark mode
+.code-theme {
+  background: var(--neutral-100);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  @include theme-transition();
+  
+  [data-theme="dark"] & {
+    background: var(--neutral-800);
+  }
+}
+
+// Table styling for dark mode
+.table-theme {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  @include theme-transition();
+  
+  th {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+  }
+  
+  td {
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  tbody tr:hover {
+    background: var(--bg-primary);
+  }
+}
+
+// Loading spinner for dark mode
+.spinner-theme {
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--primary-blue);
+  @include theme-transition(border-color);
+}
+
+// Toast/notification styling
+.toast-theme {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lg);
+  @include theme-transition();
+  
+  &.toast-success {
+    border-left: 4px solid #10b981;
+  }
+  
+  &.toast-error {
+    border-left: 4px solid #ef4444;
+  }
+  
+  &.toast-warning {
+    border-left: 4px solid #f59e0b;
+  }
+  
+  &.toast-info {
+    border-left: 4px solid var(--primary-blue);
+  }
+}
+
+// Scrollbar styling for dark mode
+.scrollbar-theme {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--text-secondary);
+    }
+  }
+}
+
+// Selection styling for dark mode
+::selection {
+  background: var(--primary-blue);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--primary-blue);
+  color: white;
+}
+
+// Focus ring for dark mode
+.focus-ring-theme {
+  &:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+// Divider/separator for dark mode
+.divider-theme {
+  border-color: var(--border-color);
+  @include theme-transition(border-color);
+}
+
+// Badge/chip styling for dark mode
+.badge-theme {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  @include theme-transition();
+  
+  &.badge-primary {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+  }
+  
+  &.badge-secondary {
+    background: var(--neutral-200);
+    color: var(--neutral-800);
+    
+    [data-theme="dark"] & {
+      background: var(--neutral-700);
+      color: var(--neutral-200);
+    }
+  }
+}
+
+// Dropdown/menu styling for dark mode
+.dropdown-theme {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  @include theme-transition();
+  
+  .dropdown-item {
+    color: var(--text-primary);
+    @include theme-transition(background-color, color);
+    
+    &:hover {
+      background: var(--bg-primary);
+    }
+    
+    &:active {
+      background: var(--primary-blue);
+      color: white;
+    }
+  }
+  
+  .dropdown-divider {
+    border-color: var(--border-color);
+  }
+}
+
+// Progress bar styling for dark mode
+.progress-theme {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  @include theme-transition();
+  
+  .progress-bar {
+    background: var(--gradient-primary);
+    @include theme-transition();
+  }
+}
+
+// Accordion styling for dark mode
+.accordion-theme {
+  .accordion-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    @include theme-transition();
+  }
+  
+  .accordion-header {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    @include theme-transition();
+    
+    &:hover {
+      background: var(--bg-secondary);
+    }
+  }
+  
+  .accordion-body {
+    color: var(--text-secondary);
+    @include theme-transition(color);
+  }
+}
+
+// Responsive dark mode utilities
+@media (max-width: 768px) {
+  .mobile-theme-adjust {
+    [data-theme="dark"] & {
+      // Increase contrast on mobile for better readability
+      --text-primary: var(--neutral-50);
+      --text-secondary: var(--neutral-300);
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  [data-theme="dark"] {
+    --text-primary: #ffffff;
+    --text-secondary: #e2e8f0;
+    --border-color: #64748b;
+  }
+}
+
+// Reduced motion support for theme transitions
+@media (prefers-reduced-motion: reduce) {
+  .theme-aware,
+  .bg-theme-primary,
+  .bg-theme-secondary,
+  .text-theme-primary,
+  .text-theme-secondary,
+  .border-theme,
+  .card-theme-aware,
+  .form-control-theme,
+  .btn-theme-outline,
+  .navbar-theme,
+  .modal-theme,
+  .code-theme,
+  .table-theme,
+  .spinner-theme,
+  .toast-theme,
+  .badge-theme,
+  .dropdown-theme,
+  .progress-theme,
+  .accordion-theme {
+    transition: none !important;
+  }
+}

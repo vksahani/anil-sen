@@ -1,0 +1,85 @@
+.theme-demo {
+  padding: var(--spacing-xl);
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+  
+  .demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+    
+    h3 {
+      color: var(--text-primary);
+      margin: 0;
+    }
+  }
+  
+  .demo-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    
+    .demo-card {
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-md);
+      
+      h4 {
+        margin: 0 0 var(--spacing-md) 0;
+        color: var(--text-primary);
+      }
+      
+      p {
+        margin-bottom: var(--spacing-lg);
+        color: var(--text-secondary);
+      }
+      
+      button {
+        margin-right: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+      }
+    }
+    
+    .demo-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      
+      input, textarea {
+        padding: var(--spacing-md);
+        border-radius: var(--radius-md);
+        font-family: inherit;
+        font-size: 1rem;
+        
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    
+    .demo-badges {
+      display: flex;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+      
+      .badge-theme {
+        padding: var(--spacing-xs) var(--spacing-md);
+        border-radius: var(--radius-full);
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .demo-header {
+      flex-direction: column;
+      gap: var(--spacing-md);
+      text-align: center;
+    }
+  }
+}
