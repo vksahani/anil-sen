@@ -48,23 +48,7 @@
   }
 }
 
-// Form elements dark mode support
-.form-control-theme {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  @include theme-transition();
-  
-  &:focus {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
-  }
-  
-  &::placeholder {
-    color: var(--text-secondary);
-    opacity: 0.7;
-  }
-}
+
 
 // Button variants for dark mode
 .btn-theme-outline {

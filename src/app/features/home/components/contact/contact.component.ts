@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContentService } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations/animations';
@@ -8,7 +7,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule],
   template: `
     <section class="contact section" #contactSection>
       <div class="container">
@@ -18,7 +17,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
         </div>
 
         <div class="contact-content">
-          <div class="contact-info" [@fadeInLeft]>
+          <div class="contact-info" [@fadeInUp]>
             <div class="contact-intro">
               <h3>Let's Connect</h3>
               <p>
@@ -138,147 +137,6 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
               </div>
             </div>
           </div>
-
-          <div class="contact-form-container" [@fadeInRight]>
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" novalidate>
-              <div class="form-header">
-                <h3>Send a Message</h3>
-                <p>Fill out the form below and I'll get back to you as soon as possible.</p>
-              </div>
-
-              <!-- Honeypot field for spam protection -->
-              <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name" class="form-label">Name *</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    formControlName="name"
-                    class="form-input"
-                    [class.error]="isFieldInvalid('name')"
-                    placeholder="Your full name"
-                    autocomplete="name">
-                  <div class="error-message" *ngIf="isFieldInvalid('name')">
-                    Name is required
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="email" class="form-label">Email *</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    formControlName="email"
-                    class="form-input"
-                    [class.error]="isFieldInvalid('email')"
-                    placeholder="your.email@example.com"
-                    autocomplete="email">
-                  <div class="error-message" *ngIf="isFieldInvalid('email')">
-                    <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</span>
-                    <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="phone" class="form-label">Phone (Optional)</label>
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  formControlName="phone"
-                  class="form-input"
-                  placeholder="+1 (555) 123-4567"
-                  autocomplete="tel">
-              </div>
-
-              <div class="form-group">
-                <label for="subject" class="form-label">Subject *</label>
-                <select 
-                  id="subject" 
-                  formControlName="subject"
-                  class="form-input form-select"
-                  [class.error]="isFieldInvalid('subject')">
-                  <option value="">Select a subject</option>
-                  <option value="project">New Project Inquiry</option>
-                  <option value="collaboration">Collaboration Opportunity</option>
-                  <option value="job">Job Opportunity</option>
-                  <option value="consultation">Consultation Request</option>
-                  <option value="other">Other</option>
-                </select>
-                <div class="error-message" *ngIf="isFieldInvalid('subject')">
-                  Please select a subject
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">Message *</label>
-                <textarea 
-                  id="message" 
-                  formControlName="message"
-                  class="form-input form-textarea"
-                  [class.error]="isFieldInvalid('message')"
-                  placeholder="Tell me about your project, requirements, or any questions you have..."
-                  rows="6"></textarea>
-                <div class="error-message" *ngIf="isFieldInvalid('message')">
-                  <span *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</span>
-                  <span *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 10 characters</span>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button 
-                  type="submit" 
-                  class="btn btn-primary submit-btn"
-                  [disabled]="contactForm.invalid || isSubmitting()"
-                  [attr.aria-label]="'Send message'">
-                  <span *ngIf="!isSubmitting()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <line x1="22" y1="2" x2="11" y2="13"/>
-                      <polygon points="22,2 15,22 11,13 2,9 22,2"/>
-                    </svg>
-                    Send Message
-                  </span>
-                  <span *ngIf="isSubmitting()">
-                    <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M21 12a9 9 0 11-6.219-8.56"/>
-                    </svg>
-                    Sending...
-                  </span>
-                </button>
-
-                <button 
-                  type="button" 
-                  class="btn btn-secondary reset-btn"
-                  (click)="resetForm()"
-                  [attr.aria-label]="'Reset form'">
-                  Reset Form
-                </button>
-              </div>
-
-              <div class="form-footer">
-                <p class="privacy-note">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
-                  </svg>
-                  Your information is secure and will never be shared with third parties.
-                </p>
-              </div>
-            </form>
-
-            <div class="success-message" [class.visible]="showSuccessMessage()" [@fadeInUp]>
-              <div class="success-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                  <polyline points="22,4 12,14.01 9,11.01"/>
-                </svg>
-              </div>
-              <h4>Message Sent Successfully!</h4>
-              <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -291,23 +149,12 @@ export class ContactComponent implements OnInit, AfterViewInit {
   @ViewChild('contactSection') contactSection!: ElementRef;
   
   personalInfo = signal<any>(null);
-  contactForm: FormGroup;
-  isSubmitting = signal(false);
-  showSuccessMessage = signal(false);
 
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
-  private fb = inject(FormBuilder);
 
   constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
-    this.contactForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      phone: [''],
-      subject: ['', [Validators.required]],
-      message: ['', [Validators.required, Validators.minLength(10)]]
-    });
   }
 
   ngOnInit(): void {
@@ -326,58 +173,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     });
   }
 
-  isFieldInvalid(fieldName: string): boolean {
-    const field = this.contactForm.get(fieldName);
-    return !!(field && field.invalid && (field.dirty || field.touched));
-  }
 
-  async onSubmit(): Promise<void> {
-    if (this.contactForm.valid) {
-      this.isSubmitting.set(true);
-      
-      try {
-        // Simulate form submission - replace with actual API call
-        await this.submitForm(this.contactForm.value);
-        
-        this.showSuccessMessage.set(true);
-        this.contactForm.reset();
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          this.showSuccessMessage.set(false);
-        }, 5000);
-        
-      } catch (error) {
-        console.error('Form submission error:', error);
-        // Handle error - show error message to user
-      } finally {
-        this.isSubmitting.set(false);
-      }
-    } else {
-      // Mark all fields as touched to show validation errors
-      Object.keys(this.contactForm.controls).forEach(key => {
-        this.contactForm.get(key)?.markAsTouched();
-      });
-    }
-  }
-
-  private async submitForm(formData: any): Promise<void> {
-    // This is a mock implementation
-    // In a real application, you would send this to your backend API
-    // or use a service like Netlify Forms, Formspree, or Firebase Functions
-    
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        console.log('Form submitted:', formData);
-        resolve();
-      }, 2000);
-    });
-  }
-
-  resetForm(): void {
-    this.contactForm.reset();
-    this.showSuccessMessage.set(false);
-  }
 
   async copyToClipboard(text: string, event: Event): Promise<void> {
     event.preventDefault();

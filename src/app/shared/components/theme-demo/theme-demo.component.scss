@@ -44,22 +44,7 @@
       }
     }
     
-    .demo-form {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-md);
-      
-      input, textarea {
-        padding: var(--spacing-md);
-        border-radius: var(--radius-md);
-        font-family: inherit;
-        font-size: 1rem;
-        
-        &:focus {
-          outline: none;
-        }
-      }
-    }
+
     
     .demo-badges {
       display: flex;

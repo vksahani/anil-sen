@@ -22,10 +22,7 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
           <button class="btn btn-theme-outline">Outline Button</button>
         </div>
         
-        <div class="demo-form">
-          <input type="text" class="form-control-theme" placeholder="Sample input field">
-          <textarea class="form-control-theme" placeholder="Sample textarea" rows="3"></textarea>
-        </div>
+
         
         <div class="demo-badges">
           <span class="badge-theme badge-primary">Primary Badge</span>
