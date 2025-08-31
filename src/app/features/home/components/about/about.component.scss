@@ -19,8 +19,8 @@
     .section-title {
       font-size: 3rem;
       font-weight: 700;
-      color: white;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      color: var(--neutral-900);
+      text-shadow: none;
       margin-bottom: var(--spacing-md);
       position: relative;
 
@@ -39,8 +39,8 @@
 
     .section-subtitle {
       font-size: 1.125rem;
-      color: rgba(255, 255, 255, 0.9);
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      color: var(--neutral-700);
+      text-shadow: none;
       max-width: 600px;
       margin: 0 auto;
     }
@@ -117,8 +117,8 @@
       p {
         font-size: 1.125rem;
         line-height: 1.7;
-        color: rgba(255, 255, 255, 0.9);
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        color: var(--neutral-800);
+        text-shadow: none;
         margin-bottom: var(--spacing-xl);
       }
 
