@@ -24,15 +24,15 @@
    // Gradients
    --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-indigo) 100%);
    --gradient-accent: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-teal) 100%);
-   --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   --gradient-hero: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
 
-   // Beautiful gradient variations - easily switchable
-   --gradient-option-1: linear-gradient(-45deg, #0c0c1d, #1a1a2e, #2d1b69, #11998e, #38ef7d, #667eea); // Current: Dark to teal-green
-   --gradient-option-2: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #533483, #7209b7, #a663cc); // Original: Deep purples
-   --gradient-option-3: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #0ea5e9, #06b6d4, #10b981); // Professional: Navy to cyan
-   --gradient-option-4: linear-gradient(-45deg, #18181b, #27272a, #3f3f46, #7c3aed, #a855f7, #c084fc); // Modern: Dark to purple
-   --gradient-option-5: linear-gradient(-45deg, #111827, #1f2937, #374151, #f59e0b, #f97316, #ef4444); // Warm: Dark to orange-red
-   --gradient-option-6: linear-gradient(-45deg, #0c1426, #1e3a8a, #3730a3, #6366f1, #8b5cf6, #a78bfa); // Royal: Deep blue to purple
+   // Beautiful light gradient variations - easily switchable
+   --gradient-option-1: linear-gradient(-45deg, #fef7ff, #f0f9ff, #ecfdf5, #f0fdfa, #fffbeb, #f8fafc); // Light pastels
+   --gradient-option-2: linear-gradient(-45deg, #fdf2f8, #fef3f2, #fff7ed, #fffbeb, #f0fdf4, #f0f9ff); // Warm light tones
+   --gradient-option-3: linear-gradient(-45deg, #f8fafc, #f1f5f9, #e0f2fe, #ecfeff, #f0fdfa, #f0fdf4); // Cool light blues
+   --gradient-option-4: linear-gradient(-45deg, #fefce8, #fef3c7, #fed7aa, #fecaca, #fde2e7, #f3e8ff); // Sunset pastels
+   --gradient-option-5: linear-gradient(-45deg, #f0f9ff, #dbeafe, #bfdbfe, #93c5fd, #ddd6fe, #e9d5ff); // Sky blues
+   --gradient-option-6: linear-gradient(-45deg, #f0fdf4, #dcfce7, #bbf7d0, #86efac, #bef264, #fef08a); // Nature greens
 
    // Main animated sophisticated gradient background
    // To change gradient: Replace var(--gradient-option-1) with any option (1-6)
@@ -124,7 +124,7 @@
      left: 0;
      right: 0;
      bottom: 0;
-     background: rgba(0, 0, 0, 0.1);
+     background: rgba(255, 255, 255, 0.3);
      backdrop-filter: blur(1px);
      z-index: -2;
      pointer-events: none;
@@ -139,9 +139,9 @@
      right: 0;
      bottom: 0;
      background-image: 
-       radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-       radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-       radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+       radial-gradient(circle at 20% 80%, rgba(147, 197, 253, 0.2) 0%, transparent 50%),
+       radial-gradient(circle at 80% 20%, rgba(251, 207, 232, 0.2) 0%, transparent 50%),
+       radial-gradient(circle at 40% 40%, rgba(134, 239, 172, 0.2) 0%, transparent 50%);
      animation: floatingShapes 20s ease-in-out infinite;
      z-index: -1;
      pointer-events: none;
@@ -158,8 +158,8 @@
    font-family: var(--font-heading);
    font-weight: 600;
    line-height: 1.2;
-   color: white;
-   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+   color: var(--neutral-800);
+   text-shadow: none;
  }
 
  h1 {
@@ -188,19 +188,19 @@
 
  p {
    margin-bottom: var(--spacing-md);
-   color: rgba(255, 255, 255, 0.9);
-   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+   color: var(--neutral-700);
+   text-shadow: none;
  }
 
  a {
-   color: rgba(255, 255, 255, 0.9);
+   color: var(--primary-blue);
    text-decoration: none;
    transition: color var(--transition-fast);
-   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+   text-shadow: none;
 
    &:hover {
-     color: white;
-     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+     color: var(--primary-indigo);
+     text-shadow: none;
    }
  }
 
@@ -542,9 +542,9 @@
      right: 0;
      bottom: 0;
      background-image: 
-       radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 2%),
-       radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 2%),
-       radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06) 0%, transparent 1%);
+       radial-gradient(circle at 10% 20%, rgba(147, 197, 253, 0.15) 0%, transparent 2%),
+       radial-gradient(circle at 90% 80%, rgba(134, 239, 172, 0.12) 0%, transparent 2%),
+       radial-gradient(circle at 50% 50%, rgba(251, 207, 232, 0.1) 0%, transparent 1%);
      animation: particleFloat 8s ease-in-out infinite;
      pointer-events: none;
      z-index: 0;
@@ -648,26 +648,26 @@
    }
  }
 
- .glass-dark {
-   background: rgba(0, 0, 0, 0.8);
+ .glass-light {
+   background: rgba(255, 255, 255, 0.8);
    backdrop-filter: blur(20px);
-   border: 1px solid rgba(255, 255, 255, 0.3);
+   border: 1px solid rgba(255, 255, 255, 0.6);
    border-radius: 32px;
-   color: white;
+   color: var(--neutral-800);
    box-shadow: 
-     0 24px 48px rgba(0, 0, 0, 0.2),
-     0 12px 24px rgba(0, 0, 0, 0.15),
-     0 6px 12px rgba(0, 0, 0, 0.1),
-     inset 0 1px 0 rgba(255, 255, 255, 0.2);
+     0 24px 48px rgba(0, 0, 0, 0.08),
+     0 12px 24px rgba(0, 0, 0, 0.06),
+     0 6px 12px rgba(0, 0, 0, 0.04),
+     inset 0 1px 0 rgba(255, 255, 255, 0.9);
    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
    
    &:hover {
      transform: translateY(-8px);
      box-shadow: 
-       0 32px 64px rgba(0, 0, 0, 0.3),
-       0 16px 32px rgba(0, 0, 0, 0.2),
-       0 8px 16px rgba(0, 0, 0, 0.15),
-       inset 0 1px 0 rgba(255, 255, 255, 0.3);
+       0 32px 64px rgba(0, 0, 0, 0.12),
+       0 16px 32px rgba(0, 0, 0, 0.08),
+       0 8px 16px rgba(0, 0, 0, 0.06),
+       inset 0 1px 0 rgba(255, 255, 255, 1);
    }
  }
 
@@ -740,17 +740,17 @@
 
  /* 
 
-🎨 GRADIENT SWITCHING GUIDE:
-=========================
+🎨 LIGHT GRADIENT SWITCHING GUIDE:
+=================================
 To change the background gradient, modify the --gradient-background property above.
 
-Available Options:
---gradient-option-1: Dark to teal-green (Current) - Sophisticated and modern
---gradient-option-2: Deep purples - Original dark theme  
---gradient-option-3: Navy to cyan - Professional and clean
---gradient-option-4: Dark to purple - Modern and trendy
---gradient-option-5: Dark to orange-red - Warm and energetic
---gradient-option-6: Deep blue to purple - Royal and elegant
+Available Light Options:
+--gradient-option-1: Light pastels (Current) - Soft and pleasant
+--gradient-option-2: Warm light tones - Cozy and inviting  
+--gradient-option-3: Cool light blues - Fresh and clean
+--gradient-option-4: Sunset pastels - Warm and cheerful
+--gradient-option-5: Sky blues - Bright and airy
+--gradient-option-6: Nature greens - Fresh and natural
 
 How to switch:
 1. Find the line: --gradient-background: var(--gradient-option-1);
@@ -774,7 +774,7 @@ Example: --gradient-background: var(--gradient-option-3);
   .floating-shape {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
     animation: floatUpDown 6s ease-in-out infinite;
 
@@ -783,7 +783,7 @@ Example: --gradient-background: var(--gradient-option-3);
       height: 300px;
       top: 10%;
       left: 5%;
-      background: radial-gradient(circle, rgba(120, 119, 198, 0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(147, 197, 253, 0.3) 0%, transparent 70%);
       animation: floatUpDown 8s ease-in-out infinite, morphShape 12s ease-in-out infinite;
       animation-delay: 0s;
     }
@@ -793,7 +793,7 @@ Example: --gradient-background: var(--gradient-option-3);
       height: 200px;
       top: 60%;
       right: 10%;
-      background: radial-gradient(circle, rgba(255, 119, 198, 0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(251, 207, 232, 0.25) 0%, transparent 70%);
       animation: floatUpDown 10s ease-in-out infinite, morphShape 15s ease-in-out infinite;
       animation-delay: 2s;
     }
@@ -803,7 +803,7 @@ Example: --gradient-background: var(--gradient-option-3);
       height: 150px;
       top: 30%;
       left: 70%;
-      background: radial-gradient(circle, rgba(120, 219, 255, 0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(134, 239, 172, 0.3) 0%, transparent 70%);
       animation: floatUpDown 7s ease-in-out infinite, morphShape 10s ease-in-out infinite;
       animation-delay: 4s;
     }
@@ -813,7 +813,7 @@ Example: --gradient-background: var(--gradient-option-3);
       height: 250px;
       bottom: 20%;
       left: 20%;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(196, 181, 253, 0.25) 0%, transparent 70%);
       animation: floatUpDown 9s ease-in-out infinite, morphShape 14s ease-in-out infinite;
       animation-delay: 1s;
     }
@@ -823,7 +823,7 @@ Example: --gradient-background: var(--gradient-option-3);
       height: 100px;
       top: 80%;
       right: 30%;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(254, 215, 170, 0.3) 0%, transparent 70%);
       animation: floatUpDown 6s ease-in-out infinite, morphShape 8s ease-in-out infinite;
       animation-delay: 3s;
     }
@@ -833,7 +833,7 @@ Example: --gradient-background: var(--gradient-option-3);
     position: absolute;
     width: 4px;
     height: 4px;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(147, 197, 253, 0.8);
     border-radius: 50%;
     animation: particleFloat 12s linear infinite;
 
