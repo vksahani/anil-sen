@@ -14,9 +14,11 @@ import { ContentService } from '../../../core/services/content.service';
 export class NavigationComponent implements OnInit {
   isScrolled = signal(false);
   isMenuOpen = signal(false);
+  activeSection = signal('hero');
   personalInfo: any = null;
 
   private contentService = inject(ContentService);
+  private sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
 
   constructor() {
     this.personalInfo = this.contentService.personalInfo;
@@ -31,6 +33,23 @@ export class NavigationComponent implements OnInit {
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     this.isScrolled.set(window.scrollY > 50);
+    this.updateActiveSection();
+  }
+
+  private updateActiveSection(): void {
+    const scrollPosition = window.scrollY + 100; // Offset for navbar
+
+    for (let i = this.sections.length - 1; i >= 0; i--) {
+      const section = document.getElementById(this.sections[i]);
+      if (section && section.offsetTop <= scrollPosition) {
+        this.activeSection.set(this.sections[i]);
+        break;
+      }
+    }
+  }
+
+  isActiveSection(sectionId: string): boolean {
+    return this.activeSection() === sectionId;
   }
 
   @HostListener('window:resize', [])
@@ -46,5 +65,23 @@ export class NavigationComponent implements OnInit {
 
   closeMenu(): void {
     this.isMenuOpen.set(false);
+  }
+
+  scrollToSection(event: Event, sectionId: string): void {
+    event.preventDefault();
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    
+    this.closeMenu();
   }
 }

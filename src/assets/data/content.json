@@ -171,7 +171,7 @@
       "id": "1",
       "company": "Quadralyst Pvt Ltd",
       "position": "Senior Web Developer",
-      "startDate": "2021-03",
+      "startDate": "2022-12",
       "endDate": null,
       "description": "Leading frontend development initiatives and mentoring junior developers",
       "responsibilities": [
@@ -197,14 +197,14 @@
         "Firebase Cloud",
         "Android Studio"
       ],
-      "location": "Remote"
+      "location": "Indore (M.P.)"
     },
     {
       "id": "2",
       "company": "The Stepping Stone",
       "position": "Frontend Developer",
-      "startDate": "2019-06",
-      "endDate": "2021-02",
+      "startDate": "2022-06",
+      "endDate": "2022-10",
       "description": "Developed user interfaces and enhanced user experience for web applications",
       "responsibilities": [
         "Built responsive web applications using Angular and modern CSS frameworks",
@@ -213,7 +213,6 @@
         "Participated in agile development processes and sprint planning"
       ],
       "achievements": [
-        "Delivered 10+ successful web applications",
         "Improved user engagement by 35% through UX enhancements",
         "Reduced development time by 25% through reusable component library"
       ],
@@ -230,7 +229,7 @@
         "MVC",
         "JSON Server"
       ],
-      "location": "Hybrid"
+      "location": "Indore (M.P.)"
     }
   ],
   "projects": [

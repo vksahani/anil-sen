@@ -16,72 +16,94 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
           <p class="section-subtitle">My professional journey and key achievements</p>
         </div>
 
-        <div class="timeline">
-          <div 
-            *ngFor="let exp of experience(); let i = index; trackBy: trackByExperience" 
-            class="timeline-item"
-            [class.visible]="isVisible()"
-            [class.left]="i % 2 === 0"
-            [class.right]="i % 2 === 1">
-            
-            <div class="timeline-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-line" *ngIf="i < experience().length - 1"></div>
-            </div>
-
-            <div class="timeline-content">
-              <div class="experience-card" (click)="toggleExpanded(exp.id)">
-                <div class="card-header">
-                  <div class="company-info">
-                    <h3 class="position">{{ exp.position }}</h3>
-                    <h4 class="company">{{ exp.company }}</h4>
-                    <div class="duration">
-                      <span class="date">{{ formatDate(exp.startDate) }} - {{ exp.endDate ? formatDate(exp.endDate) : 'Present' }}</span>
-                      <span class="location">{{ exp.location }}</span>
-                    </div>
+        <div class="experience-grid">
+          @for (exp of experience(); track exp.id) {
+            <div 
+              class="experience-card"
+              [class.visible]="isVisible()"
+              (click)="toggleExpanded(exp.id)">
+              
+              <div class="experience-header">
+                <div class="company-logo">
+                  <div class="logo-placeholder">
+                    {{ exp.company.charAt(0) }}
                   </div>
-                  
-                  <div class="expand-icon" [class.expanded]="isExpanded(exp.id)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                </div>
+                
+                <div class="experience-status">
+                  <span class="status-badge" [attr.data-status]="exp.endDate ? 'completed' : 'current'">
+                    {{ exp.endDate ? 'Past Role' : 'Current' }}
+                  </span>
+                </div>
+              </div>
+
+              <div class="experience-content">
+                <div class="experience-title-section">
+                  <h3 class="position">{{ exp.position }}</h3>
+                  <h4 class="company">{{ exp.company }}</h4>
+                  <div class="duration">
+                    <span class="date">{{ formatDate(exp.startDate) }} - {{ exp.endDate ? formatDate(exp.endDate) : 'Present' }}</span>
+                    <span class="location">{{ exp.location }}</span>
+                  </div>
+                </div>
+
+                <p class="description">{{ exp.description }}</p>
+
+                <div class="tech-stack">
+                  @for (tech of exp.technologies.slice(0, 4); track tech) {
+                    <span class="tech-tag">{{ tech }}</span>
+                  }
+                  @if (exp.technologies.length > 4) {
+                    <span class="tech-more">
+                      +{{ exp.technologies.length - 4 }} more
+                    </span>
+                  }
+                </div>
+
+                <div class="experience-highlights">
+                  @for (achievement of exp.achievements.slice(0, 2); track achievement) {
+                    <div class="highlight-item">
+                      <span class="highlight-icon">🏆</span>
+                      <span class="highlight-text">{{ achievement }}</span>
+                    </div>
+                  }
+                </div>
+
+                <div class="expand-section" [class.expanded]="isExpanded(exp.id)">
+                  @if (exp.responsibilities.length > 0) {
+                    <div class="responsibilities">
+                      <h5>Key Responsibilities</h5>
+                      <ul>
+                        @for (responsibility of exp.responsibilities; track responsibility) {
+                          <li>{{ responsibility }}</li>
+                        }
+                      </ul>
+                    </div>
+                  }
+
+                  @if (exp.achievements.length > 2) {
+                    <div class="achievements-full">
+                      <h5>All Achievements</h5>
+                      <ul>
+                        @for (achievement of exp.achievements; track achievement) {
+                          <li>{{ achievement }}</li>
+                        }
+                      </ul>
+                    </div>
+                  }
+                </div>
+
+                <div class="expand-toggle">
+                  <button class="expand-btn" [class.expanded]="isExpanded(exp.id)">
+                    <span>{{ isExpanded(exp.id) ? 'Show Less' : 'Show More' }}</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <polyline points="6,9 12,15 18,9"></polyline>
                     </svg>
-                  </div>
-                </div>
-
-                <div class="card-body">
-                  <p class="description">{{ exp.description }}</p>
-                  
-                  <div class="tech-stack">
-                    <span 
-                      *ngFor="let tech of exp.technologies" 
-                      class="tech-tag">
-                      {{ tech }}
-                    </span>
-                  </div>
-                </div>
-
-                <div class="card-details" [class.expanded]="isExpanded(exp.id)">
-                  <div class="responsibilities" *ngIf="exp.responsibilities.length > 0">
-                    <h5>Key Responsibilities</h5>
-                    <ul>
-                      <li *ngFor="let responsibility of exp.responsibilities">
-                        {{ responsibility }}
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="achievements" *ngIf="exp.achievements.length > 0">
-                    <h5>Key Achievements</h5>
-                    <ul>
-                      <li *ngFor="let achievement of exp.achievements">
-                        {{ achievement }}
-                      </li>
-                    </ul>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
+          }
         </div>
 
         <div class="experience-summary" [@fadeInUp]>
@@ -111,7 +133,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
 })
 export class ExperienceComponent implements OnInit, AfterViewInit {
   @ViewChild('experienceSection') experienceSection!: ElementRef;
-  
+
   experience = signal<Experience[]>([]);
   isVisible = signal(false);
   expandedItems = signal<Set<string>>(new Set());
@@ -119,7 +141,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.contentService.experience$.subscribe(experience => {
@@ -137,9 +159,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
     });
   }
 
-  trackByExperience(index: number, exp: Experience): string {
-    return exp.id;
-  }
+
 
   toggleExpanded(id: string): void {
     const expanded = new Set(this.expandedItems());
@@ -157,9 +177,9 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
 
   formatDate(dateString: string): string {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'short' 
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short'
     });
   }
 
@@ -170,8 +190,8 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
     const totalMonths = experiences.reduce((total, exp) => {
       const startDate = new Date(exp.startDate);
       const endDate = exp.endDate ? new Date(exp.endDate) : new Date();
-      const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + 
-                    (endDate.getMonth() - startDate.getMonth());
+      const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+        (endDate.getMonth() - startDate.getMonth());
       return total + months;
     }, 0);
 
@@ -183,8 +203,8 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
     return this.experience().reduce((total, exp) => {
       const startDate = new Date(exp.startDate);
       const endDate = exp.endDate ? new Date(exp.endDate) : new Date();
-      const years = (endDate.getFullYear() - startDate.getFullYear()) + 
-                   (endDate.getMonth() - startDate.getMonth()) / 12;
+      const years = (endDate.getFullYear() - startDate.getFullYear()) +
+        (endDate.getMonth() - startDate.getMonth()) / 12;
       return total + Math.round(years * 3); // Estimate 3 projects per year
     }, 0);
   }

@@ -75,6 +75,16 @@
       &:hover::after {
         width: 100%;
       }
+
+      &.active {
+        color: var(--primary-blue);
+        font-weight: 600;
+
+        &::after {
+          width: 100%;
+          background: var(--gradient-primary);
+        }
+      }
     }
 
 
@@ -139,6 +149,14 @@
         padding: var(--spacing-md) 0;
         width: 100%;
         text-align: center;
+
+        &.active {
+          color: var(--primary-blue);
+          font-weight: 600;
+          border-bottom: 2px solid var(--primary-blue);
+          background: rgba(30, 58, 138, 0.05);
+          border-radius: var(--radius-sm);
+        }
       }
     }
 
@@ -147,4 +165,3 @@
     }
   }
 }
-

@@ -17,29 +17,31 @@ import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animat
         </div>
 
         <div class="skills-filter" [@fadeInUp]>
-          <button 
-            *ngFor="let category of categories" 
-            class="filter-btn"
-            [class.active]="activeCategory() === category.key"
-            (click)="setActiveCategory(category.key)"
-            [attr.aria-label]="'Filter by ' + category.label + ' skills'"
-            type="button">
-            {{ category.label }}
-          </button>
+          @for (category of categories; track category.key) {
+            <button 
+              class="filter-btn"
+              [class.active]="activeCategory() === category.key"
+              (click)="setActiveCategory(category.key)"
+              [attr.aria-label]="'Filter by ' + category.label + ' skills'"
+              type="button">
+              {{ category.label }}
+            </button>
+          }
         </div>
 
         <div class="skills-grid" [@stagger]>
-          <div 
-            *ngFor="let skill of filteredSkills(); trackBy: trackBySkill" 
-            class="skill-card"
-            [class.visible]="isVisible()">
-            
-            <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
-              {{ getSkillIcon(skill.name) }}
+          @for (skill of filteredSkills(); track skill.name) {
+            <div 
+              class="skill-card"
+              [class.visible]="isVisible()">
+              
+              <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
+                {{ getSkillIcon(skill.name) }}
+              </div>
+              
+              <h3 class="skill-name">{{ skill.name }}</h3>
             </div>
-            
-            <h3 class="skill-name">{{ skill.name }}</h3>
-          </div>
+          }
         </div>
       </div>
     </section>
@@ -130,9 +132,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     this.activeCategory.set(category);
   }
 
-  trackBySkill(index: number, skill: Skill): string {
-    return skill.name;
-  }
+
 
   getSkillIcon(skillName: string): string {
     return this.skillIcons[skillName] || '⚙️';

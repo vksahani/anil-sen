@@ -99,4 +99,20 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
       animate();
     }
   }
+
+  scrollToSection(event: Event, sectionId: string): void {
+    event.preventDefault();
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 }

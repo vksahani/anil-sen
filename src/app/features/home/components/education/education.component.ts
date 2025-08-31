@@ -17,49 +17,58 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
         </div>
 
         <div class="education-grid">
-          <div 
-            *ngFor="let edu of education(); let i = index; trackBy: trackByEducation" 
-            class="education-card"
-            [class.visible]="isVisible()"
-            [@fadeInUp]="{ delay: i * 200 + 'ms' }">
-            
-            <div class="card-header">
-              <div class="institution-logo">
-                🎓
-              </div>
+          @for (edu of education(); track edu.id; let i = $index) {
+            <div 
+              class="education-card"
+              [class.visible]="isVisible()"
+              [@fadeInUp]="{ delay: i * 200 + 'ms' }">
               
-              <div class="education-info">
-                <h3 class="degree">{{ edu.degree }}</h3>
-                <h4 class="field">{{ edu.field }}</h4>
-                <h5 class="institution">{{ edu.institution }}</h5>
+              <div class="card-header">
+                <div class="institution-logo">
+                  🎓
+                </div>
                 
-                <div class="education-meta">
-                  <span class="duration">{{ edu.startYear }} - {{ edu.endYear }}</span>
-                  <span class="grade" *ngIf="edu.grade">{{ edu.grade }}</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-body" *ngIf="edu.coursework || edu.honors">
-              <div class="coursework" *ngIf="edu.coursework && edu.coursework.length > 0">
-                <h6>Relevant Coursework</h6>
-                <div class="coursework-tags">
-                  <span 
-                    *ngFor="let course of edu.coursework" 
-                    class="course-tag">
-                    {{ course }}
-                  </span>
+                <div class="education-info">
+                  <h3 class="degree">{{ edu.degree }}</h3>
+                  <h4 class="field">{{ edu.field }}</h4>
+                  <h5 class="institution">{{ edu.institution }}</h5>
+                  
+                  <div class="education-meta">
+                    <span class="duration">{{ edu.startYear }} - {{ edu.endYear }}</span>
+                    @if (edu.grade) {
+                      <span class="grade">{{ edu.grade }}</span>
+                    }
+                  </div>
                 </div>
               </div>
 
-              <div class="honors" *ngIf="edu.honors && edu.honors.length > 0">
-                <h6>Honors & Achievements</h6>
-                <ul class="honors-list">
-                  <li *ngFor="let honor of edu.honors">{{ honor }}</li>
-                </ul>
-              </div>
+              @if (edu.coursework || edu.honors) {
+                <div class="card-body">
+                  @if (edu.coursework && edu.coursework.length > 0) {
+                    <div class="coursework">
+                      <h6>Relevant Coursework</h6>
+                      <div class="coursework-tags">
+                        @for (course of edu.coursework; track course) {
+                          <span class="course-tag">{{ course }}</span>
+                        }
+                      </div>
+                    </div>
+                  }
+
+                  @if (edu.honors && edu.honors.length > 0) {
+                    <div class="honors">
+                      <h6>Honors & Achievements</h6>
+                      <ul class="honors-list">
+                        @for (honor of edu.honors; track honor) {
+                          <li>{{ honor }}</li>
+                        }
+                      </ul>
+                    </div>
+                  }
+                </div>
+              }
             </div>
-          </div>
+          }
         </div>
 
         <div class="education-summary" [@fadeInUp]>
@@ -73,29 +82,35 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
             </p>
             
             <div class="education-stats">
-              <div class="stat-item" *ngIf="education()[0]">
-                <div class="stat-icon">📚</div>
-                <div class="stat-content">
-                  <span class="stat-label">Degree</span>
-                  <span class="stat-value">{{ education()[0].degree }}</span>
+              @if (education()[0]) {
+                <div class="stat-item">
+                  <div class="stat-icon">📚</div>
+                  <div class="stat-content">
+                    <span class="stat-label">Degree</span>
+                    <span class="stat-value">{{ education()[0].degree }}</span>
+                  </div>
                 </div>
-              </div>
+              }
               
-              <div class="stat-item" *ngIf="education()[0]">
-                <div class="stat-icon">🏆</div>
-                <div class="stat-content">
-                  <span class="stat-label">Grade</span>
-                  <span class="stat-value">{{ education()[0].grade }}</span>
+              @if (education()[0]) {
+                <div class="stat-item">
+                  <div class="stat-icon">🏆</div>
+                  <div class="stat-content">
+                    <span class="stat-label">Grade</span>
+                    <span class="stat-value">{{ education()[0].grade }}</span>
+                  </div>
                 </div>
-              </div>
+              }
               
-              <div class="stat-item" *ngIf="education()[0]">
-                <div class="stat-icon">📅</div>
-                <div class="stat-content">
-                  <span class="stat-label">Graduated</span>
-                  <span class="stat-value">{{ education()[0].endYear }}</span>
+              @if (education()[0]) {
+                <div class="stat-item">
+                  <div class="stat-icon">📅</div>
+                  <div class="stat-content">
+                    <span class="stat-label">Graduated</span>
+                    <span class="stat-value">{{ education()[0].endYear }}</span>
+                  </div>
                 </div>
-              </div>
+              }
             </div>
           </div>
         </div>
@@ -133,7 +148,5 @@ export class EducationComponent implements OnInit, AfterViewInit {
     });
   }
 
-  trackByEducation(index: number, edu: Education): string {
-    return edu.id;
-  }
+
 }
