@@ -16,8 +16,10 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
           <p class="section-subtitle">Ready to start your next project? Let's work together to bring your ideas to life</p>
         </div>
 
-        <div class="contact-content">
-          <div class="contact-info" [@fadeInUp]>
+        <div class="card-brooklyn">
+          <div class="card-content">
+            <div class="contact-content">
+              <div class="contact-info" [@fadeInUp]>
             <div class="contact-intro">
               <h3>Let's Connect</h3>
               <p>
@@ -30,7 +32,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
             <div class="contact-methods">
               <a 
                 [href]="'mailto:' + personalInfo()?.email" 
-                class="contact-method"
+                class="contact-method card-glass-premium"
                 [attr.aria-label]="'Send email to ' + personalInfo()?.email">
                 <div class="method-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -56,7 +58,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
 
               <a 
                 [href]="'tel:' + personalInfo()?.phone" 
-                class="contact-method"
+                class="contact-method card-glass-premium"
                 [attr.aria-label]="'Call ' + personalInfo()?.phone">
                 <div class="method-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -83,7 +85,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                 [href]="personalInfo()?.linkedin" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="contact-method"
+                class="contact-method card-glass-premium"
                 [attr.aria-label]="'Visit LinkedIn profile'">
                 <div class="method-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -109,7 +111,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                 [href]="personalInfo()?.github" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                class="contact-method"
+                class="contact-method card-glass-premium"
                 [attr.aria-label]="'Visit GitHub profile'">
                 <div class="method-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -136,6 +138,8 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                 <span class="response-text">Usually responds within 24 hours</span>
               </div>
             </div>
+          </div>
+        </div>
           </div>
         </div>
       </div>

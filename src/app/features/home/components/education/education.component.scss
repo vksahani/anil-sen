@@ -1,5 +1,5 @@
 .education {
-  background: var(--neutral-50);
+  background: transparent;
   position: relative;
 
   .section-header {
@@ -9,7 +9,8 @@
     .section-title {
       font-size: 3rem;
       font-weight: 700;
-      color: var(--neutral-900);
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       margin-bottom: var(--spacing-md);
       position: relative;
 
@@ -28,7 +29,8 @@
 
     .section-subtitle {
       font-size: 1.125rem;
-      color: var(--neutral-600);
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
       max-width: 600px;
       margin: 0 auto;
     }

@@ -4,8 +4,21 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: var(--gradient-hero);
+  background: transparent; // Let the body gradient show through
   padding-top: 80px; // Account for fixed navbar
+  
+  // Add a subtle overlay for better text contrast on dark background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    pointer-events: none;
+  }
 
   .hero-background {
     position: absolute;
@@ -234,15 +247,16 @@
 
       .floating-tech {
         position: absolute;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
         padding: var(--spacing-sm) var(--spacing-md);
         border-radius: var(--radius-full);
         color: white;
         font-weight: 500;
         font-size: 0.875rem;
         box-shadow: var(--shadow-md);
-        animation: float 3s ease-in-out infinite;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all var(--transition-normal);
 
         &.tech-1 {
           top: 10%;

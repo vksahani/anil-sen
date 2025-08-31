@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChi
 import { CommonModule } from '@angular/common';
 import { ContentService, Experience } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
-import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations/animations';
+import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from '../../../../shared/animations/animations';
 
 @Component({
   selector: 'app-experience',
@@ -21,7 +21,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
             <div 
               class="experience-card"
               [class.visible]="isVisible()"
-              (click)="toggleExpanded(exp.id)">
+              (click)="openExperienceModal(exp)">
               
               <div class="experience-header">
                 <div class="company-logo">
@@ -69,35 +69,13 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                   }
                 </div>
 
-                <div class="expand-section" [class.expanded]="isExpanded(exp.id)">
-                  @if (exp.responsibilities.length > 0) {
-                    <div class="responsibilities">
-                      <h5>Key Responsibilities</h5>
-                      <ul>
-                        @for (responsibility of exp.responsibilities; track responsibility) {
-                          <li>{{ responsibility }}</li>
-                        }
-                      </ul>
-                    </div>
-                  }
 
-                  @if (exp.achievements.length > 2) {
-                    <div class="achievements-full">
-                      <h5>All Achievements</h5>
-                      <ul>
-                        @for (achievement of exp.achievements; track achievement) {
-                          <li>{{ achievement }}</li>
-                        }
-                      </ul>
-                    </div>
-                  }
-                </div>
 
-                <div class="expand-toggle">
-                  <button class="expand-btn" [class.expanded]="isExpanded(exp.id)">
-                    <span>{{ isExpanded(exp.id) ? 'Show Less' : 'Show More' }}</span>
+                <div class="view-details">
+                  <button class="details-btn" type="button">
+                    <span>View Details</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <polyline points="6,9 12,15 18,9"></polyline>
+                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
                     </svg>
                   </button>
                 </div>
@@ -126,9 +104,115 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
         </div>
       </div>
     </section>
+
+    <!-- Experience Modal -->
+    @if (selectedExperience()) {
+      <div 
+        class="experience-modal" 
+        [class.active]="selectedExperience()"
+        (click)="closeExperienceModal()">
+        
+        <div class="modal-content" (click)="$event.stopPropagation()" [@scaleIn]>
+          <button 
+            class="modal-close" 
+            (click)="closeExperienceModal()"
+            aria-label="Close experience details"
+            type="button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+
+          <div class="modal-header">
+            <div class="company-info">
+              <div class="company-logo-large">
+                {{ selectedExperience()!.company.charAt(0) }}
+              </div>
+              <div class="title-info">
+                <h2>{{ selectedExperience()!.position }}</h2>
+                <h3>{{ selectedExperience()!.company }}</h3>
+                <div class="duration-location">
+                  <span class="duration">
+                    {{ formatDate(selectedExperience()!.startDate) }} - 
+                    {{ selectedExperience()!.endDate ? formatDate(selectedExperience()!.endDate!) : 'Present' }}
+                  </span>
+                  <span class="location">{{ selectedExperience()!.location }}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="modal-badges">
+              <span class="status-badge" [attr.data-status]="selectedExperience()!.endDate ? 'completed' : 'current'">
+                {{ selectedExperience()!.endDate ? 'Past Role' : 'Current Position' }}
+              </span>
+            </div>
+          </div>
+
+          <div class="modal-body">
+            <div class="modal-details">
+              <div class="experience-description-full">
+                <h3>About This Role</h3>
+                <p>{{ selectedExperience()!.description }}</p>
+              </div>
+
+              @if (selectedExperience()!.responsibilities && selectedExperience()!.responsibilities.length) {
+                <div class="experience-responsibilities">
+                  <h3>Key Responsibilities</h3>
+                  <ul>
+                    @for (responsibility of selectedExperience()!.responsibilities; track responsibility) {
+                      <li>{{ responsibility }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+
+              @if (selectedExperience()!.achievements && selectedExperience()!.achievements.length) {
+                <div class="experience-achievements">
+                  <h3>Key Achievements</h3>
+                  <ul>
+                    @for (achievement of selectedExperience()!.achievements; track achievement) {
+                      <li>{{ achievement }}</li>
+                    }
+                  </ul>
+                </div>
+              }
+
+              @if (selectedExperience()!.technologies && selectedExperience()!.technologies.length) {
+                <div class="experience-tech-full">
+                  <h3>Technologies & Tools</h3>
+                  <div class="tech-grid">
+                    @for (tech of selectedExperience()!.technologies; track tech) {
+                      <span class="tech-tag">{{ tech }}</span>
+                    }
+                  </div>
+                </div>
+              }
+
+              @if (selectedExperience()!.companyUrl) {
+                <div class="experience-actions-full">
+                  <a 
+                    [href]="selectedExperience()!.companyUrl" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    <span>Visit Company</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15,3 21,3 21,9"/>
+                      <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                  </a>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
   `,
   styleUrls: ['./experience.component.scss'],
-  animations: [fadeInUp, fadeInLeft, fadeInRight],
+  animations: [fadeInUp, fadeInLeft, fadeInRight, scaleIn],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExperienceComponent implements OnInit, AfterViewInit {
@@ -137,6 +221,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
   experience = signal<Experience[]>([]);
   isVisible = signal(false);
   expandedItems = signal<Set<string>>(new Set());
+  selectedExperience = signal<Experience | null>(null);
 
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
@@ -161,18 +246,14 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
 
 
 
-  toggleExpanded(id: string): void {
-    const expanded = new Set(this.expandedItems());
-    if (expanded.has(id)) {
-      expanded.delete(id);
-    } else {
-      expanded.add(id);
-    }
-    this.expandedItems.set(expanded);
+  openExperienceModal(experience: Experience): void {
+    this.selectedExperience.set(experience);
+    document.body.style.overflow = 'hidden';
   }
 
-  isExpanded(id: string): boolean {
-    return this.expandedItems().has(id);
+  closeExperienceModal(): void {
+    this.selectedExperience.set(null);
+    document.body.style.overflow = 'auto';
   }
 
   formatDate(dateString: string): string {

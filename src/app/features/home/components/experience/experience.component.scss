@@ -1,5 +1,5 @@
 .experience {
-  background: var(--neutral-50);
+  background: transparent;
   position: relative;
 
   .section-header {
@@ -9,7 +9,8 @@
     .section-title {
       font-size: 3rem;
       font-weight: 700;
-      color: var(--neutral-900);
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
       margin-bottom: var(--spacing-md);
       position: relative;
 
@@ -28,7 +29,8 @@
 
     .section-subtitle {
       font-size: 1.125rem;
-      color: var(--neutral-600);
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
       max-width: 600px;
       margin: 0 auto;
     }
@@ -50,10 +52,11 @@
         transform: translateY(0);
         animation: fadeInUp 0.6s ease-out forwards;
       }
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(15px);
       border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--neutral-200);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       cursor: pointer;
       transition: all var(--transition-normal);
       overflow: hidden;
@@ -211,108 +214,28 @@
           }
         }
 
-        .expand-section {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height var(--transition-slow) ease-out;
-
-          &.expanded {
-            max-height: 1000px;
-            margin-bottom: var(--spacing-lg);
-          }
-
-          .responsibilities,
-          .achievements-full {
-            padding: var(--spacing-lg) 0;
-            border-top: 1px solid var(--neutral-200);
-
-            h5 {
-              font-size: 1.125rem;
-              font-weight: 600;
-              color: var(--neutral-900);
-              margin-bottom: var(--spacing-md);
-              display: flex;
-              align-items: center;
-              gap: var(--spacing-sm);
-
-              &::before {
-                content: '✓';
-                width: 24px;
-                height: 24px;
-                background: var(--gradient-primary);
-                color: white;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 0.75rem;
-                font-weight: bold;
-              }
-            }
-
-            ul {
-              list-style: none;
-              padding: 0;
-              margin: 0;
-
-              li {
-                padding: var(--spacing-sm) 0;
-                color: var(--neutral-700);
-                line-height: 1.6;
-                position: relative;
-                padding-left: var(--spacing-lg);
-
-                &::before {
-                  content: '→';
-                  position: absolute;
-                  left: 0;
-                  color: var(--primary-blue);
-                  font-weight: bold;
-                }
-
-                &:not(:last-child) {
-                  border-bottom: 1px solid var(--neutral-100);
-                }
-              }
-            }
-          }
-
-          .achievements-full {
-            h5::before {
-              content: '🏆';
-              background: var(--gradient-accent);
-            }
-
-            ul li::before {
-              content: '★';
-              color: var(--accent-coral);
-            }
-          }
-        }
-
-        .expand-toggle {
+        .view-details {
           text-align: center;
           border-top: 1px solid var(--neutral-200);
           padding-top: var(--spacing-md);
 
-          .expand-btn {
+          .details-btn {
             display: flex;
             align-items: center;
             gap: var(--spacing-sm);
-            background: none;
+            background: var(--gradient-primary);
             border: none;
-            color: var(--primary-blue);
+            color: white;
             font-weight: 500;
             cursor: pointer;
             transition: all var(--transition-fast);
             margin: 0 auto;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-lg);
 
             &:hover {
-              color: var(--primary-indigo);
-            }
-
-            &.expanded svg {
-              transform: rotate(180deg);
+              transform: translateY(-2px);
+              box-shadow: var(--shadow-md);
             }
 
             svg {
@@ -335,10 +258,11 @@
       .stat-item {
         text-align: center;
         padding: var(--spacing-xl);
-        background: white;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
         border-radius: var(--radius-xl);
-        box-shadow: var(--shadow-md);
-        border: 1px solid var(--neutral-200);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         transition: all var(--transition-normal);
 
         &:hover {
@@ -430,6 +354,325 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Experience Modal Styles
+.experience-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  padding: var(--spacing-lg);
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-content {
+    background: white;
+    border-radius: var(--radius-xl);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+
+    .modal-close {
+      position: absolute;
+      top: var(--spacing-lg);
+      right: var(--spacing-lg);
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      z-index: 1;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .modal-header {
+      padding: var(--spacing-xl);
+      border-bottom: 1px solid var(--neutral-200);
+      background: var(--gradient-primary);
+      color: white;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+
+      .company-info {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
+
+        .company-logo-large {
+          width: 80px;
+          height: 80px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          font-weight: 700;
+          color: white;
+          border: 3px solid rgba(255, 255, 255, 0.3);
+          flex-shrink: 0;
+        }
+
+        .title-info {
+          flex: 1;
+
+          h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+          }
+
+          h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.9;
+          }
+
+          .duration-location {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+
+            .duration {
+              font-size: 1rem;
+              font-weight: 500;
+              opacity: 0.9;
+            }
+
+            .location {
+              font-size: 0.875rem;
+              opacity: 0.8;
+              display: flex;
+              align-items: center;
+              gap: var(--spacing-xs);
+
+              &::before {
+                content: '📍';
+                font-size: 0.75rem;
+              }
+            }
+          }
+        }
+      }
+
+      .modal-badges {
+        display: flex;
+        gap: var(--spacing-md);
+
+        .status-badge {
+          padding: var(--spacing-sm) var(--spacing-md);
+          border-radius: var(--radius-full);
+          font-size: 0.875rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          background: rgba(255, 255, 255, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+
+          &[data-status="current"] {
+            background: rgba(34, 197, 94, 0.2);
+            border-color: rgba(34, 197, 94, 0.3);
+          }
+
+          &[data-status="completed"] {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+          }
+        }
+      }
+    }
+
+    .modal-body {
+      padding: var(--spacing-xl);
+
+      .modal-details {
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: var(--neutral-900);
+          margin-bottom: var(--spacing-md);
+          display: flex;
+          align-items: center;
+          gap: var(--spacing-sm);
+
+          &::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+          }
+        }
+
+        .experience-description-full,
+        .experience-responsibilities,
+        .experience-achievements,
+        .experience-tech-full {
+          margin-bottom: var(--spacing-xl);
+
+          p {
+            color: var(--neutral-700);
+            line-height: 1.7;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+              padding: var(--spacing-sm) 0;
+              color: var(--neutral-700);
+              position: relative;
+              padding-left: var(--spacing-lg);
+              line-height: 1.6;
+
+              &::before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                color: var(--primary-blue);
+                font-weight: bold;
+              }
+
+              &:not(:last-child) {
+                border-bottom: 1px solid var(--neutral-100);
+              }
+            }
+          }
+        }
+
+        .experience-achievements {
+          h3::before {
+            content: '🏆';
+            background: var(--gradient-accent);
+          }
+
+          ul li::before {
+            content: '★';
+            color: var(--accent-coral);
+          }
+        }
+
+        .experience-tech-full .tech-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: var(--spacing-sm);
+
+          .tech-tag {
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 500;
+          }
+        }
+
+        .experience-actions-full {
+          display: flex;
+          gap: var(--spacing-lg);
+          flex-wrap: wrap;
+
+          .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition-normal);
+
+            &.btn-primary {
+              background: var(--gradient-primary);
+              color: white;
+
+              &:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-lg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-md);
+
+    .modal-content {
+      .modal-header {
+        padding: var(--spacing-lg);
+
+        .company-info {
+          flex-direction: column;
+          text-align: center;
+          gap: var(--spacing-md);
+
+          .company-logo-large {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+          }
+
+          .title-info {
+            h2 {
+              font-size: 1.5rem;
+            }
+
+            h3 {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+
+      .modal-body {
+        padding: var(--spacing-lg);
+
+        .modal-details .experience-actions-full {
+          flex-direction: column;
+
+          .btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+      }
+    }
   }
 }
 

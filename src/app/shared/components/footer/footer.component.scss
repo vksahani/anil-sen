@@ -1,6 +1,8 @@
 .footer {
-  background: var(--neutral-900);
-  color: var(--neutral-300);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(25px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
   position: relative;
   padding: var(--spacing-3xl) 0 var(--spacing-xl);
 
@@ -24,14 +26,14 @@
 
       .brand-tagline {
         font-size: 1.125rem;
-        color: var(--primary-blue);
+        color: rgba(255, 255, 255, 0.9);
         font-weight: 500;
         margin-bottom: var(--spacing-md);
       }
 
       .brand-description {
         line-height: 1.6;
-        color: var(--neutral-400);
+        color: rgba(255, 255, 255, 0.7);
       }
     }
 
@@ -57,13 +59,13 @@
             margin-bottom: var(--spacing-sm);
 
             a {
-              color: var(--neutral-400);
+              color: rgba(255, 255, 255, 0.7);
               text-decoration: none;
               transition: color var(--transition-fast);
               font-size: 0.95rem;
 
               &:hover {
-                color: var(--primary-blue);
+                color: white;
               }
             }
           }
@@ -87,13 +89,13 @@
         .social-link {
           width: 44px;
           height: 44px;
-          background: var(--neutral-800);
-          border: 1px solid var(--neutral-700);
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: var(--radius-md);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--neutral-400);
+          color: rgba(255, 255, 255, 0.8);
           text-decoration: none;
           transition: all var(--transition-fast);
 
@@ -109,7 +111,7 @@
       .newsletter {
         p {
           font-size: 0.95rem;
-          color: var(--neutral-400);
+          color: rgba(255, 255, 255, 0.7);
           margin-bottom: var(--spacing-md);
           line-height: 1.5;
         }
@@ -121,8 +123,8 @@
           .newsletter-input {
             flex: 1;
             padding: var(--spacing-sm) var(--spacing-md);
-            background: var(--neutral-800);
-            border: 1px solid var(--neutral-700);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: var(--radius-md);
             color: white;
             font-size: 0.875rem;
@@ -135,7 +137,7 @@
             }
 
             &::placeholder {
-              color: var(--neutral-500);
+              color: rgba(255, 255, 255, 0.5);
             }
           }
 
@@ -176,13 +178,13 @@
     .footer-info {
       .copyright {
         font-size: 0.875rem;
-        color: var(--neutral-500);
+        color: rgba(255, 255, 255, 0.7);
         margin-bottom: var(--spacing-xs);
       }
 
       .built-with {
         font-size: 0.875rem;
-        color: var(--neutral-600);
+        color: rgba(255, 255, 255, 0.8);
       }
     }
 
@@ -196,7 +198,7 @@
         align-items: center;
         gap: var(--spacing-sm);
         font-size: 0.875rem;
-        color: var(--neutral-500);
+        color: rgba(255, 255, 255, 0.7);
 
         svg {
           color: var(--primary-blue);
@@ -208,7 +210,7 @@
         align-items: center;
         gap: var(--spacing-sm);
         font-size: 0.875rem;
-        color: var(--neutral-500);
+        color: rgba(255, 255, 255, 0.7);
 
         .status-indicator {
           width: 8px;

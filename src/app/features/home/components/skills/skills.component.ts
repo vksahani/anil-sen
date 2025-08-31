@@ -16,32 +16,36 @@ import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animat
           <p class="section-subtitle">Technologies and tools I work with</p>
         </div>
 
-        <div class="skills-filter" [@fadeInUp]>
-          @for (category of categories; track category.key) {
-            <button 
-              class="filter-btn"
-              [class.active]="activeCategory() === category.key"
-              (click)="setActiveCategory(category.key)"
-              [attr.aria-label]="'Filter by ' + category.label + ' skills'"
-              type="button">
-              {{ category.label }}
-            </button>
-          }
-        </div>
-
-        <div class="skills-grid" [@stagger]>
-          @for (skill of filteredSkills(); track skill.name) {
-            <div 
-              class="skill-card"
-              [class.visible]="isVisible()">
-              
-              <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
-                {{ getSkillIcon(skill.name) }}
-              </div>
-              
-              <h3 class="skill-name">{{ skill.name }}</h3>
+        <div class="card-brooklyn">
+          <div class="card-content">
+            <div class="skills-filter" [@fadeInUp]>
+              @for (category of categories; track category.key) {
+                <button 
+                  class="filter-btn"
+                  [class.active]="activeCategory() === category.key"
+                  (click)="setActiveCategory(category.key)"
+                  [attr.aria-label]="'Filter by ' + category.label + ' skills'"
+                  type="button">
+                  {{ category.label }}
+                </button>
+              }
             </div>
-          }
+
+            <div class="skills-grid" [@stagger]>
+              @for (skill of filteredSkills(); track skill.name) {
+                <div 
+                  class="skill-card card-glass-premium"
+                  [class.visible]="isVisible()">
+                  
+                  <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
+                    {{ getSkillIcon(skill.name) }}
+                  </div>
+                  
+                  <h3 class="skill-name">{{ skill.name }}</h3>
+                </div>
+              }
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -52,7 +56,7 @@ import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animat
 })
 export class SkillsComponent implements OnInit, AfterViewInit {
   @ViewChild('skillsSection') skillsSection!: ElementRef;
-  
+
   skills = signal<Skill[]>([]);
   personalInfo = signal<any>(null);
   activeCategory = signal<string>('all');

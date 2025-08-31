@@ -11,9 +11,9 @@
     <div class="hero-content">
       <div class="hero-text" [@fadeInLeft]>
         <h1 class="hero-title">
-          <span class="greeting">Hello, I'm</span>
-          <span class="name">{{ personalInfo()?.name }}</span>
-          <span class="title-role">{{ personalInfo()?.title }}</span>
+          <span class="greeting animate-float">Hello, I'm</span>
+          <span class="name text-glow">{{ personalInfo()?.name }}</span>
+          <span class="title-role animate-shimmer">{{ personalInfo()?.title }}</span>
         </h1>
 
         <div class="typed-text" #typedElement>
@@ -25,7 +25,7 @@
         </p>
 
         <div class="hero-actions" [@fadeInUp]>
-          <a href="#contact" class="btn btn-primary" (click)="scrollToSection($event, 'contact')"
+          <a href="#contact" class="btn btn-primary animate-pulse-glow" (click)="scrollToSection($event, 'contact')"
             aria-label="Contact me for hiring">
             <span>Hire Me</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -33,7 +33,7 @@
             </svg>
           </a>
 
-          <a [href]="personalInfo()?.resumeUrl" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+          <a [href]="personalInfo()?.resumeUrl" target="_blank" rel="noopener noreferrer" class="btn btn-secondary glass-animated"
             aria-label="View my resume">
             <span>View Resume</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -45,7 +45,7 @@
             </svg>
           </a>
 
-          <a href="#projects" class="btn btn-accent" (click)="scrollToSection($event, 'projects')"
+          <a href="#projects" class="btn btn-accent animate-shimmer" (click)="scrollToSection($event, 'projects')"
             aria-label="See my projects">
             <span>See Projects</span>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -65,10 +65,10 @@
           </div>
 
           <div class="floating-elements">
-            <div class="floating-tech tech-1">Angular</div>
-            <div class="floating-tech tech-2">TypeScript</div>
-            <div class="floating-tech tech-3">Node.js</div>
-            <div class="floating-tech tech-4">Firebase</div>
+            <div class="floating-tech tech-1 animate-float">Angular</div>
+            <div class="floating-tech tech-2 animate-pulse-glow">TypeScript</div>
+            <div class="floating-tech tech-3 animate-float">Node.js</div>
+            <div class="floating-tech tech-4 animate-shimmer">Firebase</div>
           </div>
         </div>
       </div>
