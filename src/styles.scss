@@ -1,6 +1,9 @@
  // Import Bootstrap grid system
  @use 'bootstrap/scss/bootstrap-grid';
 
+ // Import optimized animations
+ @use 'styles/animations';
+
  // Global theme variables
  :root {
    // Primary colors
@@ -862,7 +865,7 @@ How to switch:
 Example: --gradient-background: var(--gradient-option-3);
 */
 
- // Animated Background Elements
+ // Optimized Animated Background Elements
  .animated-background {
    position: fixed;
    top: 0;
@@ -872,101 +875,62 @@ Example: --gradient-background: var(--gradient-option-3);
    pointer-events: none;
    z-index: -1;
    overflow: hidden;
+   contain: layout style paint;
 
    .floating-shape {
-     position: absolute;
-     border-radius: 50%;
-     background: rgba(255, 255, 255, 0.3);
-     backdrop-filter: blur(10px);
-     animation: floatUpDown 6s ease-in-out infinite;
-
+     top: 10%;
+     left: 5%;
+     
      &.shape-1 {
-       width: 300px;
-       height: 300px;
        top: 10%;
        left: 5%;
-       background: radial-gradient(circle, rgba(147, 197, 253, 0.3) 0%, transparent 70%);
-       animation: floatUpDown 8s ease-in-out infinite, morphShape 12s ease-in-out infinite;
-       animation-delay: 0s;
      }
 
      &.shape-2 {
-       width: 200px;
-       height: 200px;
        top: 60%;
        right: 10%;
-       background: radial-gradient(circle, rgba(251, 207, 232, 0.25) 0%, transparent 70%);
-       animation: floatUpDown 10s ease-in-out infinite, morphShape 15s ease-in-out infinite;
-       animation-delay: 2s;
      }
 
      &.shape-3 {
-       width: 150px;
-       height: 150px;
        top: 30%;
        left: 70%;
-       background: radial-gradient(circle, rgba(134, 239, 172, 0.3) 0%, transparent 70%);
-       animation: floatUpDown 7s ease-in-out infinite, morphShape 10s ease-in-out infinite;
-       animation-delay: 4s;
      }
 
      &.shape-4 {
-       width: 250px;
-       height: 250px;
        bottom: 20%;
        left: 20%;
-       background: radial-gradient(circle, rgba(196, 181, 253, 0.25) 0%, transparent 70%);
-       animation: floatUpDown 9s ease-in-out infinite, morphShape 14s ease-in-out infinite;
-       animation-delay: 1s;
      }
 
      &.shape-5 {
-       width: 100px;
-       height: 100px;
        top: 80%;
        right: 30%;
-       background: radial-gradient(circle, rgba(254, 215, 170, 0.3) 0%, transparent 70%);
-       animation: floatUpDown 6s ease-in-out infinite, morphShape 8s ease-in-out infinite;
-       animation-delay: 3s;
      }
    }
 
    .particle {
-     position: absolute;
-     width: 4px;
-     height: 4px;
-     background: rgba(147, 197, 253, 0.8);
-     border-radius: 50%;
-     animation: particleFloat 12s linear infinite;
-
      &.particle-1 {
        top: 20%;
        left: 10%;
-       animation-delay: 0s;
      }
 
      &.particle-2 {
        top: 50%;
        left: 80%;
-       animation-delay: 2s;
      }
 
      &.particle-3 {
        top: 70%;
        left: 30%;
-       animation-delay: 4s;
      }
 
      &.particle-4 {
        top: 30%;
        left: 60%;
-       animation-delay: 6s;
      }
 
      &.particle-5 {
        top: 80%;
        left: 70%;
-       animation-delay: 8s;
      }
    }
  }
@@ -1261,7 +1225,6 @@ Example: --gradient-background: var(--gradient-option-3);
 
  // Performance-based CSS classes
  .reduce-animations {
-
    *,
    *::before,
    *::after {
@@ -1279,6 +1242,27 @@ Example: --gradient-background: var(--gradient-option-3);
        display: none !important;
      }
    }
+
+   .animated-background,
+   .floating-shape,
+   .particle {
+     display: none !important;
+   }
+ }
+
+ // Animation pause utility
+ .animations-paused {
+   *,
+   *::before,
+   *::after {
+     animation-play-state: paused !important;
+   }
+ }
+
+ // No animation fallback
+ .no-animation {
+   opacity: 1 !important;
+   transform: none !important;
  }
 
  .mobile-device {

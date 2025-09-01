@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, inject, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
@@ -11,6 +11,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { NavigationComponent } from '../../shared/components/navigation/navigation.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { ContentService } from '../../core/services/content.service';
+import { AnimationService } from '../../core/services/animation.service';
+import { PerformanceService } from '../../core/services/performance.service';
 
 @Component({
   selector: 'app-home',
@@ -31,8 +33,10 @@ import { ContentService } from '../../core/services/content.service';
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   private contentService = inject(ContentService);
+  private animationService = inject(AnimationService);
+  private performanceService = inject(PerformanceService);
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
@@ -47,5 +51,12 @@ export class HomeComponent implements OnInit {
     ).subscribe(() => {
       this.cdr.markForCheck();
     });
+
+    // Initialize performance optimizations
+    this.performanceService.optimizeForDevice();
+  }
+
+  ngOnDestroy(): void {
+    this.animationService.destroy();
   }
 }
