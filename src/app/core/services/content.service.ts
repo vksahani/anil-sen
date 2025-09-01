@@ -1,4 +1,4 @@
-import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
+import { Injectable, PLATFORM_ID, Inject, inject, ChangeDetectorRef } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
@@ -83,6 +83,8 @@ export class ContentService {
 
   private educationSubject = new BehaviorSubject<Education[]>([]);
 
+  cdr = inject(ChangeDetectorRef)
+
   constructor(
     private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -121,6 +123,8 @@ export class ContentService {
           if (data.education) {
             this.educationSubject.next(data.education);
           }
+
+          this.cdr.detectChanges();
         }
       }
     });
