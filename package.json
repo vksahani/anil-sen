@@ -8,12 +8,13 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
+    "build:mobile": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
     "serve:ssr": "node dist/vishal-portfolio/server/server.mjs",
     "build:ssr": "ng build --configuration production",
-    "hosting": "ng build && firebase deploy --only hosting"
+    "hosting": "ng build --configuration production && firebase deploy --only hosting"
   },
   "prettier": {
     "printWidth": 100,

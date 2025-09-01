@@ -374,6 +374,46 @@
    }
  }
 
+ // Mobile Performance Optimizations
+ @media (max-width: 768px) {
+
+   // Disable heavy animations on mobile
+   body {
+     animation: none !important;
+     background: var(--neutral-50) !important; // Static background
+
+     &::before,
+     &::after {
+       display: none !important; // Remove animated overlays
+     }
+   }
+
+   .animated-background,
+   .floating-shape,
+   .particle {
+     display: none !important; // Remove all floating animations
+   }
+
+   // Simplify cards on mobile
+   .card,
+   .card-brooklyn,
+   .card-glass-premium {
+     box-shadow: var(--shadow-md) !important; // Simpler shadows
+     backdrop-filter: none !important; // Remove blur effects
+
+     &:hover {
+       transform: none !important; // Disable hover transforms
+     }
+   }
+
+   // Disable complex animations
+   .animate-float,
+   .animate-pulse-glow,
+   .animate-shimmer {
+     animation: none !important;
+   }
+ }
+
  // Accessibility
  @media (prefers-reduced-motion: reduce) {
 
@@ -1167,5 +1207,99 @@ Example: --gradient-background: var(--gradient-option-3);
 
    50% {
      opacity: 1;
+   }
+ }
+
+ // Mobile-First Performance Optimizations
+ @media (max-width: 768px) {
+
+   // Force hardware acceleration for critical elements only
+   .btn,
+   .card {
+     will-change: transform;
+     transform: translateZ(0); // Force GPU acceleration
+   }
+
+   // Optimize text rendering
+   body {
+     text-rendering: optimizeSpeed;
+     -webkit-font-smoothing: subpixel-antialiased;
+   }
+
+   // Reduce repaints
+   .section {
+     contain: layout style paint;
+   }
+
+   // Simplify gradients
+   .btn-primary {
+     background: var(--primary-blue) !important;
+   }
+
+   .btn-accent {
+     background: var(--accent-coral) !important;
+   }
+ }
+
+ // Touch device optimizations
+ @media (hover: none) and (pointer: coarse) {
+
+   // Remove hover effects on touch devices
+   .card:hover,
+   .btn:hover,
+   a:hover {
+     transform: none !important;
+     box-shadow: inherit !important;
+   }
+
+   // Optimize touch targets
+   .btn {
+     min-height: 44px;
+     min-width: 44px;
+   }
+ }
+
+ // Performance-based CSS classes
+ .reduce-animations {
+
+   *,
+   *::before,
+   *::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+   }
+
+   body {
+     background: var(--neutral-50) !important;
+     animation: none !important;
+
+     &::before,
+     &::after {
+       display: none !important;
+     }
+   }
+ }
+
+ .mobile-device {
+
+   // Optimize for mobile rendering
+   .card {
+     will-change: auto;
+     transform: none !important;
+
+     &:hover {
+       transform: none !important;
+       box-shadow: var(--shadow-md) !important;
+     }
+   }
+
+   // Disable expensive effects
+   .glass,
+   .glass-light,
+   .glass-strong,
+   .glass-minimal {
+     backdrop-filter: none !important;
+     background: rgba(255, 255, 255, 0.95) !important;
    }
  }

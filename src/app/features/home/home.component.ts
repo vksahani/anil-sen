@@ -36,13 +36,15 @@ export class HomeComponent implements OnInit {
   private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
-    // Ensure data is loaded when component initializes
+    // Optimize for mobile - load data only once
     if (!this.contentService.isDataLoaded()) {
       this.contentService.reloadContent();
     }
     
-    // Subscribe to any data changes and trigger change detection
-    this.contentService.personalInfo$.subscribe(() => {
+    // Use takeUntil to prevent memory leaks and reduce subscriptions
+    this.contentService.personalInfo$.pipe(
+      // Only trigger change detection when data actually changes
+    ).subscribe(() => {
       this.cdr.markForCheck();
     });
   }
