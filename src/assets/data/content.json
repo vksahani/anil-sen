@@ -19,151 +19,151 @@
       "name": "Angular",
       "category": "frontend",
       "description": "Web application framework for building dynamic applications",
-      "icon": "angular"
+      "icon": "https://skillicons.dev/icons?i=angular"
     },
     {
       "name": "Ionic",
       "category": "frontend",
       "description": "Cross-platform mobile app development framework",
-      "icon": "ionic"
+      "icon": "../../assets/images/ionic.webp"
     },
     {
       "name": "TypeScript",
       "category": "frontend",
       "description": "Typed JavaScript for better development experience",
-      "icon": "typescript"
+      "icon": "https://skillicons.dev/icons?i=typescript"
     },
     {
       "name": "JavaScript",
       "category": "frontend",
       "description": "Core programming language for web development",
-      "icon": "javascript"
+      "icon": "https://skillicons.dev/icons?i=javascript"
     },
     {
       "name": "HTML",
       "category": "frontend",
       "description": "Markup language for web pages",
-      "icon": "html5"
+      "icon": "https://skillicons.dev/icons?i=html"
     },
     {
       "name": "CSS",
       "category": "frontend",
       "description": "Styling language for web pages",
-      "icon": "css3"
+      "icon": "https://skillicons.dev/icons?i=css"
     },
     {
       "name": "SCSS",
       "category": "frontend",
       "description": "CSS preprocessor with enhanced features",
-      "icon": "sass"
+      "icon": "https://skillicons.dev/icons?i=sass"
     },
     {
       "name": "Bootstrap",
       "category": "frontend",
       "description": "CSS framework for responsive design",
-      "icon": "bootstrap"
+      "icon": "https://skillicons.dev/icons?i=bootstrap"
     },
     {
       "name": "Angular Material",
       "category": "frontend",
       "description": "Material Design components for Angular",
-      "icon": "material"
+      "icon": "https://skillicons.dev/icons?i=materialui"
     },
     {
       "name": "NodeJS",
       "category": "backend",
       "description": "Server-side JavaScript runtime environment",
-      "icon": "nodejs"
+      "icon": "https://skillicons.dev/icons?i=nodejs"
     },
     {
       "name": "Express",
       "category": "backend",
       "description": "Node.js web application framework",
-      "icon": "express"
+      "icon": "https://skillicons.dev/icons?i=express"
     },
     {
       "name": "MongoDB",
       "category": "backend",
       "description": "NoSQL database for modern applications",
-      "icon": "mongodb"
+      "icon": "https://skillicons.dev/icons?i=mongodb"
     },
     {
       "name": "Mongoose",
       "category": "backend",
       "description": "MongoDB object modeling for Node.js",
-      "icon": "mongoose"
+      "icon": "https://skillicons.dev/icons?i=mongodb"
     },
     {
       "name": "Firebase",
       "category": "backend",
       "description": "Backend-as-a-Service platform",
-      "icon": "firebase"
+      "icon": "https://skillicons.dev/icons?i=firebase"
     },
     {
       "name": "Firebase Cloud",
       "category": "backend",
       "description": "Cloud functions and hosting services",
-      "icon": "firebase"
+      "icon": "https://skillicons.dev/icons?i=firebase"
     },
     {
       "name": "JWT",
       "category": "backend",
       "description": "JSON Web Tokens for authentication",
-      "icon": "jwt"
+      "icon": "https://skillicons.dev/icons?i=jwt"
     },
     {
       "name": "MVC",
       "category": "backend",
       "description": "Model-View-Controller architectural pattern",
-      "icon": "mvc"
+      "icon": "https://skillicons.dev/icons?i=dotnet"
     },
     {
       "name": "VS Code",
       "category": "tools",
       "description": "Code editor for development",
-      "icon": "vscode"
+      "icon": "https://skillicons.dev/icons?i=vscode"
     },
     {
       "name": "GitHub",
       "category": "tools",
       "description": "Version control and collaboration platform",
-      "icon": "github"
+      "icon": "https://skillicons.dev/icons?i=github"
     },
     {
       "name": "Xcode",
       "category": "tools",
       "description": "iOS development IDE",
-      "icon": "xcode"
+      "icon": "https://skillicons.dev/icons?i=xcode"
     },
     {
       "name": "Android Studio",
       "category": "tools",
       "description": "Android development IDE",
-      "icon": "android"
+      "icon": "https://skillicons.dev/icons?i=androidstudio"
     },
     {
       "name": "Capacitor",
       "category": "tools",
       "description": "Native mobile app runtime",
-      "icon": "capacitor"
+      "icon": "https://skillicons.dev/icons?i=capacitor"
     },
     {
       "name": "Cordova",
       "category": "tools",
       "description": "Mobile app development platform",
-      "icon": "cordova"
+      "icon": "https://skillicons.dev/icons?i=cordova"
     },
     {
       "name": "JSON Server",
       "category": "tools",
       "description": "Mock REST API for development",
-      "icon": "json"
+      "icon": "https://skillicons.dev/icons?i=json"
     },
     {
       "name": "AnalogJS",
       "category": "frontend",
       "description": "Angular meta-framework for full-stack development",
-      "icon": "analog"
+      "icon": "https://skillicons.dev/icons?i=angular"
     }
   ],
   "experience": [

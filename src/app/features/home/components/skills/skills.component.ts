@@ -38,7 +38,7 @@ import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animat
                   [class.visible]="isVisible()">
                   
                   <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
-                    {{ getSkillIcon(skill.name) }}
+                    <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon-img">
                   </div>
                   
                   <h3 class="skill-name">{{ skill.name }}</h3>
@@ -69,33 +69,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     { key: 'tools', label: 'Tools' }
   ];
 
-  private skillIcons: { [key: string]: string } = {
-    'NodeJS': '🟢',
-    'HTML': '🌐',
-    'CSS': '🎨',
-    'SCSS': '💅',
-    'Bootstrap': '🅱️',
-    'JavaScript': '📜',
-    'TypeScript': '📘',
-    'VS Code': '💻',
-    'JSON Server': '📊',
-    'Ionic': '⚡',
-    'MongoDB': '🍃',
-    'Firebase': '🔥',
-    'Angular': '🅰️',
-    'MVC': '🏗️',
-    'Capacitor': '📱',
-    'Firebase Cloud': '☁️',
-    'Cordova': '📲',
-    'GitHub': '🐙',
-    'JWT': '🔐',
-    'Express': '🚀',
-    'Mongoose': '🦫',
-    'AnalogJS': '⚡',
-    'Xcode': '🍎',
-    'Angular Material': '🎯',
-    'Android Studio': '🤖'
-  };
+
 
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
@@ -145,9 +119,7 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
 
 
-  getSkillIcon(skillName: string): string {
-    return this.skillIcons[skillName] || '⚙️';
-  }
+
 
   getCategoryLabel(category: string): string {
     const categoryMap: { [key: string]: string } = {
