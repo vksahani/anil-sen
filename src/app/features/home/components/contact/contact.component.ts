@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -156,6 +156,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
+  private cdr = inject(ChangeDetectorRef);
 
   constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
@@ -163,7 +164,10 @@ export class ContactComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo.set(info);
+      if (info) {
+        this.personalInfo.set(info);
+        this.cdr.markForCheck(); // Trigger change detection
+      }
     });
   }
 

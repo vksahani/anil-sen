@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from './components/hero/hero.component';
 import { AboutComponent } from './components/about/about.component';
@@ -10,6 +10,7 @@ import { ResumeInviteComponent } from './components/resume-invite/resume-invite.
 import { ContactComponent } from './components/contact/contact.component';
 import { NavigationComponent } from '../../shared/components/navigation/navigation.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { ContentService } from '../../core/services/content.service';
 
 @Component({
   selector: 'app-home',
@@ -30,4 +31,19 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  private contentService = inject(ContentService);
+  private cdr = inject(ChangeDetectorRef);
+
+  ngOnInit(): void {
+    // Ensure data is loaded when component initializes
+    if (!this.contentService.isDataLoaded()) {
+      this.contentService.reloadContent();
+    }
+    
+    // Subscribe to any data changes and trigger change detection
+    this.contentService.personalInfo$.subscribe(() => {
+      this.cdr.markForCheck();
+    });
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnInit, HostListener, signal, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit, HostListener, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ContentService } from '../../../core/services/content.service';
@@ -18,6 +18,7 @@ export class NavigationComponent implements OnInit {
   personalInfo: any = null;
 
   private contentService = inject(ContentService);
+  private cdr = inject(ChangeDetectorRef);
   private sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
 
   constructor() {
@@ -26,7 +27,10 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit(): void {
     this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo = info;
+      if (info) {
+        this.personalInfo = info;
+        this.cdr.markForCheck(); // Trigger change detection
+      }
     });
   }
 

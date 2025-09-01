@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Project } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -260,12 +260,16 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
+  private cdr = inject(ChangeDetectorRef);
 
   constructor() {}
 
   ngOnInit(): void {
     this.contentService.projects$.subscribe(projects => {
-      this.projects.set(projects);
+      if (projects && projects.length > 0) {
+        this.projects.set(projects);
+        this.cdr.markForCheck(); // Trigger change detection
+      }
     });
   }
 

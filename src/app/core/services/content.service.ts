@@ -2,7 +2,7 @@ import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 export type Skill = {
   name: string;
@@ -97,12 +97,15 @@ export class ContentService {
       catchError(error => {
         console.error('Error loading content:', error);
         return of(null);
+      }),
+      tap(data => {
+        if (data) {
+          console.log('Content loaded successfully:', data);
+        }
       })
     ).subscribe({
       next: (data) => {
         if (data) {
-          console.log('data-----------', data);
-          
           if (data.personalInfo) {
             this.personalInfoSubject.next(data.personalInfo);
           }
@@ -121,6 +124,22 @@ export class ContentService {
         }
       }
     });
+  }
+
+  // Method to reload content manually
+  reloadContent(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadContent();
+    }
+  }
+
+  // Method to check if data is loaded
+  isDataLoaded(): boolean {
+    return this.personalInfoSubject.value !== null && 
+           this.skillsSubject.value.length > 0 && 
+           this.experienceSubject.value.length > 0 && 
+           this.projectsSubject.value.length > 0 && 
+           this.educationSubject.value.length > 0;
   }
 
   // Getters for observables

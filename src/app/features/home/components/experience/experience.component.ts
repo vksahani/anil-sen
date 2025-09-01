@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Experience } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -225,12 +225,16 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
 
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
+  private cdr = inject(ChangeDetectorRef);
 
   constructor() { }
 
   ngOnInit(): void {
     this.contentService.experience$.subscribe(experience => {
-      this.experience.set(experience);
+      if (experience && experience.length > 0) {
+        this.experience.set(experience);
+        this.cdr.markForCheck(); // Trigger change detection
+      }
     });
   }
 
