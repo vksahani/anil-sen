@@ -254,12 +254,12 @@
         "Responsive design"
       ],
       "imageUrl": "/assets/images/projects/partytambola.jpg",
-      "adminUrl": "https://bhautikiplus.com",
-      "userUrl": "https://bhautikiplus.com",
-      "playStoreUrl": "https://bhautikiplus.com",
-      "appStoreUrl": "https://bhautikiplus.com",
+      "adminUrl": "",
+      "userUrl": "",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.partytambola",
+      "appStoreUrl": "https://apps.apple.com/us/app/party-tambola-housie-game/id1498917095?ls=1",
       "status": "completed",
-      "category": "web",
+      "category": ["mobile"],
       "highlights": [
         "500+ active users",
         "Real-time synchronization",
@@ -284,12 +284,12 @@
         "Vendor dashboard"
       ],
       "imageUrl": "/assets/images/projects/durud.jpg",
-      "adminUrl": "https://bhautikiplus.com",
-      "userUrl": "https://bhautikiplus.com",
-      "playStoreUrl": "https://bhautikiplus.com",
-      "appStoreUrl": "https://bhautikiplus.com",
+      "adminUrl": "https://durud-e7449.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
       "status": "completed",
-      "category": "fullstack",
+      "category": ["fullstack"],
       "highlights": [
         "100+ vendors onboarded",
         "Mobile-first design",
@@ -319,12 +319,47 @@
         "Responsive design"
       ],
       "imageUrl": "/assets/images/projects/bhautiki.jpg",
-      "adminUrl": "https://bhautikiplus.com",
-      "userUrl": "https://bhautikiplus.com",
-      "playStoreUrl": "https://bhautikiplus.com",
-      "appStoreUrl": "https://bhautikiplus.com",
+      "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
+      "userUrl": "https://student-app-3b632.web.app/",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=in.bhautikiplus.studentapp",
+      "appStoreUrl": "https://apps.apple.com/us/app/bhautiki/id1498917095?ls=1",
       "status": "completed",
-      "category": "web",
+      "category": ["web", "mobile"],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Bhautiki Plus",
+      "description": "Educational platform for physics learning with interactive simulations",
+      "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
+      "technologies": [
+        "Angular",
+        "Android Studio",
+        "Capacitor",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "Ionic",
+        "TypeScript",
+        "Material Design"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "/assets/images/projects/bhautiki.jpg",
+      "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
+      "userUrl": "https://student-app-3b632.web.app/",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "completed",
+      "category": ["web"],
       "highlights": [
         "1000+ students enrolled",
         "3D physics simulations",
