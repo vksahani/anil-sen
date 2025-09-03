@@ -85,7 +85,7 @@ export class ContentService {
 
   private educationSubject = new BehaviorSubject<Education[]>([]);
 
-  cdr = inject(ChangeDetectorRef)
+  // cdr = inject(ChangeDetectorRef)
 
   constructor(
     private http: HttpClient,
@@ -126,7 +126,7 @@ export class ContentService {
             this.educationSubject.next(data.education);
           }
 
-          this.cdr.detectChanges();
+          // this.cdr.detectChanges();
         }
       }
     });
