@@ -33,10 +33,12 @@ export type Project = {
   technologies: string[];
   features: string[];
   imageUrl: string;
-  demoUrl?: string;
-  githubUrl?: string;
+  adminUrl?: string;
+  userUrl?: string;
+  playStoreUrl?: string;
+  appStoreUrl?: string;
   status: 'completed' | 'in-progress' | 'planned';
-  category: 'web' | 'mobile' | 'fullstack';
+  category: string[];
   highlights: string[];
 };
 
@@ -196,7 +198,7 @@ export class ContentService {
   }
 
   getProjectsByCategory(category: string): Project[] {
-    return this.projects.filter(project => project.category === category);
+    return this.projects.filter(project => project.category.includes(category));
   }
 
   getProjectById(id: string): Project | undefined {

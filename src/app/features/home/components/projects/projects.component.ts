@@ -45,9 +45,9 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
                 
                 <div class="project-overlay">
                   <div class="project-actions">
-                    @if (project.demoUrl) {
+                    @if (project.adminUrl) {
                       <a 
-                        [href]="project.demoUrl" 
+                        [href]="project.adminUrl" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         class="action-btn demo-btn"
@@ -58,13 +58,13 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
                           <polyline points="15,3 21,3 21,9"/>
                           <line x1="10" y1="14" x2="21" y2="3"/>
                         </svg>
-                        <span>Live Demo</span>
+                        <span>Admin App</span>
                       </a>
                     }
                     
-                    @if (project.githubUrl) {
+                    @if (project.userUrl) {
                       <a 
-                        [href]="project.githubUrl" 
+                        [href]="project.userUrl" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         class="action-btn github-btn"
@@ -73,7 +73,37 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                           <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                         </svg>
-                        <span>Source Code</span>
+                        <span>User App</span>
+                      </a>
+                    }
+
+                     @if (project.playStoreUrl) {
+                      <a 
+                        [href]="project.playStoreUrl" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="action-btn github-btn"
+                        (click)="$event.stopPropagation()"
+                        [attr.aria-label]="'View ' + project.title + ' source code'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        <span>Play Store</span>
+                      </a>
+                    }
+
+                     @if (project.appStoreUrl) {
+                      <a 
+                        [href]="project.appStoreUrl" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="action-btn github-btn"
+                        (click)="$event.stopPropagation()"
+                        [attr.aria-label]="'View ' + project.title + ' source code'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                        <span>App Store</span>
                       </a>
                     }
                   </div>
@@ -155,7 +185,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
             <h2>{{ selectedProject()?.title }}</h2>
             <div class="modal-badges">
               <span class="category-badge" [attr.data-category]="selectedProject()?.category">
-                {{ getCategoryLabel(selectedProject()?.category || '') }}
+                {{ getCategoryLabel(selectedProject()?.category || []) }}
               </span>
               <span class="status-badge" [attr.data-status]="selectedProject()?.status">
                 {{ getStatusLabel(selectedProject()?.status || 'completed') }}
@@ -205,9 +235,9 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
               </div>
 
               <div class="project-actions-full">
-                @if (selectedProject()?.demoUrl) {
+                @if (selectedProject()?.adminUrl) {
                   <a 
-                    [href]="selectedProject()?.demoUrl" 
+                    [href]="selectedProject()?.adminUrl" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     class="btn btn-primary">
@@ -220,9 +250,9 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
                   </a>
                 }
                 
-                @if (selectedProject()?.githubUrl) {
+                @if (selectedProject()?.userUrl) {
                   <a 
-                    [href]="selectedProject()?.githubUrl" 
+                    [href]="selectedProject()?.userUrl" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     class="btn btn-secondary">
@@ -288,7 +318,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     if (category === 'all') {
       return this.projects();
     }
-    return this.projects().filter(project => project.category === category);
+    return this.projects().filter(project => project.category.includes(category));
   };
 
   setActiveCategory(category: string): void {
@@ -297,7 +327,10 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
 
 
-  getCategoryLabel(category: string): string {
+  getCategoryLabel(category: string | string[]): string {
+    if (Array.isArray(category)) {
+      return category.map(c => this.getCategoryLabel(c)).join(', ');
+    }
     const categoryMap: { [key: string]: string } = {
       'web': 'Web App',
       'mobile': 'Mobile App',
