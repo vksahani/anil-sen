@@ -453,6 +453,20 @@
    }
  }
 
+ // Tablet tweaks
+ @media (max-width: 1024px) {
+   .section {
+     padding: var(--spacing-2xl) 0;
+   }
+ }
+
+ // Small mobile tweaks
+ @media (max-width: 480px) {
+   .section {
+     padding: var(--spacing-lg) 0;
+   }
+ }
+
  // Focus styles for accessibility
  *:focus {
    outline: 2px solid var(--primary-blue);
@@ -597,6 +611,11 @@
    padding: var(--spacing-3xl) 0;
    position: relative;
    // Remove all background overlays to let gradient show through consistently
+
+   // Remove unwanted bottom space from the last child inside sections
+   > *:last-child {
+     margin-bottom: 0;
+   }
 
    // Add floating particles to sections
    &::before {

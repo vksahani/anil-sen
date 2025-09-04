@@ -4,7 +4,7 @@
 
   .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-2xl);
 
     .section-title {
       font-size: 3rem;
@@ -78,9 +78,9 @@
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-3xl);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
 
     .project-card {
       background: rgba(255, 255, 255, 0.95);
@@ -111,7 +111,7 @@
 
       .project-image {
         position: relative;
-        height: 250px;
+        height: 240px;
         overflow: hidden;
 
         .project-img {
@@ -357,18 +357,18 @@
   // Responsive design
   @media (max-width: 1024px) {
     .projects-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--spacing-lg);
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
     }
 
     .section-header .section-title {
-      font-size: 2.5rem;
+      font-size: 2.25rem;
     }
   }
 
   @media (max-width: 768px) {
     .projects-filter {
-      gap: var(--spacing-sm);
+      gap: var(--spacing-xs);
 
       .filter-btn {
         padding: var(--spacing-xs) var(--spacing-md);
@@ -378,11 +378,11 @@
 
     .projects-grid {
       grid-template-columns: 1fr;
-      gap: var(--spacing-md);
+      gap: var(--spacing-sm);
 
       .project-card {
         .project-image {
-          height: 220px;
+          height: 200px;
           
           .project-overlay {
             opacity: 1;
@@ -390,7 +390,7 @@
           }
         }
         .project-content {
-          padding: var(--spacing-lg);
+          padding: var(--spacing-md);
 
           .project-header {
             flex-direction: column;
@@ -406,7 +406,7 @@
     }
 
     .projects-cta {
-      padding: var(--spacing-xl);
+      padding: var(--spacing-lg);
 
       p {
         font-size: 1.125rem;
@@ -414,7 +414,7 @@
     }
 
     .section-header .section-title {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
   }
 
@@ -429,14 +429,14 @@
       .filter-btn {
         white-space: nowrap;
         flex: 0 0 auto;
-        min-height: 40px;
-        padding: var(--spacing-xs) var(--spacing-lg);
+        min-height: 36px;
+        padding: var(--spacing-xs) var(--spacing-md);
       }
     }
 
     .projects-grid .project-card {
       .project-image {
-        height: 200px;
+        height: 180px;
 
         .project-overlay {
           .project-actions {
