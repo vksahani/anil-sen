@@ -23,6 +23,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
               [class.active]="activeCategory() === category.key"
               (click)="setActiveCategory(category.key)"
               [attr.aria-label]="'Filter by ' + category.label + ' projects'"
+              [attr.aria-pressed]="activeCategory() === category.key"
               type="button">
               {{ category.label }}
             </button>
@@ -34,79 +35,20 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
             <div 
               class="project-card"
               [class.visible]="isVisible()"
-              (click)="openProjectModal(project)">
+              (click)="openProjectModal(project)"
+              tabindex="0"
+              (keydown.enter)="openProjectModal(project)"
+              role="button"
+              [attr.aria-label]="'Open details for ' + project.title">
               
               <div class="project-image">
                 <img 
-                  [src]="project.imageUrl" 
+                  [src]="'https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w'" 
                   [alt]="project.title + ' - Project Screenshot'"
                   class="project-img"
                   loading="lazy">
                 
                 <div class="project-overlay">
-                  <div class="project-actions">
-                    @if (project.adminUrl) {
-                      <a 
-                        [href]="project.adminUrl" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="action-btn demo-btn"
-                        (click)="$event.stopPropagation()"
-                        [attr.aria-label]="'View ' + project.title + ' live demo'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                          <polyline points="15,3 21,3 21,9"/>
-                          <line x1="10" y1="14" x2="21" y2="3"/>
-                        </svg>
-                        <span>Admin App</span>
-                      </a>
-                    }
-                    
-                    @if (project.userUrl) {
-                      <a 
-                        [href]="project.userUrl" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="action-btn github-btn"
-                        (click)="$event.stopPropagation()"
-                        [attr.aria-label]="'View ' + project.title + ' source code'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                        </svg>
-                        <span>User App</span>
-                      </a>
-                    }
-
-                     @if (project.playStoreUrl) {
-                      <a 
-                        [href]="project.playStoreUrl" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="action-btn github-btn"
-                        (click)="$event.stopPropagation()"
-                        [attr.aria-label]="'View ' + project.title + ' source code'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                        </svg>
-                        <span>Play Store</span>
-                      </a>
-                    }
-
-                     @if (project.appStoreUrl) {
-                      <a 
-                        [href]="project.appStoreUrl" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        class="action-btn github-btn"
-                        (click)="$event.stopPropagation()"
-                        [attr.aria-label]="'View ' + project.title + ' source code'">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                        </svg>
-                        <span>App Store</span>
-                      </a>
-                    }
-                  </div>
                   
                   <div class="project-status">
                     <span class="status-badge" [attr.data-status]="project.status">
@@ -154,7 +96,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
           <p>Interested in seeing more of my work?</p>
           <a href="#contact" class="btn btn-primary">
             <span>Let's Work Together</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
               <path d="M7 17L17 7M17 7H7M17 7V17"/>
             </svg>
           </a>
@@ -196,7 +138,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
           <div class="modal-body">
             <div class="modal-image">
               <img 
-                [src]="selectedProject()?.imageUrl" 
+                [src]="'https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w'" 
                 [alt]="selectedProject()?.title + ' - Detailed view'"
                 loading="lazy">
             </div>
@@ -240,14 +182,8 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
                     [href]="selectedProject()?.adminUrl" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="btn btn-primary">
-                    <span>View Live Demo</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                      <polyline points="15,3 21,3 21,9"/>
-                      <line x1="10" y1="14" x2="21" y2="3"/>
-                    </svg>
-                  </a>
+                    class="modal-link"
+                    title="Admin App">Admin App</a>
                 }
                 
                 @if (selectedProject()?.userUrl) {
@@ -255,12 +191,26 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
                     [href]="selectedProject()?.userUrl" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="btn btn-secondary">
-                    <span>View Source Code</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                    </svg>
-                  </a>
+                    class="modal-link"
+                    title="User App">User App</a>
+                }
+
+                @if (selectedProject()?.playStoreUrl) {
+                  <a 
+                    [href]="selectedProject()?.playStoreUrl" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="modal-link"
+                    title="Play Store">Play Store</a>
+                }
+
+                @if (selectedProject()?.appStoreUrl) {
+                  <a 
+                    [href]="selectedProject()?.appStoreUrl" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="modal-link"
+                    title="App Store">App Store</a>
                 }
               </div>
             </div>
