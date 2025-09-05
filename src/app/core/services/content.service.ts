@@ -1,6 +1,6 @@
 import { Injectable, PLATFORM_ID, Inject, inject, ChangeDetectorRef } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
 import { catchError, tap } from 'rxjs/operators';
 
@@ -97,7 +97,11 @@ export class ContentService {
   }
 
   private loadContent(): void {
-    this.http.get<any>('/assets/data/content.json').pipe(
+    const url = '/assets/data/content.json';
+    const params = new HttpParams().set('v', Date.now().toString());
+    const headers = new HttpHeaders({ 'Cache-Control': 'no-cache' });
+
+    this.http.get<any>(url, { params, headers }).pipe(
       catchError(error => {
         console.error('Error loading content:', error);
         return of(null);
