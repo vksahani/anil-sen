@@ -156,7 +156,7 @@
     }
 
     .skills-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--spacing-sm);
 
       .skill-card {
@@ -192,7 +192,7 @@
     }
 
     .skills-grid {
-      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
 
       .skill-card {
         padding: var(--spacing-sm);
