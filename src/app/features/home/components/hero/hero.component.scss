@@ -72,11 +72,22 @@
   }
 
   .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3xl);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-3xl);
     margin-bottom: var(--spacing-3xl);
+  }
+
+  .hero-text {
+    flex: 1 1 500px;
+    min-width: 300px;
+  }
+
+  .hero-visual {
+    flex: 1 1 400px;
+    min-width: 300px;
   }
 
   .hero-text {
