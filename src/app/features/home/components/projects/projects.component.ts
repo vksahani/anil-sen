@@ -9,7 +9,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="projects section" #projectsSection>
+    <section class="projects" #projectsSection>
       <div class="container">
         <div class="section-header" [@fadeInUp]>
           <h2 class="section-title">Featured Projects</h2>
@@ -66,7 +66,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
                   </span>
                 </div>
 
-                <p class="project-description">{{ project.description }}</p>
+                <p class="project-description lh-sm">{{ project.description }}</p>
 
                 <div class="project-tech">
                   @for (tech of project.technologies.slice(0, 4); track tech) {
@@ -90,16 +90,6 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
               </div>
             </div>
           }
-        </div>
-
-        <div class="projects-cta" [@fadeInUp]>
-          <p>Interested in seeing more of my work?</p>
-          <a href="#contact" class="btn btn-primary">
-            <span>Let's Work Together</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </a>
         </div>
       </div>
     </section>
@@ -146,7 +136,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
             <div class="modal-details">
               <div class="project-description-full">
                 <h3>About This Project</h3>
-                <p>{{ selectedProject()?.longDescription }}</p>
+                <p class="lh-sm">{{ selectedProject()?.longDescription }}</p>
               </div>
 
               <div class="project-features">

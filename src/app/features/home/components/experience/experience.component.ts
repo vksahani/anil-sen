@@ -47,7 +47,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from '../../../../shared/a
                   </div>
                 </div>
 
-                <p class="description">{{ exp.description }}</p>
+                <p class="description lh-sm">{{ exp.description }}</p>
 
                 <div class="tech-stack">
                   @for (tech of exp.technologies.slice(0, 4); track tech) {
@@ -153,13 +153,13 @@ import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from '../../../../shared/a
             <div class="modal-details">
               <div class="experience-description-full">
                 <h3>About This Role</h3>
-                <p>{{ selectedExperience()!.description }}</p>
+                <p class="lh-sm">{{ selectedExperience()!.description }}</p>
               </div>
 
               @if (selectedExperience()!.responsibilities && selectedExperience()!.responsibilities.length) {
                 <div class="experience-responsibilities">
                   <h3>Key Responsibilities</h3>
-                  <ul>
+                  <ul class="lh-sm">
                     @for (responsibility of selectedExperience()!.responsibilities; track responsibility) {
                       <li>{{ responsibility }}</li>
                     }
@@ -170,7 +170,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from '../../../../shared/a
               @if (selectedExperience()!.achievements && selectedExperience()!.achievements.length) {
                 <div class="experience-achievements">
                   <h3>Key Achievements</h3>
-                  <ul>
+                  <ul class="lh-sm">
                     @for (achievement of selectedExperience()!.achievements; track achievement) {
                       <li>{{ achievement }}</li>
                     }

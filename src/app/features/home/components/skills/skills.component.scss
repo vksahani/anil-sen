@@ -4,7 +4,7 @@
 
   .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
 
     .section-title {
       font-size: 3rem;
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
     flex-wrap: wrap;
 
     .filter-btn {
@@ -69,9 +69,9 @@
 
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
 
     .skill-card {
       background: rgba(255, 255, 255, 0.98);
@@ -128,7 +128,6 @@
         color: var(--neutral-900);
         margin: 0;
         text-align: center;
-        line-height: 1.3;
       }
     }
   }

@@ -76,8 +76,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-3xl);
-    margin-bottom: var(--spacing-3xl);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
   }
 
   .hero-text {
@@ -139,7 +139,6 @@
 
     .hero-description {
       font-size: 1.125rem;
-      line-height: 1.7;
       color: var(--neutral-600);
       margin-bottom: var(--spacing-xl);
       max-width: 500px;
@@ -368,9 +367,8 @@
 
   @media (max-width: 768px) {
     .hero-content {
-      grid-template-columns: 1fr;
+      flex-direction: column;
       gap: var(--spacing-xl);
-      text-align: center;
     }
 
     .hero-text {

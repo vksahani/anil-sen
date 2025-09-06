@@ -1,5 +1,6 @@
  // Import Bootstrap grid system
  @use 'bootstrap/scss/bootstrap-grid';
+ @use 'bootstrap/scss/bootstrap-utilities.scss';
 
  // Import optimized animations
  @use 'styles/animations';
@@ -62,8 +63,6 @@
    --spacing-md: 1rem;
    --spacing-lg: 1.5rem;
    --spacing-xl: 2rem;
-   --spacing-2xl: 3rem;
-   --spacing-3xl: 4rem;
 
    // Border radius
    --radius-sm: 0.25rem;
@@ -107,7 +106,6 @@
 
  body {
    font-family: var(--font-primary);
-   line-height: 1.6;
    color: var(--text-primary);
    background: var(--gradient-background);
    background-size: 400% 400%;
@@ -160,7 +158,6 @@
  h6 {
    font-family: var(--font-heading);
    font-weight: 600;
-   line-height: 1.2;
    color: var(--neutral-900);
    text-shadow: none;
  }
@@ -215,7 +212,7 @@
  }
 
  .section {
-   padding: var(--spacing-3xl) 0;
+   padding: var(--spacing-xl) 0;
  }
 
  .text-center {
@@ -456,7 +453,7 @@
  // Tablet tweaks
  @media (max-width: 1024px) {
    .section {
-     padding: var(--spacing-2xl) 0;
+     padding: var(--spacing-xl) 0;
    }
  }
 
@@ -608,7 +605,7 @@
 
  // Enhanced section styling with animated elements
  .section {
-   padding: var(--spacing-3xl) 0;
+   padding: var(--spacing-xl) 0;
    position: relative;
    // Remove all background overlays to let gradient show through consistently
 
@@ -1066,7 +1063,7 @@ Example: --gradient-background: var(--gradient-option-3);
      0 12px 24px rgba(0, 0, 0, 0.06),
      0 6px 12px rgba(0, 0, 0, 0.04),
      inset 0 1px 0 rgba(255, 255, 255, 0.9);
-   padding: var(--spacing-3xl);
+   padding: var(--spacing-xl);
    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
    position: relative;
    overflow: hidden;
@@ -1144,7 +1141,7 @@ Example: --gradient-background: var(--gradient-option-3);
      0 6px 12px rgba(0, 0, 0, 0.04),
      inset 0 2px 4px rgba(255, 255, 255, 0.3),
      inset 0 -2px 4px rgba(0, 0, 0, 0.05);
-   padding: var(--spacing-2xl);
+   padding: var(--spacing-xl);
    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
    position: relative;
    overflow: hidden;

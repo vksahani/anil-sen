@@ -9,7 +9,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="contact section" #contactSection>
+    <section class="contact section mt-5" #contactSection>
       <div class="container">
         <div class="section-header" [@fadeInUp]>
           <h2 class="section-title">Get In Touch</h2>
@@ -22,7 +22,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
               <div class="contact-info" [@fadeInUp]>
             <div class="contact-intro">
               <h3>Let's Connect</h3>
-              <p>
+              <p class="lh-sm">
                 I'm always interested in hearing about new opportunities and exciting projects. 
                 Whether you have a question, want to discuss a potential collaboration, or just 
                 want to say hello, I'd love to hear from you.
@@ -30,8 +30,8 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
             </div>
 
             <div class="contact-methods">
-              <a 
-                [href]="'mailto:' + personalInfo()?.email" 
+              <a
+                [href]="'mailto:' + personalInfo()?.email"
                 class="contact-method card-glass-premium"
                 [attr.aria-label]="'Send email to ' + personalInfo()?.email">
                 <div class="method-icon">
@@ -44,8 +44,8 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                   <span class="method-label">Email</span>
                   <span class="method-value">{{ personalInfo()?.email }}</span>
                 </div>
-                <button 
-                  class="copy-btn" 
+                <button
+                  class="copy-btn"
                   (click)="copyToClipboard(personalInfo()?.email || '', $event)"
                   [attr.aria-label]="'Copy email address'"
                   type="button">
@@ -56,8 +56,8 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                 </button>
               </a>
 
-              <a 
-                [href]="'tel:' + personalInfo()?.phone" 
+              <a
+                [href]="'tel:' + personalInfo()?.phone"
                 class="contact-method card-glass-premium"
                 [attr.aria-label]="'Call ' + personalInfo()?.phone">
                 <div class="method-icon">
@@ -69,8 +69,8 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                   <span class="method-label">Phone</span>
                   <span class="method-value">{{ personalInfo()?.phone }}</span>
                 </div>
-                <button 
-                  class="copy-btn" 
+                <button
+                  class="copy-btn"
                   (click)="copyToClipboard(personalInfo()?.phone || '', $event)"
                   [attr.aria-label]="'Copy phone number'"
                   type="button">
@@ -81,9 +81,9 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                 </button>
               </a>
 
-              <a 
-                [href]="personalInfo()?.linkedin" 
-                target="_blank" 
+              <a
+                [href]="personalInfo()?.linkedin"
+                target="_blank"
                 rel="noopener noreferrer"
                 class="contact-method card-glass-premium"
                 [attr.aria-label]="'Visit LinkedIn profile'">
@@ -107,9 +107,9 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                 </div>
               </a>
 
-              <a 
-                [href]="personalInfo()?.github" 
-                target="_blank" 
+              <a
+                [href]="personalInfo()?.github"
+                target="_blank"
                 rel="noopener noreferrer"
                 class="contact-method card-glass-premium"
                 [attr.aria-label]="'Visit GitHub profile'">

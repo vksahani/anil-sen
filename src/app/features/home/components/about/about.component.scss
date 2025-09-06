@@ -14,7 +14,7 @@
 
   .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
 
     .section-title {
       font-size: 3rem;
@@ -49,7 +49,7 @@
   .about-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: var(--spacing-3xl);
+    gap: var(--spacing-xl);
     align-items: center;
   }
 
@@ -91,7 +91,6 @@
             font-size: 2rem;
             font-weight: 700;
             color: var(--primary-blue);
-            line-height: 1;
           }
 
           .experience-text {
@@ -116,7 +115,6 @@
 
       p {
         font-size: 1.125rem;
-        line-height: 1.7;
         color: var(--neutral-800);
         text-shadow: none;
         margin-bottom: var(--spacing-lg);
@@ -240,7 +238,6 @@
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-blue);
-            line-height: 1;
             margin-bottom: var(--spacing-sm);
           }
 
@@ -340,7 +337,7 @@
       order: 1;
 
       .about-description .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
 
         .stat-item {

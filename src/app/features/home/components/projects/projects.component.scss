@@ -4,7 +4,7 @@
 
   .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-xl);
 
     .section-title {
       font-size: 3rem;
@@ -40,7 +40,7 @@
     display: flex;
     justify-content: center;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
     flex-wrap: wrap;
 
     .filter-btn {
@@ -78,9 +78,9 @@
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
 
     .project-card {
       background: rgba(255, 255, 255, 0.95);
@@ -153,7 +153,6 @@
               transition: all var(--transition-fast);
               border: 1px solid transparent;
               min-height: 40px;
-              line-height: 1;
               box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 
               svg { display: block; }
@@ -264,7 +263,6 @@
 
         .project-description {
           color: var(--neutral-600);
-          line-height: 1.6;
           margin-bottom: var(--spacing-lg);
         }
 
@@ -317,7 +315,7 @@
 
   .projects-cta {
     text-align: center;
-    padding: var(--spacing-3xl);
+    padding: var(--spacing-xl);
     background: var(--gradient-primary);
     border-radius: var(--radius-xl);
     color: white;
@@ -332,7 +330,7 @@
       display: inline-flex;
       align-items: center;
       gap: var(--spacing-sm);
-      padding: var(--spacing-md) var(--spacing-2xl);
+      padding: var(--spacing-md) var(--spacing-xl);
       background: white;
       color: var(--primary-blue);
       border-radius: var(--radius-lg);
@@ -598,7 +596,6 @@
 
           p {
             color: var(--neutral-700);
-            line-height: 1.7;
           }
 
           ul {

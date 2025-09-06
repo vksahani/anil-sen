@@ -1,11 +1,11 @@
-<section class="about section" #aboutSection>
+<section class="about pt-4 mb-5" #aboutSection>
   <div class="container">
     <div class="section-header" [@fadeInUp]>
       <h2 class="section-title">About Me</h2>
       <p class="section-subtitle">Get to know more about my background and expertise</p>
     </div>
 
-    <div class="card-brooklyn">
+    <div class="card-brooklyn p-5">
       <div class="card-content">
         <div class="about-content">
           <div class="about-image" [@fadeInLeft]>
@@ -14,7 +14,7 @@
                 class="about-img" loading="lazy">
               <div class="image-overlay">
                 <div class="experience-badge">
-                  <span class="experience-number">{{ personalInfo()?.yearsOfExperience }}+</span>
+                  <span class="experience-number lh-sm">{{ personalInfo()?.yearsOfExperience }}+</span>
                   <span class="experience-text">Years Experience</span>
                 </div>
               </div>
@@ -23,7 +23,7 @@
 
           <div class="about-text" [@fadeInRight]>
             <div class="about-description">
-              <p>{{ personalInfo()?.bio }}</p>
+              <p class="lh-sm">{{ personalInfo()?.bio }}</p>
 
               <div class="highlights">
                 <h3>Key Highlights</h3>
@@ -64,17 +64,17 @@
 
               <div class="stats-grid">
                 <div class="stat-item" [class.visible]="isVisible()">
-                  <div class="stat-number" [attr.data-target]="15">0</div>
+                  <div class="stat-number lh-sm" [attr.data-target]="15">0</div>
                   <div class="stat-label">Projects Completed</div>
                 </div>
 
                 <div class="stat-item" [class.visible]="isVisible()">
-                  <div class="stat-number" [attr.data-target]="500">0</div>
+                  <div class="stat-number lh-sm" [attr.data-target]="500">0</div>
                   <div class="stat-label">Happy Clients</div>
                 </div>
 
                 <div class="stat-item" [class.visible]="isVisible()">
-                  <div class="stat-number" [attr.data-target]="10">0</div>
+                  <div class="stat-number lh-sm" [attr.data-target]="10">0</div>
                   <div class="stat-label">Technologies</div>
                 </div>
               </div>
@@ -83,7 +83,7 @@
             <div class="about-actions">
               <a [href]="personalInfo()?.resumeUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-light"
                 aria-label="Download my resume">
-                <span>Download Resume</span>
+                <span class="text-light">Download Resume</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7,10 12,15 17,10" />

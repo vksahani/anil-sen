@@ -24,7 +24,7 @@ import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
 
             <div class="resume-text">
               <h2>Download My Resume</h2>
-              <p>
+              <p class="lh-sm">
                 Get a comprehensive overview of my professional experience, skills, and achievements. 
                 My resume includes detailed information about my projects, technical expertise, and career progression.
               </p>
@@ -93,24 +93,24 @@ import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
 
           <div class="resume-stats">
             <div class="stat-item">
-              <div class="stat-number">{{ personalInfo()?.yearsOfExperience }}+</div>
+              <div class="stat-number lh-sm">{{ personalInfo()?.yearsOfExperience }}+</div>
               <div class="stat-label">Years Experience</div>
             </div>
             
             <div class="stat-item">
-              <div class="stat-number">15+</div>
+              <div class="stat-number lh-sm">15+</div>
               <div class="stat-label">Projects Completed</div>
             </div>
             
             <div class="stat-item">
-              <div class="stat-number">10+</div>
+              <div class="stat-number lh-sm">10+</div>
               <div class="stat-label">Technologies</div>
             </div>
           </div>
         </div>
 
         <div class="resume-testimonial" [@fadeInUp]>
-          <blockquote>
+          <blockquote class="lh-sm">
             "{{ personalInfo()?.name }} is a highly skilled developer with exceptional problem-solving abilities 
             and a keen eye for detail. His technical expertise and collaborative approach make him 
             an invaluable team member."

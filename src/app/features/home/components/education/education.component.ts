@@ -9,7 +9,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="education section" #educationSection>
+    <section class="education" #educationSection>
       <div class="container">
         <div class="section-header" [@fadeInUp]>
           <h2 class="section-title">Education</h2>
@@ -29,7 +29,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                 </div>
                 
                 <div class="education-info">
-                  <h3 class="degree">{{ edu.degree }}</h3>
+                  <h3 class="degree lh-sm">{{ edu.degree }}</h3>
                   <h4 class="field">{{ edu.field }}</h4>
                   <h5 class="institution">{{ edu.institution }}</h5>
                   
@@ -60,7 +60,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
                       <h6>Honors & Achievements</h6>
                       <ul class="honors-list">
                         @for (honor of edu.honors; track honor) {
-                          <li>{{ honor }}</li>
+                          <li class="lh-sm">{{ honor }}</li>
                         }
                       </ul>
                     </div>
@@ -74,7 +74,7 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
         <div class="education-summary" [@fadeInUp]>
           <div class="summary-content">
             <h3>Academic Excellence</h3>
-            <p>
+            <p class="lh-sm">
               My educational journey has provided me with a strong foundation in engineering 
               principles, analytical thinking, and problem-solving methodologies. 
               The combination of theoretical knowledge and practical application has shaped my 
