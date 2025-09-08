@@ -112,12 +112,6 @@
     "icon": "assets/svg/jwt.svg"
   },
   {
-    "name": "MVC",
-    "category": "backend",
-    "description": "Model-View-Controller architectural pattern",
-    "icon": "assets/svg/dotnet.svg"
-  },
-  {
     "name": "VS Code",
     "category": "tools",
     "description": "Code editor for development",
@@ -157,7 +151,7 @@
     "name": "JSON Server",
     "category": "tools",
     "description": "Mock REST API for development",
-    "icon": "assets/svg/json-server.svg"
+    "icon": "assets/svg/jwt.svg"
   },
   {
     "name": "AnalogJS",
