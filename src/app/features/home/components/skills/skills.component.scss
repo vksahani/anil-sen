@@ -41,7 +41,14 @@
     justify-content: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .filter-btn {
       padding: var(--spacing-sm) var(--spacing-lg);
@@ -52,6 +59,8 @@
       font-weight: 500;
       cursor: pointer;
       transition: all var(--transition-fast);
+      white-space: nowrap;
+      flex: 0 0 auto;
 
       &:hover {
         border-color: var(--primary-blue);
@@ -181,12 +190,14 @@
 
   @media (max-width: 480px) {
     .skills-filter {
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      padding: 0 var(--spacing-md);
+      scroll-padding-left: var(--spacing-md);
+      scroll-padding-right: var(--spacing-md);
 
-      .filter-btn {
-        width: 100%;
-        max-width: 200px;
+      .filter-btn:first-child {
+        margin-left: var(--spacing-xl);
       }
     }
 

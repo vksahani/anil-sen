@@ -140,7 +140,7 @@
 
           .highlight-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center; // vertically center icon with text
             gap: var(--spacing-md);
             padding: var(--spacing-md);
             background: rgba(255, 255, 255, 0.98);
@@ -173,8 +173,8 @@
               width: 44px;
               height: 44px;
               display: flex;
-              align-items: center;
-              justify-content: center;
+              align-items: center; // ensure vertical centering inside the circle
+              justify-content: center; // ensure horizontal centering inside the circle
               background: var(--gradient-primary);
               color: #fff;
               border-radius: 50%;
@@ -319,6 +319,22 @@
     }
   }
 
+  // Tablet-only layout: keep all stat sections in a single row
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .about-text {
+      .about-description {
+        .stats-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .highlights {
+          .highlights-list {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     .about-content {
       grid-template-columns: 1fr;
@@ -360,6 +376,24 @@
 
     .section-header .section-title {
       font-size: 2rem;
+    }
+  }
+
+  // Tablet portrait (600px–768px): force 3 stats in a single row
+  // This overrides the earlier 2-column rule for this specific range
+  @media (min-width: 600px) and (max-width: 768px) {
+    .about-text {
+      .about-description {
+        .stats-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: var(--spacing-md);
+        }
+        .highlights {
+          .highlights-list {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+      }
     }
   }
 

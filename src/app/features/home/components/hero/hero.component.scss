@@ -147,7 +147,7 @@
     .hero-actions {
       display: flex;
       gap: var(--spacing-lg);
-      flex-wrap: wrap;
+      flex-wrap: nowrap; // keep buttons in one row
 
       .btn {
         display: inline-flex;
@@ -418,6 +418,44 @@
     .hero-visual .profile-image-wrapper {
       width: 200px;
       height: 200px;
+    }
+  }
+
+  // Tablet-only overrides (769px–1024px)
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .hero-text {
+      .hero-actions {
+        .btn.btn-accent {
+          background: transparent;
+          color: #f97316;
+          border-color: #f97316;
+
+          &:hover {
+            background: transparent;
+            color: #f97316;
+            transform: none;
+          }
+        }
+      }
+    }
+  }
+
+  // Mobile overrides (≤768px)
+  @media (max-width: 768px) {
+    .hero-text {
+      .hero-actions {
+        .btn.btn-accent {
+          background: transparent;
+          color: #f97316;
+          border-color: #f97316;
+
+          &:hover {
+            background: transparent;
+            color: #f97316;
+            transform: none;
+          }
+        }
+      }
     }
   }
 }
