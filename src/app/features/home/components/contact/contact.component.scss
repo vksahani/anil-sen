@@ -45,7 +45,7 @@
   }
 
   .contact-info {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     
@@ -68,6 +68,9 @@
     }
 
     .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-lg);
       margin-bottom: var(--spacing-xl);
 
       .contact-method {
@@ -95,7 +98,7 @@
         .method-icon {
           width: 50px;
           height: 50px;
-          // background: var(--gradient-primary);
+          background: var(--gradient-primary);
           border-radius: var(--radius-md);
           display: flex;
           align-items: center;
@@ -120,6 +123,7 @@
             font-size: 1rem;
             color: var(--neutral-900);
             font-weight: 600;
+            word-break: break-all;
           }
         }
 
@@ -184,12 +188,19 @@
     .section-header .section-title {
       font-size: 2.5rem;
     }
+    .contact-info .contact-methods {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   @media (max-width: 768px) {
     .contact-info {
       .contact-intro h3 {
         font-size: 1.5rem;
+      }
+
+      .contact-methods {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .contact-methods .contact-method {

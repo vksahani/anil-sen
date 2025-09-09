@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-brand">
+      <div class="footer-brand px-3">
         <h3 class="brand-name">{{ personalInfo()?.name }}</h3>
         <p class="brand-tagline">{{ personalInfo()?.title }}</p>
         <p class="brand-description lh-sm">
@@ -63,7 +63,7 @@
       </div>
 
       <div class="footer-social">
-        <h4>Follow Me</h4>
+        <h4 class="d-flex align-items-center justify-content-center">Follow Me</h4>
         <div class="social-links">
           <a 
             [href]="personalInfo()?.linkedin" 

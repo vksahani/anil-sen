@@ -42,6 +42,7 @@
       gap: var(--spacing-xl);
 
       .link-group {
+        padding: var(--spacing-md);
         h4 {
           font-size: 1.125rem;
           font-weight: 600;
@@ -324,8 +325,8 @@
   @media (max-width: 480px) {
     .footer-content {
       .footer-links {
-        grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
       }
 
       .footer-social {
