@@ -1,6 +1,12 @@
 .education {
   background: transparent;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
 
   .section-header {
     text-align: center;
@@ -40,7 +46,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    width: 100%;
+    padding: 0 var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-xl);
 
     .education-card {
       background: white;
@@ -253,6 +262,7 @@
 
         .stat-item {
           display: flex;
+          flex-direction: column;
           align-items: center;
           gap: var(--spacing-md);
           padding: var(--spacing-lg);
@@ -261,6 +271,7 @@
           box-shadow: var(--shadow-md);
           border: 1px solid var(--neutral-200);
           transition: all var(--transition-normal);
+          text-align: center;
 
           &:hover {
             transform: translateY(-3px);
@@ -280,8 +291,6 @@
           }
 
           .stat-content {
-            flex: 1;
-            text-align: left;
 
             .stat-label {
               display: block;
@@ -306,7 +315,7 @@
   // Responsive design
   @media (max-width: 1024px) {
     .education-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--spacing-lg);
 
       .education-card .card-header {
@@ -354,8 +363,8 @@
 
     .education-summary .summary-content {
       .education-stats {
-        grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+        grid-template-columns: repeat(3, 1fr);
 
         .stat-item {
           justify-content: center;
@@ -375,7 +384,8 @@
 
   @media (max-width: 480px) {
     .education-grid {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: center;
 
       .education-card {
         .card-header {
@@ -412,14 +422,23 @@
         font-size: 1rem;
       }
 
-      .education-stats .stat-item {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+      .education-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
 
-        .stat-icon {
-          width: 50px;
-          height: 50px;
-          font-size: 1.5rem;
+        .stat-item {
+          flex-direction: column;
+          gap: var(--spacing-sm);
+
+          &:first-child {
+            grid-column: 1 / -1;
+          }
+
+          .stat-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+          }
         }
       }
     }

@@ -83,14 +83,14 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     this.contentService.skills$.subscribe(skills => {
       if (skills && skills.length > 0) {
         this.skills.set(skills);
-        this.cdr.markForCheck(); // Trigger change detection
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
 
     this.contentService.personalInfo$.subscribe(info => {
       if (info) {
         this.personalInfo.set(info);
-        this.cdr.markForCheck(); // Trigger change detection
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
   }

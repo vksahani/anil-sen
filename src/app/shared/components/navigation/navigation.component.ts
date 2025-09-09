@@ -29,7 +29,7 @@ export class NavigationComponent implements OnInit {
     this.contentService.personalInfo$.subscribe(info => {
       if (info) {
         this.personalInfo = info;
-        this.cdr.markForCheck(); // Trigger change detection
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
   }

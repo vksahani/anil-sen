@@ -11,7 +11,7 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
   template: `
     <section class="projects" #projectsSection>
       <div class="container">
-        <div class="section-header" [@fadeInUp]>
+        <div class="section-header mt-5" [@fadeInUp]>
           <h2 class="section-title">Featured Projects</h2>
           <p class="section-subtitle">A showcase of my recent work and technical achievements</p>
         </div>
@@ -238,7 +238,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     this.contentService.projects$.subscribe(projects => {
       if (projects && projects.length > 0) {
         this.projects.set(projects);
-        this.cdr.markForCheck(); // Trigger change detection
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
   }

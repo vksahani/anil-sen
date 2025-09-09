@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     ])
     .pipe(takeUntil(this.destroy$))
     .subscribe(() => {
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     });
 
     // Initialize performance optimizations

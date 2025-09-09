@@ -127,7 +127,7 @@ export class PerformanceMonitorComponent implements OnInit, OnDestroy {
       // Check if animations are disabled
       this.animationsDisabled = document.body.classList.contains('reduce-animations');
 
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     }
 
     this.animationFrame = requestAnimationFrame(() => this.updateMetrics());

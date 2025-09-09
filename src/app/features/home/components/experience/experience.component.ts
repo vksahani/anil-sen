@@ -233,7 +233,7 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
     this.contentService.experience$.subscribe(experience => {
       if (experience && experience.length > 0) {
         this.experience.set(experience);
-        this.cdr.markForCheck(); // Trigger change detection
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
   }

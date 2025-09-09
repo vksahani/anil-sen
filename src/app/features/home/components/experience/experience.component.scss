@@ -329,7 +329,7 @@
     }
 
     .experience-summary .summary-stats {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--spacing-lg);
 
       .stat-item {
@@ -347,6 +347,11 @@
   }
 
   @media (max-width: 480px) {
+    .experience-summary .summary-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+    }
+
     .experience-grid .experience-card {
       .experience-content {
         padding: var(--spacing-md);

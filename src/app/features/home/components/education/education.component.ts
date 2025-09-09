@@ -137,7 +137,7 @@ export class EducationComponent implements OnInit, AfterViewInit {
     this.contentService.education$.subscribe(education => {
       if (education && education.length > 0) {
         this.education.set(education);
-        this.cdr.markForCheck(); // Trigger change detection
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
   }
@@ -151,6 +151,4 @@ export class EducationComponent implements OnInit, AfterViewInit {
       });
     });
   }
-
-
 }

@@ -166,7 +166,7 @@ export class ContactComponent implements OnInit, AfterViewInit {
     this.contentService.personalInfo$.subscribe(info => {
       if (info) {
         this.personalInfo.set(info);
-        this.cdr.markForCheck(); // Trigger change detection
+        this.cdr.detectChanges(); // Trigger change detection
       }
     });
   }
