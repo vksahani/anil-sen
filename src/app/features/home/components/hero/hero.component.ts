@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, signal, AfterViewInit, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, signal, AfterViewInit, ElementRef, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations/animations';
@@ -21,6 +21,7 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
   private animationFrameId: number | null = null;
 
   private contentService = inject(ContentService);
+  private cdr = inject(ChangeDetectorRef);
 
   constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
@@ -28,7 +29,10 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo.set(info);
+      if (info) {
+        this.personalInfo.set(info);
+        this.cdr.detectChanges(); // Trigger change detection
+      }
     });
   }
 
@@ -97,6 +101,22 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
     // Only animate if user hasn't requested reduced motion
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       animate();
+    }
+  }
+
+  scrollToSection(event: Event, sectionId: string): void {
+    event.preventDefault();
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
 }

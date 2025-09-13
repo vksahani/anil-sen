@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Skill } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -8,49 +8,14 @@ import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animat
   selector: 'app-skills',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <section class="skills section" #skillsSection>
-      <div class="container">
-        <div class="section-header" [@fadeInUp]>
-          <h2 class="section-title">Skills & Technologies</h2>
-          <p class="section-subtitle">Technologies and tools I work with</p>
-        </div>
-
-        <div class="skills-filter" [@fadeInUp]>
-          <button 
-            *ngFor="let category of categories" 
-            class="filter-btn"
-            [class.active]="activeCategory() === category.key"
-            (click)="setActiveCategory(category.key)"
-            [attr.aria-label]="'Filter by ' + category.label + ' skills'"
-            type="button">
-            {{ category.label }}
-          </button>
-        </div>
-
-        <div class="skills-grid" [@stagger]>
-          <div 
-            *ngFor="let skill of filteredSkills(); trackBy: trackBySkill" 
-            class="skill-card"
-            [class.visible]="isVisible()">
-            
-            <div class="skill-icon" [attr.aria-label]="skill.name + ' icon'">
-              {{ getSkillIcon(skill.name) }}
-            </div>
-            
-            <h3 class="skill-name">{{ skill.name }}</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-  `,
+  templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss'],
   animations: [fadeInUp, staggerAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SkillsComponent implements OnInit, AfterViewInit {
   @ViewChild('skillsSection') skillsSection!: ElementRef;
-  
+
   skills = signal<Skill[]>([]);
   personalInfo = signal<any>(null);
   activeCategory = signal<string>('all');
@@ -60,40 +25,14 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     { key: 'all', label: 'All Skills' },
     { key: 'frontend', label: 'Frontend' },
     { key: 'backend', label: 'Backend' },
-    { key: 'devops', label: 'DevOps' },
     { key: 'tools', label: 'Tools' }
   ];
 
-  private skillIcons: { [key: string]: string } = {
-    'NodeJS': '🟢',
-    'HTML': '🌐',
-    'CSS': '🎨',
-    'SCSS': '💅',
-    'Bootstrap': '🅱️',
-    'JavaScript': '📜',
-    'TypeScript': '📘',
-    'VS Code': '💻',
-    'JSON Server': '📊',
-    'Ionic': '⚡',
-    'MongoDB': '🍃',
-    'Firebase': '🔥',
-    'Angular': '🅰️',
-    'MVC': '🏗️',
-    'Capacitor': '📱',
-    'Firebase Cloud': '☁️',
-    'Cordova': '📲',
-    'GitHub': '🐙',
-    'JWT': '🔐',
-    'Express': '🚀',
-    'Mongoose': '🦫',
-    'AnalogJS': '⚡',
-    'Xcode': '🍎',
-    'Angular Material': '🎯',
-    'Android Studio': '🤖'
-  };
+
 
   private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
+  private cdr = inject(ChangeDetectorRef);
 
   constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
@@ -101,11 +40,17 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.contentService.skills$.subscribe(skills => {
-      this.skills.set(skills);
+      if (skills && skills.length > 0) {
+        this.skills.set(skills);
+        this.cdr.detectChanges(); // Trigger change detection
+      }
     });
 
     this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo.set(info);
+      if (info) {
+        this.personalInfo.set(info);
+        this.cdr.detectChanges(); // Trigger change detection
+      }
     });
   }
 
@@ -131,13 +76,9 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     this.activeCategory.set(category);
   }
 
-  trackBySkill(index: number, skill: Skill): string {
-    return skill.name;
-  }
 
-  getSkillIcon(skillName: string): string {
-    return this.skillIcons[skillName] || '⚙️';
-  }
+
+
 
   getCategoryLabel(category: string): string {
     const categoryMap: { [key: string]: string } = {

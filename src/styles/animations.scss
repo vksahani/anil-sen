@@ -1,0 +1,295 @@
+// Optimized Animation System
+// Performance-first approach with hardware acceleration
+
+// Hardware acceleration utilities
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+// Optimized keyframes - using only transform and opacity for best performance
+@keyframes floatUpDown {
+  0%, 100% { 
+    transform: translate3d(0, 0, 0); 
+  }
+  50% { 
+    transform: translate3d(0, -20px, 0); 
+  }
+}
+
+@keyframes morphShape {
+  0%, 100% { 
+    transform: translate3d(0, 0, 0) scale(1); 
+    border-radius: 50%; 
+  }
+  33% { 
+    transform: translate3d(10px, -15px, 0) scale(1.1); 
+    border-radius: 60% 40% 30% 70%; 
+  }
+  66% { 
+    transform: translate3d(-10px, -10px, 0) scale(0.9); 
+    border-radius: 30% 60% 70% 40%; 
+  }
+}
+
+@keyframes particleFloat {
+  0% { 
+    transform: translate3d(0, 100vh, 0) scale(0); 
+    opacity: 0; 
+  }
+  10% { 
+    opacity: 1; 
+  }
+  90% { 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translate3d(0, -100px, 0) scale(1); 
+    opacity: 0; 
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: scale(1.05); 
+    opacity: 1; 
+  }
+}
+
+@keyframes shimmer {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(100%); 
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% { 
+    opacity: 0.5; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Performance-optimized animation classes
+.animate-float {
+  animation: floatUpDown 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+// Intersection Observer triggered animations
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Optimized floating shapes with reduced complexity
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  contain: layout style paint;
+  
+  // Use CSS custom properties for easier performance tuning
+  --shape-duration: 8s;
+  --shape-delay: 0s;
+  
+  animation: floatUpDown var(--shape-duration) ease-in-out infinite;
+  animation-delay: var(--shape-delay);
+  
+  // Simplified backgrounds - no backdrop-filter for better performance
+  &.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(147, 197, 253, 0.15) 0%, transparent 70%);
+    --shape-duration: 8s;
+    --shape-delay: 0s;
+  }
+  
+  &.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(251, 207, 232, 0.12) 0%, transparent 70%);
+    --shape-duration: 10s;
+    --shape-delay: 2s;
+  }
+  
+  &.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(134, 239, 172, 0.15) 0%, transparent 70%);
+    --shape-duration: 7s;
+    --shape-delay: 4s;
+  }
+  
+  &.shape-4 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.12) 0%, transparent 70%);
+    --shape-duration: 9s;
+    --shape-delay: 1s;
+  }
+  
+  &.shape-5 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(254, 215, 170, 0.15) 0%, transparent 70%);
+    --shape-duration: 6s;
+    --shape-delay: 3s;
+  }
+}
+
+// Optimized particles
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(147, 197, 253, 0.6);
+  border-radius: 50%;
+  will-change: transform, opacity;
+  animation: particleFloat 15s linear infinite;
+  
+  &.particle-1 { animation-delay: 0s; }
+  &.particle-2 { animation-delay: 3s; }
+  &.particle-3 { animation-delay: 6s; }
+  &.particle-4 { animation-delay: 9s; }
+  &.particle-5 { animation-delay: 12s; }
+}
+
+// Performance optimizations for mobile and low-end devices
+@media (max-width: 768px) {
+  .floating-shape {
+    // Reduce animation complexity on mobile
+    animation-duration: calc(var(--shape-duration) * 1.5);
+    
+    &.shape-1, &.shape-4 {
+      // Hide larger shapes on mobile to reduce GPU load
+      display: none;
+    }
+  }
+  
+  .particle {
+    // Reduce particle count on mobile
+    &.particle-4, &.particle-5 {
+      display: none;
+    }
+  }
+}
+
+// Respect user preferences
+@media (prefers-reduced-motion: reduce) {
+  .floating-shape,
+  .particle,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-shimmer {
+    animation: none !important;
+  }
+  
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+// High contrast mode optimizations
+@media (prefers-contrast: high) {
+  .floating-shape,
+  .particle {
+    opacity: 0.3;
+  }
+}

@@ -9,169 +9,163 @@
     "linkedin": "https://www.linkedin.com/in/vishal-kumar-2ab7ab146",
     "github": "https://github.com/vishal-quadralyst",
     "website": "https://vishalkumar.dev",
-    "bio": "Results-driven Angular and Ionic Developer with 2.5 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
+    "bio": "Results-driven Angular and Ionic Developer with 3 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
     "profileImage": "/assets/images/profile.jpg",
     "resumeUrl": "/assets/documents/vishal-kumar-resume.pdf",
     "yearsOfExperience": 3
   },
   "skills": [
-    {
-      "name": "Angular",
-      "category": "frontend",
-      "description": "Web application framework for building dynamic applications",
-      "icon": "angular"
-    },
-    {
-      "name": "Ionic",
-      "category": "frontend",
-      "description": "Cross-platform mobile app development framework",
-      "icon": "ionic"
-    },
-    {
-      "name": "TypeScript",
-      "category": "frontend",
-      "description": "Typed JavaScript for better development experience",
-      "icon": "typescript"
-    },
-    {
-      "name": "JavaScript",
-      "category": "frontend",
-      "description": "Core programming language for web development",
-      "icon": "javascript"
-    },
-    {
-      "name": "HTML",
-      "category": "frontend",
-      "description": "Markup language for web pages",
-      "icon": "html5"
-    },
-    {
-      "name": "CSS",
-      "category": "frontend",
-      "description": "Styling language for web pages",
-      "icon": "css3"
-    },
-    {
-      "name": "SCSS",
-      "category": "frontend",
-      "description": "CSS preprocessor with enhanced features",
-      "icon": "sass"
-    },
-    {
-      "name": "Bootstrap",
-      "category": "frontend",
-      "description": "CSS framework for responsive design",
-      "icon": "bootstrap"
-    },
-    {
-      "name": "Angular Material",
-      "category": "frontend",
-      "description": "Material Design components for Angular",
-      "icon": "material"
-    },
-    {
-      "name": "NodeJS",
-      "category": "backend",
-      "description": "Server-side JavaScript runtime environment",
-      "icon": "nodejs"
-    },
-    {
-      "name": "Express",
-      "category": "backend",
-      "description": "Node.js web application framework",
-      "icon": "express"
-    },
-    {
-      "name": "MongoDB",
-      "category": "backend",
-      "description": "NoSQL database for modern applications",
-      "icon": "mongodb"
-    },
-    {
-      "name": "Mongoose",
-      "category": "backend",
-      "description": "MongoDB object modeling for Node.js",
-      "icon": "mongoose"
-    },
-    {
-      "name": "Firebase",
-      "category": "backend",
-      "description": "Backend-as-a-Service platform",
-      "icon": "firebase"
-    },
-    {
-      "name": "Firebase Cloud",
-      "category": "backend",
-      "description": "Cloud functions and hosting services",
-      "icon": "firebase"
-    },
-    {
-      "name": "JWT",
-      "category": "backend",
-      "description": "JSON Web Tokens for authentication",
-      "icon": "jwt"
-    },
-    {
-      "name": "MVC",
-      "category": "backend",
-      "description": "Model-View-Controller architectural pattern",
-      "icon": "mvc"
-    },
-    {
-      "name": "VS Code",
-      "category": "tools",
-      "description": "Code editor for development",
-      "icon": "vscode"
-    },
-    {
-      "name": "GitHub",
-      "category": "tools",
-      "description": "Version control and collaboration platform",
-      "icon": "github"
-    },
-    {
-      "name": "Xcode",
-      "category": "tools",
-      "description": "iOS development IDE",
-      "icon": "xcode"
-    },
-    {
-      "name": "Android Studio",
-      "category": "tools",
-      "description": "Android development IDE",
-      "icon": "android"
-    },
-    {
-      "name": "Capacitor",
-      "category": "tools",
-      "description": "Native mobile app runtime",
-      "icon": "capacitor"
-    },
-    {
-      "name": "Cordova",
-      "category": "tools",
-      "description": "Mobile app development platform",
-      "icon": "cordova"
-    },
-    {
-      "name": "JSON Server",
-      "category": "tools",
-      "description": "Mock REST API for development",
-      "icon": "json"
-    },
-    {
-      "name": "AnalogJS",
-      "category": "frontend",
-      "description": "Angular meta-framework for full-stack development",
-      "icon": "analog"
-    }
-  ],
+  {
+    "name": "Angular",
+    "category": "frontend",
+    "description": "Web application framework for building dynamic applications",
+    "icon": "assets/svg/angular.svg"
+  },
+  {
+    "name": "Ionic",
+    "category": "frontend",
+    "description": "Cross-platform mobile app development framework",
+    "icon": "assets/svg/ionic.svg"
+  },
+  {
+    "name": "TypeScript",
+    "category": "frontend",
+    "description": "Typed JavaScript for better development experience",
+    "icon": "assets/svg/typescript.svg"
+  },
+  {
+    "name": "JavaScript",
+    "category": "frontend",
+    "description": "Core programming language for web development",
+    "icon": "assets/svg/javascript.svg"
+  },
+  {
+    "name": "HTML",
+    "category": "frontend",
+    "description": "Markup language for web pages",
+    "icon": "assets/svg/html.svg"
+  },
+  {
+    "name": "CSS",
+    "category": "frontend",
+    "description": "Styling language for web pages",
+    "icon": "assets/svg/css.svg"
+  },
+  {
+    "name": "SCSS",
+    "category": "frontend",
+    "description": "CSS preprocessor with enhanced features",
+    "icon": "assets/svg/scss.svg"
+  },
+  {
+    "name": "Bootstrap",
+    "category": "frontend",
+    "description": "CSS framework for responsive design",
+    "icon": "assets/svg/bootstrap.svg"
+  },
+  {
+    "name": "Angular Material",
+    "category": "frontend",
+    "description": "Material Design components for Angular",
+    "icon": "assets/svg/angular-material.svg"
+  },
+  {
+    "name": "NodeJS",
+    "category": "backend",
+    "description": "Server-side JavaScript runtime environment",
+    "icon": "assets/svg/nodejs.svg"
+  },
+  {
+    "name": "Express",
+    "category": "backend",
+    "description": "Node.js web application framework",
+    "icon": "assets/svg/express.svg"
+  },
+  {
+    "name": "MongoDB",
+    "category": "backend",
+    "description": "NoSQL database for modern applications",
+    "icon": "assets/svg/mongoDb.svg"
+  },
+  {
+    "name": "Mongoose",
+    "category": "backend",
+    "description": "MongoDB object modeling for Node.js",
+    "icon": "assets/svg/mongoDb.svg"
+  },
+  {
+    "name": "Firebase",
+    "category": "backend",
+    "description": "Backend-as-a-Service platform",
+    "icon": "assets/svg/firebase.svg"
+  },
+  {
+    "name": "Firebase Cloud",
+    "category": "backend",
+    "description": "Cloud functions and hosting services",
+    "icon": "assets/svg/firebase.svg"
+  },
+  {
+    "name": "JWT",
+    "category": "backend",
+    "description": "JSON Web Tokens for authentication",
+    "icon": "assets/svg/jwt.svg"
+  },
+  {
+    "name": "VS Code",
+    "category": "tools",
+    "description": "Code editor for development",
+    "icon": "assets/svg/vscode.svg"
+  },
+  {
+    "name": "GitHub",
+    "category": "tools",
+    "description": "Version control and collaboration platform",
+    "icon": "assets/svg/github.svg"
+  },
+  {
+    "name": "Xcode",
+    "category": "tools",
+    "description": "iOS development IDE",
+    "icon": "assets/svg/xcode.svg"
+  },
+  {
+    "name": "Android Studio",
+    "category": "tools",
+    "description": "Android development IDE",
+    "icon": "assets/svg/android-studio.svg"
+  },
+  {
+    "name": "Capacitor",
+    "category": "tools",
+    "description": "Native mobile app runtime",
+    "icon": "assets/svg/capacitor.svg"
+  },
+  {
+    "name": "Cordova",
+    "category": "tools",
+    "description": "Mobile app development platform",
+    "icon": "assets/svg/cordova.svg"
+  },
+  {
+    "name": "JSON Server",
+    "category": "tools",
+    "description": "Mock REST API for development",
+    "icon": "assets/svg/jwt.svg"
+  },
+  {
+    "name": "AnalogJS",
+    "category": "frontend",
+    "description": "Angular meta-framework for full-stack development",
+    "icon": "assets/svg/analogjs.svg"
+  }
+],
   "experience": [
     {
       "id": "1",
       "company": "Quadralyst Pvt Ltd",
       "position": "Senior Web Developer",
-      "startDate": "2021-03",
+      "startDate": "2022-12",
       "endDate": null,
       "description": "Leading frontend development initiatives and mentoring junior developers",
       "responsibilities": [
@@ -197,14 +191,14 @@
         "Firebase Cloud",
         "Android Studio"
       ],
-      "location": "Remote"
+      "location": "Indore (M.P.)"
     },
     {
       "id": "2",
       "company": "The Stepping Stone",
       "position": "Frontend Developer",
-      "startDate": "2019-06",
-      "endDate": "2021-02",
+      "startDate": "2022-06",
+      "endDate": "2022-10",
       "description": "Developed user interfaces and enhanced user experience for web applications",
       "responsibilities": [
         "Built responsive web applications using Angular and modern CSS frameworks",
@@ -213,7 +207,6 @@
         "Participated in agile development processes and sprint planning"
       ],
       "achievements": [
-        "Delivered 10+ successful web applications",
         "Improved user engagement by 35% through UX enhancements",
         "Reduced development time by 25% through reusable component library"
       ],
@@ -222,9 +215,15 @@
         "JavaScript",
         "Bootstrap",
         "SCSS",
-        "Node.js"
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "MVC",
+        "JSON Server"
       ],
-      "location": "Hybrid"
+      "location": "Indore (M.P.)"
     }
   ],
   "projects": [
@@ -235,10 +234,12 @@
       "longDescription": "A comprehensive online tambola (bingo) platform that allows users to create and join games, with real-time synchronization and interactive gameplay features.",
       "technologies": [
         "Angular",
-        "Socket.io",
-        "Node.js",
-        "MongoDB",
-        "Express"
+        "Android Studio",
+        "Ionic",
+        "Firebase",
+        "Firebase Cloud",
+        "Capacitor",
+        "RxJS"
       ],
       "features": [
         "Real-time multiplayer",
@@ -247,10 +248,12 @@
         "Responsive design"
       ],
       "imageUrl": "/assets/images/projects/partytambola.jpg",
-      "demoUrl": "https://partytambola.com",
-      "githubUrl": "https://github.com/vishalkumar/partytambola",
+      "adminUrl": "",
+      "userUrl": "",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.partytambola",
+      "appStoreUrl": "https://apps.apple.com/us/app/party-tambola-housie-game/id1498917095?ls=1",
       "status": "completed",
-      "category": "web",
+      "category": ["mobile"],
       "highlights": [
         "500+ active users",
         "Real-time synchronization",
@@ -264,9 +267,9 @@
       "longDescription": "A marketplace connecting local artisans with customers, featuring product catalogs, order management, and payment integration.",
       "technologies": [
         "Angular",
-        "Ionic",
         "Firebase",
-        "Stripe"
+        "Firebase Cloud",
+        "AnalogJS"
       ],
       "features": [
         "Product catalog",
@@ -275,9 +278,12 @@
         "Vendor dashboard"
       ],
       "imageUrl": "/assets/images/projects/durud.jpg",
-      "demoUrl": "https://durud.com",
+      "adminUrl": "https://durud-e7449.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
       "status": "completed",
-      "category": "fullstack",
+      "category": ["fullstack"],
       "highlights": [
         "100+ vendors onboarded",
         "Mobile-first design",
@@ -291,8 +297,12 @@
       "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
       "technologies": [
         "Angular",
-        "Three.js",
-        "WebGL",
+        "Android Studio",
+        "Capacitor",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "Ionic",
         "TypeScript",
         "Material Design"
       ],
@@ -303,9 +313,47 @@
         "Responsive design"
       ],
       "imageUrl": "/assets/images/projects/bhautiki.jpg",
-      "demoUrl": "https://bhautikiplus.com",
+      "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
+      "userUrl": "https://student-app-3b632.web.app/",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=in.bhautikiplus.studentapp",
+      "appStoreUrl": "https://apps.apple.com/us/app/bhautiki/id1498917095?ls=1",
       "status": "completed",
-      "category": "web",
+      "category": ["web", "mobile"],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Bhautiki Plus",
+      "description": "Educational platform for physics learning with interactive simulations",
+      "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
+      "technologies": [
+        "Angular",
+        "Android Studio",
+        "Capacitor",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "Ionic",
+        "TypeScript",
+        "Material Design"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "/assets/images/projects/bhautiki.jpg",
+      "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
+      "userUrl": "https://student-app-3b632.web.app/",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "completed",
+      "category": ["web"],
       "highlights": [
         "1000+ students enrolled",
         "3D physics simulations",

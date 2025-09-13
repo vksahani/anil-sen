@@ -1,0 +1,107 @@
+<section class="education" #educationSection>
+      <div class="container">
+        <div class="section-header" [@fadeInUp]>
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">My academic background and qualifications</p>
+        </div>
+
+        <div class="education-grid">
+          @for (edu of education(); track edu.id; let i = $index) {
+            <div 
+              class="education-card"
+              [class.visible]="isVisible()"
+              [@fadeInUp]="{ delay: i * 200 + 'ms' }">
+              
+              <div class="card-header">
+                <div class="institution-logo">
+                  🎓
+                </div>
+                
+                <div class="education-info">
+                  <h3 class="degree lh-sm">{{ edu.degree }}</h3>
+                  <h4 class="field">{{ edu.field }}</h4>
+                  <h5 class="institution">{{ edu.institution }}</h5>
+                  
+                  <div class="education-meta">
+                    <span class="duration">{{ edu.startYear }} - {{ edu.endYear }}</span>
+                    @if (edu.grade) {
+                      <span class="grade">{{ edu.grade }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
+
+              @if (edu.coursework || edu.honors) {
+                <div class="card-body">
+                  @if (edu.coursework && edu.coursework.length > 0) {
+                    <div class="coursework">
+                      <h6>Relevant Coursework</h6>
+                      <div class="coursework-tags">
+                        @for (course of edu.coursework; track course) {
+                          <span class="course-tag">{{ course }}</span>
+                        }
+                      </div>
+                    </div>
+                  }
+
+                  @if (edu.honors && edu.honors.length > 0) {
+                    <div class="honors">
+                      <h6>Honors & Achievements</h6>
+                      <ul class="honors-list">
+                        @for (honor of edu.honors; track honor) {
+                          <li class="lh-sm">{{ honor }}</li>
+                        }
+                      </ul>
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="education-summary" [@fadeInUp]>
+          <div class="summary-content">
+            <h3>Academic Excellence</h3>
+            <p class="lh-sm">
+              My educational journey has provided me with a strong foundation in engineering 
+              principles, analytical thinking, and problem-solving methodologies. 
+              The combination of theoretical knowledge and practical application has shaped my 
+              approach to software development and technical innovation.
+            </p>
+            
+            <div class="education-stats">
+              @if (education()[0]) {
+                <div class="stat-item">
+                  <div class="stat-icon">📚</div>
+                  <div class="stat-content">
+                    <span class="stat-label">Degree</span>
+                    <span class="stat-value">{{ education()[0].degree }}</span>
+                  </div>
+                </div>
+              }
+              
+              @if (education()[0]) {
+                <div class="stat-item">
+                  <div class="stat-icon">🏆</div>
+                  <div class="stat-content">
+                    <span class="stat-label">Grade</span>
+                    <span class="stat-value">{{ education()[0].grade }}</span>
+                  </div>
+                </div>
+              }
+              
+              @if (education()[0]) {
+                <div class="stat-item">
+                  <div class="stat-icon">📅</div>
+                  <div class="stat-content">
+                    <span class="stat-label">Graduated</span>
+                    <span class="stat-value">{{ education()[0].endYear }}</span>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

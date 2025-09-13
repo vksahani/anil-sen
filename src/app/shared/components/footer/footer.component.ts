@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../core/services/content.service';
 
@@ -18,6 +18,7 @@ export class FooterComponent implements OnInit {
   angularVersion = '20';
 
   private contentService = inject(ContentService);
+  private cdr = inject(ChangeDetectorRef);
 
   constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
@@ -31,7 +32,10 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo.set(info);
+      if (info) {
+        this.personalInfo.set(info);
+        this.cdr.detectChanges(); // Trigger change detection
+      }
     });
   }
 

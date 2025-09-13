@@ -1,8 +1,8 @@
 import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 export type Skill = {
   name: string;
@@ -33,10 +33,12 @@ export type Project = {
   technologies: string[];
   features: string[];
   imageUrl: string;
-  demoUrl?: string;
-  githubUrl?: string;
+  adminUrl?: string;
+  userUrl?: string;
+  playStoreUrl?: string;
+  appStoreUrl?: string;
   status: 'completed' | 'in-progress' | 'planned';
-  category: 'web' | 'mobile' | 'fullstack';
+  category: string[];
   highlights: string[];
 };
 
@@ -87,45 +89,25 @@ export class ContentService {
     private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.initializeWithDefaults();
     if (isPlatformBrowser(this.platformId)) {
       this.loadContent();
     }
   }
 
-  private initializeWithDefaults(): void {
-    // Initialize with default data for SSR
-    this.personalInfoSubject.next({
-      name: 'Vishal Kumar',
-      title: 'Web & Application Developer',
-      email: 'vishalkumarbanmore@gmail.com',
-      phone: '+91-8269423244',
-      location: 'Indore (M.P.)',
-      dateOfBirth: '08-07-1998',
-      linkedin: 'https://www.linkedin.com/in/vishal-kumar-2ab7ab146',
-      github: 'https://github.com/vishal-quadralyst',
-      website: 'https://vishalkumar.dev',
-      bio: 'Results-driven Angular and Ionic Developer with 2.5 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications.',
-      profileImage: '/assets/images/profile.jpg',
-      resumeUrl: '/assets/documents/vishal-kumar-resume.pdf',
-      yearsOfExperience: 2.5
-    });
-
-    // Initialize with default skills
-    this.skillsSubject.next([
-      { name: 'Angular', category: 'frontend', description: 'Expert in Angular framework', icon: 'angular' },
-      { name: 'TypeScript', category: 'frontend', description: 'Strong typing and modern JavaScript', icon: 'typescript' },
-      { name: 'Ionic', category: 'frontend', description: 'Cross-platform mobile development', icon: 'ionic' },
-      { name: 'Node.js', category: 'backend', description: 'Server-side JavaScript runtime', icon: 'nodejs' },
-      { name: 'Firebase', category: 'backend', description: 'Backend-as-a-Service platform', icon: 'firebase' }
-    ]);
-  }
-
   private loadContent(): void {
-    this.http.get<any>('/assets/data/content.json').pipe(
+    const url = '/assets/data/content.json';
+    const params = new HttpParams().set('v', Date.now().toString());
+    const headers = new HttpHeaders({ 'Cache-Control': 'no-cache' });
+
+    this.http.get<any>(url, { params, headers }).pipe(
       catchError(error => {
         console.error('Error loading content:', error);
         return of(null);
+      }),
+      tap(data => {
+        if (data) {
+          console.log('Content loaded successfully:', data);
+        }
       })
     ).subscribe({
       next: (data) => {
@@ -148,6 +130,22 @@ export class ContentService {
         }
       }
     });
+  }
+
+  // Method to reload content manually
+  reloadContent(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadContent();
+    }
+  }
+
+  // Method to check if data is loaded
+  isDataLoaded(): boolean {
+    return this.personalInfoSubject.value !== null && 
+           this.skillsSubject.value.length > 0 && 
+           this.experienceSubject.value.length > 0 && 
+           this.projectsSubject.value.length > 0 && 
+           this.educationSubject.value.length > 0;
   }
 
   // Getters for observables
@@ -200,7 +198,7 @@ export class ContentService {
   }
 
   getProjectsByCategory(category: string): Project[] {
-    return this.projects.filter(project => project.category === category);
+    return this.projects.filter(project => project.category.includes(category));
   }
 
   getProjectById(id: string): Project | undefined {

@@ -1,15 +1,22 @@
 .education {
-  background: var(--neutral-50);
+  background: transparent;
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
 
   .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
 
     .section-title {
       font-size: 3rem;
       font-weight: 700;
       color: var(--neutral-900);
+      text-shadow: none;
       margin-bottom: var(--spacing-md);
       position: relative;
 
@@ -28,7 +35,8 @@
 
     .section-subtitle {
       font-size: 1.125rem;
-      color: var(--neutral-600);
+      color: var(--neutral-700);
+      text-shadow: none;
       max-width: 600px;
       margin: 0 auto;
     }
@@ -36,9 +44,12 @@
 
   .education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-3xl);
+    width: 100%;
+    padding: 0 var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-xl);
 
     .education-card {
       background: white;
@@ -64,9 +75,9 @@
       .card-header {
         padding: var(--spacing-xl);
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: var(--spacing-lg);
-        border-bottom: 1px solid var(--neutral-200);
+        // border-bottom: 1px solid var(--neutral-200);
 
         .institution-logo {
           width: 80px;
@@ -89,7 +100,6 @@
             font-weight: 700;
             color: var(--neutral-900);
             margin-bottom: var(--spacing-xs);
-            line-height: 1.2;
           }
 
           .field {
@@ -206,7 +216,6 @@
             li {
               padding: var(--spacing-sm) 0;
               color: var(--neutral-700);
-              line-height: 1.6;
               position: relative;
               padding-left: var(--spacing-lg);
 
@@ -242,7 +251,6 @@
 
       p {
         font-size: 1.125rem;
-        line-height: 1.7;
         color: var(--neutral-700);
         margin-bottom: var(--spacing-xl);
       }
@@ -254,6 +262,7 @@
 
         .stat-item {
           display: flex;
+          flex-direction: column;
           align-items: center;
           gap: var(--spacing-md);
           padding: var(--spacing-lg);
@@ -262,6 +271,7 @@
           box-shadow: var(--shadow-md);
           border: 1px solid var(--neutral-200);
           transition: all var(--transition-normal);
+          text-align: center;
 
           &:hover {
             transform: translateY(-3px);
@@ -281,8 +291,6 @@
           }
 
           .stat-content {
-            flex: 1;
-            text-align: left;
 
             .stat-label {
               display: block;
@@ -307,7 +315,7 @@
   // Responsive design
   @media (max-width: 1024px) {
     .education-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--spacing-lg);
 
       .education-card .card-header {
@@ -355,8 +363,8 @@
 
     .education-summary .summary-content {
       .education-stats {
-        grid-template-columns: 1fr;
         gap: var(--spacing-lg);
+        grid-template-columns: repeat(3, 1fr);
 
         .stat-item {
           justify-content: center;
@@ -376,7 +384,8 @@
 
   @media (max-width: 480px) {
     .education-grid {
-      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: center;
 
       .education-card {
         .card-header {
@@ -413,100 +422,26 @@
         font-size: 1rem;
       }
 
-      .education-stats .stat-item {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+      .education-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
 
-        .stat-icon {
-          width: 50px;
-          height: 50px;
-          font-size: 1.5rem;
-        }
-      }
-    }
-  }
-}
+        .stat-item {
+          flex-direction: column;
+          gap: var(--spacing-sm);
 
-// Dark theme styles
-[data-theme="dark"] .education {
-  background: var(--neutral-100);
+          &:first-child {
+            grid-column: 1 / -1;
+          }
 
-  .section-header {
-    .section-title {
-      color: var(--neutral-100);
-    }
-
-    .section-subtitle {
-      color: var(--neutral-400);
-    }
-  }
-
-  .education-grid .education-card {
-    background: var(--neutral-800);
-    border-color: var(--neutral-700);
-
-    &:hover {
-      border-color: var(--primary-blue);
-    }
-
-    .card-header {
-      border-bottom-color: var(--neutral-700);
-
-      .education-info {
-        .degree {
-          color: var(--neutral-100);
-        }
-
-        .institution {
-          color: var(--neutral-300);
-        }
-
-        .education-meta {
-          .duration {
-            color: var(--neutral-400);
+          .stat-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
           }
         }
       }
     }
-
-    .card-body {
-      .coursework h6,
-      .honors h6 {
-        color: var(--neutral-100);
-      }
-
-      .honors .honors-list li {
-        color: var(--neutral-300);
-
-        &:not(:last-child) {
-          border-bottom-color: var(--neutral-700);
-        }
-      }
-    }
-  }
-
-  .education-summary .summary-content {
-    h3 {
-      color: var(--neutral-100);
-    }
-
-    p {
-      color: var(--neutral-300);
-    }
-
-    .education-stats .stat-item {
-      background: var(--neutral-800);
-      border-color: var(--neutral-700);
-
-      .stat-content {
-        .stat-label {
-          color: var(--neutral-400);
-        }
-
-        .stat-value {
-          color: var(--neutral-100);
-        }
-      }
-    }
   }
 }
+

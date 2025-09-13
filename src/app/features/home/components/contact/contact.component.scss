@@ -1,15 +1,16 @@
 .contact {
-  background: var(--neutral-50);
+  background: transparent;
   position: relative;
 
   .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-3xl);
+    margin-bottom: var(--spacing-xl);
 
     .section-title {
       font-size: 3rem;
       font-weight: 700;
       color: var(--neutral-900);
+      text-shadow: none;
       margin-bottom: var(--spacing-md);
       position: relative;
 
@@ -28,7 +29,8 @@
 
     .section-subtitle {
       font-size: 1.125rem;
-      color: var(--neutral-600);
+      color: var(--neutral-700);
+      text-shadow: none;
       max-width: 600px;
       margin: 0 auto;
     }
@@ -36,44 +38,51 @@
 
   .contact-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: var(--spacing-xl);
   }
 
   .contact-info {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     
     .contact-intro {
-      margin-bottom: var(--spacing-3xl);
+      margin-bottom: var(--spacing-xl);
 
       h3 {
         font-size: 2rem;
         font-weight: 700;
         color: var(--neutral-900);
+        text-shadow: none;
         margin-bottom: var(--spacing-lg);
       }
 
       p {
         font-size: 1.125rem;
-        line-height: 1.7;
-        color: var(--neutral-700);
+        color: var(--neutral-800);
+        text-shadow: none;
       }
     }
 
     .contact-methods {
-      margin-bottom: var(--spacing-3xl);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
 
       .contact-method {
         display: flex;
         align-items: center;
         gap: var(--spacing-lg);
         padding: var(--spacing-lg);
-        background: white;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
         border-radius: var(--radius-lg);
-        box-shadow: var(--shadow-sm);
-        border: 1px solid var(--neutral-200);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         text-decoration: none;
         color: inherit;
         transition: all var(--transition-normal);
@@ -114,6 +123,7 @@
             font-size: 1rem;
             color: var(--neutral-900);
             font-weight: 600;
+            word-break: break-all;
           }
         }
 
@@ -178,12 +188,19 @@
     .section-header .section-title {
       font-size: 2.5rem;
     }
+    .contact-info .contact-methods {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   @media (max-width: 768px) {
     .contact-info {
       .contact-intro h3 {
         font-size: 1.5rem;
+      }
+
+      .contact-methods {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .contact-methods .contact-method {
@@ -210,6 +227,7 @@
   @media (max-width: 480px) {
     .contact-info .contact-methods .contact-method {
       flex-direction: column;
+      align-items: center;
       text-align: center;
       gap: var(--spacing-md);
 
@@ -231,60 +249,3 @@
   to { transform: rotate(360deg); }
 }
 
-// Dark theme styles
-[data-theme="dark"] .contact {
-  background: var(--neutral-100);
-
-  .section-header {
-    .section-title {
-      color: var(--neutral-100);
-    }
-
-    .section-subtitle {
-      color: var(--neutral-400);
-    }
-  }
-
-  .contact-info {
-    .contact-intro {
-      h3 {
-        color: var(--neutral-100);
-      }
-
-      p {
-        color: var(--neutral-300);
-      }
-    }
-
-    .contact-methods .contact-method {
-      background: var(--neutral-800);
-      border-color: var(--neutral-700);
-
-      &:hover {
-        border-color: var(--primary-blue);
-      }
-
-      .method-content {
-        .method-label {
-          color: var(--neutral-400);
-        }
-
-        .method-value {
-          color: var(--neutral-100);
-        }
-      }
-
-      .copy-btn {
-        background: var(--neutral-700);
-        border-color: var(--neutral-600);
-        color: var(--neutral-400);
-
-        &:hover {
-          background: var(--primary-blue);
-          border-color: var(--primary-blue);
-          color: white;
-        }
-      }
-    }
-  }
-}

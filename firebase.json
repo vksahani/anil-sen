@@ -1,16 +1,17 @@
 {
   "hosting": {
-    "site": "vishal-kumar-portfolio",
+    "site": "staff-management-system-c9a6b",
     "public": "dist/vishal-portfolio/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
+    "cleanUrls": true,
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.csr.html"
+        "destination": "/index.html"
       }
     ]
   }
