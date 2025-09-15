@@ -47,7 +47,7 @@
   }
 
   .about-content {
-    display: grid;
+    // display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: var(--spacing-xl);
     align-items: center;
@@ -254,6 +254,7 @@
       display: flex;
       gap: var(--spacing-lg);
       flex-wrap: wrap;
+      justify-content: center;
 
       .btn {
         display: inline-flex;
