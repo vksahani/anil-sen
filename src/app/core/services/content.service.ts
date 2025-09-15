@@ -13,6 +13,7 @@ export type Skill = {
 
 export type Experience = {
   id: string;
+  icon?: string;
   company: string;
   position: string;
   startDate: string;

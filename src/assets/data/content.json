@@ -19,150 +19,151 @@
       "name": "Angular",
       "category": "frontend",
       "description": "Web application framework for building dynamic applications",
-      "icon": "assets/svg/angular.svg"
+      "icon": "assets/svg/skills/angular.svg"
     },
     {
       "name": "Ionic",
       "category": "frontend",
       "description": "Cross-platform mobile app development framework",
-      "icon": "assets/svg/ionic.svg"
+      "icon": "assets/svg/skills/ionic.svg"
     },
     {
       "name": "TypeScript",
       "category": "frontend",
       "description": "Typed JavaScript for better development experience",
-      "icon": "assets/svg/typescript.svg"
+      "icon": "assets/svg/skills/typescript.svg"
     },
     {
       "name": "JavaScript",
       "category": "frontend",
       "description": "Core programming language for web development",
-      "icon": "assets/svg/javascript.svg"
+      "icon": "assets/svg/skills/javascript.svg"
     },
     {
       "name": "HTML",
       "category": "frontend",
       "description": "Markup language for web pages",
-      "icon": "assets/svg/html.svg"
+      "icon": "assets/svg/skills/html.svg"
     },
     {
       "name": "CSS",
       "category": "frontend",
       "description": "Styling language for web pages",
-      "icon": "assets/svg/css.svg"
+      "icon": "assets/svg/skills/css.svg"
     },
     {
       "name": "SCSS",
       "category": "frontend",
       "description": "CSS preprocessor with enhanced features",
-      "icon": "assets/svg/scss.svg"
+      "icon": "assets/svg/skills/scss.svg"
     },
     {
       "name": "Bootstrap",
       "category": "frontend",
       "description": "CSS framework for responsive design",
-      "icon": "assets/svg/bootstrap.svg"
+      "icon": "assets/svg/skills/bootstrap.svg"
     },
     {
       "name": "Angular Material",
       "category": "frontend",
       "description": "Material Design components for Angular",
-      "icon": "assets/svg/angular-material.svg"
+      "icon": "assets/svg/skills/angular-material.svg"
     },
     {
       "name": "NodeJS",
       "category": "backend",
       "description": "Server-side JavaScript runtime environment",
-      "icon": "assets/svg/nodejs.svg"
+      "icon": "assets/svg/skills/nodejs.svg"
     },
     {
       "name": "Express",
       "category": "backend",
       "description": "Node.js web application framework",
-      "icon": "assets/svg/express.svg"
+      "icon": "assets/svg/skills/express.svg"
     },
     {
       "name": "MongoDB",
       "category": "backend",
       "description": "NoSQL database for modern applications",
-      "icon": "assets/svg/mongoDb.svg"
+      "icon": "assets/svg/skills/mongoDb.svg"
     },
     {
       "name": "Mongoose",
       "category": "backend",
       "description": "MongoDB object modeling for Node.js",
-      "icon": "assets/svg/mongoDb.svg"
+      "icon": "assets/svg/skills/mongoDb.svg"
     },
     {
       "name": "Firebase",
       "category": "backend",
       "description": "Backend-as-a-Service platform",
-      "icon": "assets/svg/firebase.svg"
+      "icon": "assets/svg/skills/firebase.svg"
     },
     {
       "name": "Firebase Cloud",
       "category": "backend",
       "description": "Cloud functions and hosting services",
-      "icon": "assets/svg/firebase.svg"
+      "icon": "assets/svg/skills/firebase.svg"
     },
     {
       "name": "JWT",
       "category": "backend",
       "description": "JSON Web Tokens for authentication",
-      "icon": "assets/svg/jwt.svg"
+      "icon": "assets/svg/skills/jwt.svg"
     },
     {
       "name": "VS Code",
       "category": "tools",
       "description": "Code editor for development",
-      "icon": "assets/svg/vscode.svg"
+      "icon": "assets/svg/skills/vscode.svg"
     },
     {
       "name": "GitHub",
       "category": "tools",
       "description": "Version control and collaboration platform",
-      "icon": "assets/svg/github.svg"
+      "icon": "assets/svg/skills/github.svg"
     },
     {
       "name": "Xcode",
       "category": "tools",
       "description": "iOS development IDE",
-      "icon": "assets/svg/xcode.svg"
+      "icon": "assets/svg/skills/xcode.svg"
     },
     {
       "name": "Android Studio",
       "category": "tools",
       "description": "Android development IDE",
-      "icon": "assets/svg/android-studio.svg"
+      "icon": "assets/svg/skills/android-studio.svg"
     },
     {
       "name": "Capacitor",
       "category": "tools",
       "description": "Native mobile app runtime",
-      "icon": "assets/svg/capacitor.svg"
+      "icon": "assets/svg/skills/capacitor.svg"
     },
     {
       "name": "Cordova",
       "category": "tools",
       "description": "Mobile app development platform",
-      "icon": "assets/svg/cordova.svg"
+      "icon": "assets/svg/skills/cordova.svg"
     },
     {
       "name": "JSON Server",
       "category": "tools",
       "description": "Mock REST API for development",
-      "icon": "assets/svg/jwt.svg"
+      "icon": "assets/svg/skills/jwt.svg"
     },
     {
       "name": "AnalogJS",
       "category": "frontend",
       "description": "Angular meta-framework for full-stack development",
-      "icon": "assets/svg/analogjs.svg"
+      "icon": "assets/svg/skills/analogjs.svg"
     }
   ],
   "experience": [
     {
       "id": "1",
+      "icon": "assets/svg/experience/quadralyst.svg",
       "company": "Quadralyst Pvt Ltd",
       "position": "Senior Web Developer",
       "startDate": "2022-12",
@@ -191,10 +192,12 @@
         "Firebase Cloud",
         "Android Studio"
       ],
-      "location": "Indore (M.P.)"
+      "location": "Indore (M.P.)",
+      "companyUrl": "https://quadralyst.com/"
     },
     {
       "id": "2",
+      "icon": "assets/svg/experience/stepping-stone.png",
       "company": "The Stepping Stone",
       "position": "Frontend Developer",
       "startDate": "2022-06",
@@ -223,7 +226,8 @@
         "MVC",
         "JSON Server"
       ],
-      "location": "Indore (M.P.)"
+      "location": "Indore (M.P.)",
+      "companyUrl": "https://steppingstone.in/"
     }
   ],
   "projects": [
@@ -251,7 +255,7 @@
         "User-friendly interface, mobile app based",
         "No physical tickets or boards required"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "",
       "userUrl": "",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.partytambola",
@@ -293,7 +297,7 @@
         "Notifications to schools for dispatch and arrival",
         "Analytics and reporting dashboards (inventory turnover, delivery times, error rates)"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "https://durud-e7449.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
@@ -333,7 +337,7 @@
         "Comprehensive Mock Exams & frequent assessments",
         "Integrated preparation for boards, school, IIT-JEE & NEET"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
       "userUrl": "https://student-app-3b632.web.app/",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=in.bhautikiplus.studentapp",
@@ -373,7 +377,7 @@
         "Composable & coordinated operations",
         "Customizable execution models"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "https://qm-demo.web.app/",
       "userUrl": "https://qm-demo.web.app/",
       "playStoreUrl": "",
@@ -414,7 +418,7 @@
         "Data visualization and trend analysis",
         "Secure cloud-based storage"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "https://qasper-live.web.app/",
       "userUrl": "https://qasper-live.web.app/",
       "playStoreUrl": "",
@@ -451,7 +455,7 @@
         "Quiz system",
         "Responsive design"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "https://active-avenue-dev.web.app/",
       "userUrl": "https://lyvvib-dev.web.app/",
       "playStoreUrl": "",
@@ -492,7 +496,7 @@
         "Track verified hours of volunteering or contributions",
         "Business and NGO collaboration"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "",
       "userUrl": "",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.GoWow&hl=en_IN",
@@ -536,7 +540,7 @@
         "Relaxed, aesthetic atmosphere suited for various group types",
         "Scenic view during sunset"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "https://mangosteen-cafe.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
@@ -580,7 +584,7 @@
         "Secure in-app communication",
         "Cross-platform support"
       ],
-      "imageUrl": "assets/svg/cordova.svg",
+      "imageUrl": "assets/svg/projects/cordova.svg",
       "adminUrl": "https://taskindev-69c4f.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
