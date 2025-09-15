@@ -235,6 +235,7 @@
       "technologies": [
         "Angular",
         "Android Studio",
+        "XCode",
         "Ionic",
         "Firebase",
         "Firebase Cloud",
@@ -247,7 +248,7 @@
         "Voice chat integration",
         "Responsive design"
       ],
-      "imageUrl": "/assets/images/projects/partytambola.jpg",
+      "imageUrl": "assets/svg/cordova.svg",
       "adminUrl": "",
       "userUrl": "",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.partytambola",
@@ -267,9 +268,12 @@
       "longDescription": "A marketplace connecting local artisans with customers, featuring product catalogs, order management, and payment integration.",
       "technologies": [
         "Angular",
+        "Angular Material",
+        "TypeScript",
         "Firebase",
         "Firebase Cloud",
-        "AnalogJS"
+        "AnalogJS",
+        "RxJS"
       ],
       "features": [
         "Product catalog",
@@ -277,13 +281,13 @@
         "Payment integration",
         "Vendor dashboard"
       ],
-      "imageUrl": "/assets/images/projects/durud.jpg",
+      "imageUrl": "assets/svg/cordova.svg",
       "adminUrl": "https://durud-e7449.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
       "appStoreUrl": "",
       "status": "completed",
-      "category": ["fullstack"],
+      "category": ["web"],
       "highlights": [
         "100+ vendors onboarded",
         "Mobile-first design",
@@ -304,7 +308,7 @@
         "RxJS",
         "Ionic",
         "TypeScript",
-        "Material Design"
+        "Angular Material"
       ],
       "features": [
         "Interactive simulations",
@@ -312,7 +316,7 @@
         "Quiz system",
         "Responsive design"
       ],
-      "imageUrl": "/assets/images/projects/bhautiki.jpg",
+      "imageUrl": "assets/svg/cordova.svg",
       "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
       "userUrl": "https://student-app-3b632.web.app/",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=in.bhautikiplus.studentapp",
@@ -327,19 +331,16 @@
     },
     {
       "id": "4",
-      "title": "Bhautiki Plus",
+      "title": "Quantum Mosaic",
       "description": "Educational platform for physics learning with interactive simulations",
       "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
       "technologies": [
         "Angular",
-        "Android Studio",
-        "Capacitor",
         "Firebase Cloud",
         "Firebase",
         "RxJS",
-        "Ionic",
         "TypeScript",
-        "Material Design"
+        "Angular Material"
       ],
       "features": [
         "Interactive simulations",
@@ -347,13 +348,193 @@
         "Quiz system",
         "Responsive design"
       ],
-      "imageUrl": "/assets/images/projects/bhautiki.jpg",
-      "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
-      "userUrl": "https://student-app-3b632.web.app/",
+      "imageUrl": "assets/svg/cordova.svg",
+      "adminUrl": "https://qm-demo.web.app/",
+      "userUrl": "https://qm-demo.web.app/",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "running",
+      "category": ["web"],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Qasper",
+      "description": "Educational platform for physics learning with interactive simulations",
+      "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "GenAI"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "assets/svg/cordova.svg",
+      "adminUrl": "https://qasper-live.web.app/",
+      "userUrl": "https://qasper-live.web.app/",
       "playStoreUrl": "",
       "appStoreUrl": "",
       "status": "completed",
       "category": ["web"],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Active Avenue",
+      "description": "Educational platform for physics learning with interactive simulations",
+      "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "GenAI"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "assets/svg/cordova.svg",
+      "adminUrl": "https://active-avenue-dev.web.app/",
+      "userUrl": "https://lyvvib-dev.web.app/",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "running",
+      "category": ["web"],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "GoWow",
+      "description": "Educational platform for physics learning with interactive simulations",
+      "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
+      "technologies": [
+        "Angular",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "TypeScript",
+        "Angular Material",
+        "Ionic",
+        "Capacitor",
+        "Android Studio",
+        "XCode"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "assets/svg/cordova.svg",
+      "adminUrl": "",
+      "userUrl": "",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.GoWow&hl=en_IN",
+      "appStoreUrl": "https://apps.apple.com/us/app/gowow-the-social-service-app/id6745549820",
+      "status": "completed",
+      "category": ["mobile"],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Mangosteen",
+      "description": "Educational platform for physics learning with interactive simulations",
+      "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "Ionic",
+        "Capacitor",
+        "Android Studio"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "assets/svg/cordova.svg",
+      "adminUrl": "https://mangosteen-cafe.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "running",
+      "category": ["web", "mobile"],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    }, 
+    {
+      "id": "9",
+      "title": "Taskin",
+      "description": "Educational platform for physics learning with interactive simulations",
+      "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "Ionic",
+        "Capacitor",
+        "Android Studio"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "assets/svg/cordova.svg",
+      "adminUrl": "https://taskindev-69c4f.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "running",
+      "category": ["web", "mobile"],
       "highlights": [
         "1000+ students enrolled",
         "3D physics simulations",
