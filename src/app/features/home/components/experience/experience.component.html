@@ -14,9 +14,7 @@
               
               <div class="experience-header">
                 <div class="company-logo">
-                  <div class="logo-placeholder">
-                    {{ exp.company.charAt(0) }}
-                  </div>
+                  <img [src]="exp.icon" [alt]="exp.company + ' logo'" class="logo-image">
                 </div>
                 
                 <div class="experience-status">
@@ -116,7 +114,10 @@
           <div class="modal-header">
             <div class="company-info">
               <div class="company-logo-large">
-                {{ selectedExperience()!.company.charAt(0) }}
+                <img [src]="selectedExperience()!.icon" [alt]="selectedExperience()!.company + ' logo'" *ngIf="selectedExperience()!.icon" class="logo-image-large">
+                <div class="logo-placeholder-large" *ngIf="!selectedExperience()!.icon">
+                  {{ selectedExperience()!.company.charAt(0) }}
+                </div>
               </div>
               <div class="title-info">
                 <h2>{{ selectedExperience()!.position }}</h2>

@@ -32,7 +32,7 @@
               
               <div class="project-image">
                 <img 
-                  [src]="'https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w'" 
+                  [src]="project.imageUrl" 
                   [alt]="project.title + ' - Project Screenshot'"
                   class="project-img"
                   loading="lazy">
@@ -117,7 +117,7 @@
           <div class="modal-body">
             <div class="modal-image">
               <img 
-                [src]="'https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w'" 
+                [src]="selectedProject()?.imageUrl" 
                 [alt]="selectedProject()?.title + ' - Detailed view'"
                 loading="lazy">
             </div>

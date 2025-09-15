@@ -69,7 +69,7 @@
 
     .contact-methods {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-lg);
       margin-bottom: var(--spacing-xl);
 
@@ -188,9 +188,6 @@
     .section-header .section-title {
       font-size: 2.5rem;
     }
-    .contact-info .contact-methods {
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 
   @media (max-width: 768px) {
@@ -200,7 +197,11 @@
       }
 
       .contact-methods {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+
+        .contact-method:nth-child(n + 3) {
+          display: flex;
+        }
       }
 
       .contact-methods .contact-method {

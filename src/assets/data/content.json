@@ -164,8 +164,8 @@
     {
       "id": "1",
       "icon": "assets/svg/experience/quadralyst.svg",
-      "company": "Quadralyst Pvt Ltd",
-      "position": "Senior Web Developer",
+      "company": "Quadralyst Pvt. Ltd.",
+      "position": "Junior Developer",
       "startDate": "2022-12",
       "endDate": null,
       "description": "Leading frontend development initiatives and mentoring junior developers",
@@ -255,7 +255,7 @@
         "User-friendly interface, mobile app based",
         "No physical tickets or boards required"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/partytambola.webp",
       "adminUrl": "",
       "userUrl": "",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.partytambola",
@@ -297,7 +297,7 @@
         "Notifications to schools for dispatch and arrival",
         "Analytics and reporting dashboards (inventory turnover, delivery times, error rates)"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/partytambola.webp",
       "adminUrl": "https://durud-e7449.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
@@ -337,7 +337,7 @@
         "Comprehensive Mock Exams & frequent assessments",
         "Integrated preparation for boards, school, IIT-JEE & NEET"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/bhautiki-plus.png",
       "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
       "userUrl": "https://student-app-3b632.web.app/",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=in.bhautikiplus.studentapp",
@@ -377,7 +377,7 @@
         "Composable & coordinated operations",
         "Customizable execution models"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/partytambola.webp",
       "adminUrl": "https://qm-demo.web.app/",
       "userUrl": "https://qm-demo.web.app/",
       "playStoreUrl": "",
@@ -418,7 +418,7 @@
         "Data visualization and trend analysis",
         "Secure cloud-based storage"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/qasper.png",
       "adminUrl": "https://qasper-live.web.app/",
       "userUrl": "https://qasper-live.web.app/",
       "playStoreUrl": "",
@@ -455,7 +455,7 @@
         "Quiz system",
         "Responsive design"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/active-avenue.png",
       "adminUrl": "https://active-avenue-dev.web.app/",
       "userUrl": "https://lyvvib-dev.web.app/",
       "playStoreUrl": "",
@@ -496,7 +496,7 @@
         "Track verified hours of volunteering or contributions",
         "Business and NGO collaboration"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/gowow.webp",
       "adminUrl": "",
       "userUrl": "",
       "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.GoWow&hl=en_IN",
@@ -540,7 +540,7 @@
         "Relaxed, aesthetic atmosphere suited for various group types",
         "Scenic view during sunset"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/partytambola.webp",
       "adminUrl": "https://mangosteen-cafe.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
@@ -584,7 +584,7 @@
         "Secure in-app communication",
         "Cross-platform support"
       ],
-      "imageUrl": "assets/svg/projects/cordova.svg",
+      "imageUrl": "assets/svg/projects/partytambola.webp",
       "adminUrl": "https://taskindev-69c4f.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
