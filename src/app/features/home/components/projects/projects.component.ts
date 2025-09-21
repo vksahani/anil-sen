@@ -16,6 +16,10 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
 export class ProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('projectsSection') projectsSection!: ElementRef;
   
+  private readonly contentService = inject(ContentService);
+  private readonly intersectionObserver = inject(IntersectionObserverService);
+  private readonly cdr = inject(ChangeDetectorRef);
+
   projects = signal<Project[]>([]);
   activeCategory = signal<string>('all');
   isVisible = signal(false);
@@ -27,10 +31,6 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     { key: 'mobile', label: 'Mobile Apps' },
     { key: 'fullstack', label: 'Full Stack' }
   ];
-
-  private contentService = inject(ContentService);
-  private intersectionObserver = inject(IntersectionObserverService);
-  private cdr = inject(ChangeDetectorRef);
 
   constructor() {}
 

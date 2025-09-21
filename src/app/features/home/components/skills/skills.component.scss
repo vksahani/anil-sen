@@ -45,6 +45,14 @@
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+      padding-left: var(--spacing-md);
+      padding-right: var(--spacing-md);
+      margin-left: calc(-1 * var(--spacing-md));
+      margin-right: calc(-1 * var(--spacing-md));
+    }
 
     &::-webkit-scrollbar {
       display: none;

@@ -12,7 +12,12 @@
     "bio": "Results-driven Angular and Ionic Developer with 3 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
     "profileImage": "/assets/images/profile.jpg",
     "resumeUrl": "/assets/documents/vishal-kumar-resume.pdf",
-    "yearsOfExperience": 3
+    "yearsOfExperience": 3,
+    "statistics": {
+      "projectsCompleted": 15,
+      "happyClients": 500,
+      "technologiesMastered": 10
+    }
   },
   "skills": [
     {

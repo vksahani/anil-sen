@@ -16,8 +16,11 @@ import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animat
 export class SkillsComponent implements OnInit, AfterViewInit {
   @ViewChild('skillsSection') skillsSection!: ElementRef;
 
+  private readonly contentService = inject(ContentService);
+  private readonly intersectionObserver = inject(IntersectionObserverService);
+  private readonly cdr = inject(ChangeDetectorRef);
+
   skills = signal<Skill[]>([]);
-  personalInfo = signal<any>(null);
   activeCategory = signal<string>('all');
   isVisible = signal(false);
 
@@ -28,28 +31,13 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     { key: 'tools', label: 'Tools' }
   ];
 
-
-
-  private contentService = inject(ContentService);
-  private intersectionObserver = inject(IntersectionObserverService);
-  private cdr = inject(ChangeDetectorRef);
-
-  constructor() {
-    this.personalInfo.set(this.contentService.personalInfo);
-  }
+  constructor() {}
 
   ngOnInit(): void {
     this.contentService.skills$.subscribe(skills => {
       if (skills && skills.length > 0) {
         this.skills.set(skills);
-        this.cdr.detectChanges(); // Trigger change detection
-      }
-    });
-
-    this.contentService.personalInfo$.subscribe(info => {
-      if (info) {
-        this.personalInfo.set(info);
-        this.cdr.detectChanges(); // Trigger change detection
+        this.cdr.detectChanges();
       }
     });
   }
@@ -76,10 +64,6 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     this.activeCategory.set(category);
   }
 
-
-
-
-
   getCategoryLabel(category: string): string {
     const categoryMap: { [key: string]: string } = {
       'frontend': 'Frontend',
@@ -89,6 +73,4 @@ export class SkillsComponent implements OnInit, AfterViewInit {
     };
     return categoryMap[category] || category;
   }
-
-
 }
