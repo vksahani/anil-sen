@@ -15,7 +15,7 @@
     "yearsOfExperience": 3,
     "statistics": {
       "projectsCompleted": 15,
-      "happyClients": 500,
+      "happyClients": 12,
       "technologiesMastered": 10
     }
   },
@@ -195,7 +195,8 @@
         "Angular Material",
         "Firebase",
         "Firebase Cloud",
-        "Android Studio"
+        "Android Studio",
+        "AnalogJS"
       ],
       "location": "Indore (M.P.)",
       "companyUrl": "https://quadralyst.com/"
@@ -302,7 +303,7 @@
         "Notifications to schools for dispatch and arrival",
         "Analytics and reporting dashboards (inventory turnover, delivery times, error rates)"
       ],
-      "imageUrl": "assets/svg/projects/partytambola.webp",
+      "imageUrl": "assets/svg/projects/durud.webp",
       "adminUrl": "https://durud-e7449.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
@@ -382,7 +383,7 @@
         "Composable & coordinated operations",
         "Customizable execution models"
       ],
-      "imageUrl": "assets/svg/projects/partytambola.webp",
+      "imageUrl": "",
       "adminUrl": "https://qm-demo.web.app/",
       "userUrl": "https://qm-demo.web.app/",
       "playStoreUrl": "",
@@ -545,7 +546,7 @@
         "Relaxed, aesthetic atmosphere suited for various group types",
         "Scenic view during sunset"
       ],
-      "imageUrl": "assets/svg/projects/partytambola.webp",
+      "imageUrl": "assets/svg/projects/mangosteen.jpeg",
       "adminUrl": "https://mangosteen-cafe.web.app/",
       "userUrl": "",
       "playStoreUrl": "",
@@ -589,7 +590,7 @@
         "Secure in-app communication",
         "Cross-platform support"
       ],
-      "imageUrl": "assets/svg/projects/partytambola.webp",
+      "imageUrl": "",
       "adminUrl": "https://taskindev-69c4f.web.app/",
       "userUrl": "",
       "playStoreUrl": "",

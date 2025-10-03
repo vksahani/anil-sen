@@ -33,11 +33,15 @@
               [attr.aria-label]="'Open details for ' + project.title">
               
               <div class="project-image">
-                <img 
+                <img
+                  *ngIf="project.imageUrl"
                   [src]="project.imageUrl" 
                   [alt]="project.title + ' - Project Screenshot'"
                   class="project-img"
                   loading="lazy">
+                <div *ngIf="!project.imageUrl" class="project-img-placeholder">
+                  <span>{{ project.title }}</span>
+                </div>
                 
                 <div class="project-overlay">
                   
@@ -117,12 +121,14 @@
           </div>
 
           <div class="modal-body">
-            <div class="modal-image">
-              <img 
-                [src]="selectedProject()?.imageUrl" 
-                [alt]="selectedProject()?.title + ' - Detailed view'"
-                loading="lazy">
-            </div>
+            @if(selectedProject()?.imageUrl) {
+              <div class="modal-image">
+                <img 
+                  [src]="selectedProject()?.imageUrl" 
+                  [alt]="selectedProject()?.title + ' - Detailed view'"
+                  loading="lazy">
+              </div>
+            }
 
             <div class="modal-details">
               <div class="project-description-full">
