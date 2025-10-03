@@ -169,7 +169,7 @@
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   
   &.in-view {
     opacity: 1;
@@ -270,7 +270,8 @@
   }
 }
 
-// Respect user preferences
+// Respect user preferences and device capabilities
+body.reduce-animations,
 @media (prefers-reduced-motion: reduce) {
   .floating-shape,
   .particle,
@@ -283,6 +284,7 @@
   .animate-on-scroll {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
   }
 }
 
