@@ -1,12 +1,21 @@
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
+
+  @media (max-width: 1024px) {
+    min-height: 70vh;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 120vh;
+  }
+
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: transparent; // Let the body gradient show through
-  padding-top: 80px; // Account for fixed navbar
-  
+  background: transparent;
+  padding-top: 8vh;
+
   // Add a subtle overlay for better text contrast on light background
   &::before {
     content: '';
@@ -148,6 +157,7 @@
       display: flex;
       gap: var(--spacing-lg);
       flex-wrap: nowrap; // keep buttons in one row
+
 
       .btn {
         display: inline-flex;
@@ -380,6 +390,7 @@
 
       .hero-actions {
         justify-content: center;
+        margin-bottom: 30px;
       }
     }
 
@@ -462,30 +473,59 @@
 
 // Optimized Animations with hardware acceleration
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg) translateZ(0); }
-  to { transform: rotate(360deg) translateZ(0); }
+  from {
+    transform: rotate(0deg) translateZ(0);
+  }
+
+  to {
+    transform: rotate(360deg) translateZ(0);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -10px, 0); }
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
 }
 
 @keyframes scroll {
-  0% { transform: translate3d(-50%, 0, 0); }
-  50% { transform: translate3d(-50%, 8px, 0); }
-  100% { transform: translate3d(-50%, 0, 0); }
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-50%, 8px, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 
 
 // Reduced motion preferences
 @media (prefers-reduced-motion: reduce) {
+
   .profile-ring,
   .floating-tech,
   .scroll-wheel {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject, SimpleChanges, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -11,35 +11,37 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   animations: [fadeInUp, fadeInLeft, fadeInRight],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutComponent implements OnInit, AfterViewInit {
+export class AboutComponent implements AfterViewInit {
   @ViewChild('aboutSection') aboutSection!: ElementRef;
+  @Input() personalData: any;
 
   personalInfo = signal<any>(null);
+  statisticsData = signal<any>({projectsCompleted: 15, happyClients: 12, technologiesMastered: 10});
   isVisible = signal(false);
   private hasAnimated = false;
-
-  private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
   private cdr = inject(ChangeDetectorRef);
 
-  constructor() {
-    this.personalInfo.set(this.contentService.personalInfo);
-  }
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['personalData'] && simples['personalData'].currentValue) {
+      this.personalInfo.set(simples['personalData'].currentValue);
 
-  ngOnInit(): void {
-    this.contentService.personalInfo$.subscribe(info => {
-      if (info) {
-        this.personalInfo.set(info);
-        this.cdr.detectChanges(); // Trigger change detection
+      if(this.personalInfo().statistics) {
+        // this.statisticsData.set(this.personalInfo().statistics);
+        this.statisticsData.set({projectsCompleted: 15, happyClients: 12, technologiesMastered: 10});
+      } else {
+        this.statisticsData.set({projectsCompleted: 15, happyClients: 12, technologiesMastered: 10});
       }
-    });
+      
+      console.log('personalInfo:', this.personalInfo());
+    }
   }
 
   ngAfterViewInit(): void {
-    this.intersectionObserver.observe(this.aboutSection).subscribe(entries => {
-      entries.forEach(entry => {
+    this.intersectionObserver.observe(this.aboutSection).subscribe((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
           this.isVisible.set(true);
           if (!this.hasAnimated) {

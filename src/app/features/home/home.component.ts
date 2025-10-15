@@ -42,6 +42,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   private performanceService = inject(PerformanceService);
   private cdr = inject(ChangeDetectorRef);
   private destroy$ = new Subject<void>();
+  public personalData: any;
+  public skillData: any;
+  public experienceData: any;
+  public projectData: any;
+  public educationData: any;
 
   ngOnInit(): void {
     // Optimize for mobile - load data only once
@@ -58,7 +63,13 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.contentService.education$
     ])
     .pipe(takeUntil(this.destroy$))
-    .subscribe(() => {
+    .subscribe(([personalData, skillData, experienceData, projectData, educationData]) => {
+      this.personalData = personalData;
+      this.skillData = skillData;
+      this.experienceData = experienceData;
+      this.projectData = projectData;
+      this.educationData = educationData;
+      
       this.cdr.detectChanges();
     });
 

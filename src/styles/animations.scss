@@ -271,22 +271,22 @@
 }
 
 // Respect user preferences and device capabilities
-body.reduce-animations,
-@media (prefers-reduced-motion: reduce) {
-  .floating-shape,
-  .particle,
-  .animate-float,
-  .animate-pulse-glow,
-  .animate-shimmer {
-    animation: none !important;
-  }
+// body.reduce-animations,
+// @media (prefers-reduced-motion: reduce) {
+//   .floating-shape,
+//   .particle,
+//   .animate-float,
+//   .animate-pulse-glow,
+//   .animate-shimmer {
+//     animation: none !important;
+//   }
   
-  .animate-on-scroll {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-}
+//   .animate-on-scroll {
+//     opacity: 1 !important;
+//     transform: none !important;
+//     transition: none !important;
+//   }
+// }
 
 // High contrast mode optimizations
 @media (prefers-contrast: high) {

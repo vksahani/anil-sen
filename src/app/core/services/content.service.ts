@@ -107,25 +107,26 @@ export class ContentService {
       }),
       tap(data => {
         if (data) {
-          console.log('Content loaded successfully:', data);
         }
       })
     ).subscribe({
       next: (data) => {
         if (data) {
-          if (data.personalInfo) {
+          console.log('Content loaded successfully:', data);
+          
+          if (data && data.personalInfo) {
             this.personalInfoSubject.next(data.personalInfo);
           }
-          if (data.skills) {
+          if (data && data.skills) {
             this.skillsSubject.next(data.skills);
           }
-          if (data.experience) {
+          if (data && data.experience) {
             this.experienceSubject.next(data.experience);
           }
-          if (data.projects) {
+          if (data && data.projects) {
             this.projectsSubject.next(data.projects);
           }
-          if (data.education) {
+          if (data && data.education) {
             this.educationSubject.next(data.education);
           }
         }

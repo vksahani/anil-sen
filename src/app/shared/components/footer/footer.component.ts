@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, inject, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../core/services/content.service';
 
@@ -10,18 +10,18 @@ import { ContentService } from '../../../core/services/content.service';
   styleUrls: ['./footer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   personalInfo = signal<any>(null);
   newsletterEmail = signal('');
   showBackToTop = signal(false);
   currentYear = new Date().getFullYear();
   angularVersion = '20';
+  @Input() personalData: any; 
 
   private contentService = inject(ContentService);
   private cdr = inject(ChangeDetectorRef);
 
   constructor() {
-    this.personalInfo.set(this.contentService.personalInfo);
     // Listen for scroll events to show/hide back to top button
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', () => {
@@ -30,13 +30,12 @@ export class FooterComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.contentService.personalInfo$.subscribe(info => {
-      if (info) {
-        this.personalInfo.set(info);
-        this.cdr.detectChanges(); // Trigger change detection
-      }
-    });
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['personalData'] && simples['personalData'].currentValue) {
+      this.personalInfo.set(simples['personalData'].currentValue);
+      console.log('personalInfo:', this.personalInfo());
+      this.cdr.detectChanges(); // Trigger change detection
+    }
   }
 
   updateNewsletterEmail(event: Event): void {

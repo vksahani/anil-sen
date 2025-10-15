@@ -48,7 +48,7 @@
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    
+
     .contact-intro {
       margin-bottom: var(--spacing-xl);
 
@@ -71,7 +71,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-lg);
-      margin-bottom: var(--spacing-xl);
+      // margin-bottom: var(--spacing-xl);
 
       .contact-method {
         display: flex;
@@ -197,7 +197,8 @@
       }
 
       .contact-methods {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
 
         .contact-method:nth-child(n + 3) {
           display: flex;
@@ -226,7 +227,12 @@
   }
 
   @media (max-width: 480px) {
-    .contact-info .contact-methods .contact-method {
+    .contact-methods {
+      grid-template-columns: repeat(1, 1fr) !important;
+      gap: var(--spacing-md) !important;
+    }
+
+    .contact-info .contact-method {
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -246,7 +252,11 @@
 
 // Animations
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+  from {
+    transform: rotate(0deg);
+  }
 
+  to {
+    transform: rotate(360deg);
+  }
+}

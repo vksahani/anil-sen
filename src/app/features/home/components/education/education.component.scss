@@ -1,12 +1,12 @@
 .education {
   background: transparent;
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 0;
+  // padding: 4rem 0;
 
   .section-header {
     text-align: center;
@@ -47,7 +47,7 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
     width: 100%;
-    padding: 0 var(--spacing-xl);
+    padding: 0 var(--spacing-sm);
     max-width: 1000px;
     margin: 0 auto var(--spacing-xl);
 
@@ -315,7 +315,7 @@
   // Responsive design
   @media (max-width: 1024px) {
     .education-grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(267px, 1fr));
       gap: var(--spacing-lg);
 
       .education-card .card-header {

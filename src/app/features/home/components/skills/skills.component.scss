@@ -205,12 +205,12 @@
       scroll-padding-right: var(--spacing-md);
 
       .filter-btn:first-child {
-        margin-left: var(--spacing-xl);
+        margin-left: 40px;
       }
     }
 
     .skills-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
 
       .skill-card {
         padding: var(--spacing-sm);

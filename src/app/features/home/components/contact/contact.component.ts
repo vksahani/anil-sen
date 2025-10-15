@@ -1,8 +1,9 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations/animations';
+import { AboutComponent } from "../about/about.component";
 
 @Component({
   selector: 'app-contact',
@@ -13,26 +14,20 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
   animations: [fadeInUp, fadeInLeft, fadeInRight],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactComponent implements OnInit, AfterViewInit {
+export class ContactComponent implements AfterViewInit {
   @ViewChild('contactSection') contactSection!: ElementRef;
+  @Input() personalData: any;
   
   personalInfo = signal<any>(null);
-
-  private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
   private cdr = inject(ChangeDetectorRef);
 
-  constructor() {
-    this.personalInfo.set(this.contentService.personalInfo);
-  }
-
-  ngOnInit(): void {
-    this.contentService.personalInfo$.subscribe(info => {
-      if (info) {
-        this.personalInfo.set(info);
-        this.cdr.detectChanges(); // Trigger change detection
-      }
-    });
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['personalData'] && simples['personalData'].currentValue) {
+      this.personalInfo.set(simples['personalData'].currentValue);
+      console.log('personalInfo:', this.personalInfo());
+      this.cdr.detectChanges(); // Trigger change detection
+    }
   }
 
   ngAfterViewInit(): void {

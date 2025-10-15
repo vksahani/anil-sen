@@ -1,175 +1,169 @@
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-brand px-3">
-        <h3 class="brand-name">{{ personalInfo()?.name }}</h3>
-        <p class="brand-tagline">{{ personalInfo()?.title }}</p>
-        <p class="brand-description lh-sm">
-          Building exceptional web experiences with modern technologies and user-centric design.
-        </p>
-      </div>
-
-      <div class="footer-links">
-        <div class="link-group">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="#about" aria-label="About section">About</a></li>
-            <li><a href="#skills" aria-label="Skills section">Skills</a></li>
-            <li><a href="#experience" aria-label="Experience section">Experience</a></li>
-            <li><a href="#projects" aria-label="Projects section">Projects</a></li>
-            <li><a href="#contact" aria-label="Contact section">Contact</a></li>
-          </ul>
+@if(personalInfo()) {
+  <footer class="footer mt-5">
+    <div class="container px-3">
+      <div class="footer-content">
+        <div class="footer-brand px-3">
+          <h3 class="brand-name">{{ personalInfo()?.name }}</h3>
+          <p class="brand-tagline">{{ personalInfo()?.title }}</p>
+          <p class="brand-description lh-sm">
+            Building exceptional web experiences with modern technologies and user-centric design.
+          </p>
         </div>
-
-        <div class="link-group">
-          <h4>Connect</h4>
-          <ul>
-            <li>
-              <a [href]="personalInfo()?.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-                LinkedIn
-              </a>
-            </li>
-            <li>
-              <a [href]="personalInfo()?.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a [href]="'mailto:' + personalInfo()?.email" aria-label="Send email">
-                Email
-              </a>
-            </li>
-            <li>
-              <a [href]="'tel:' + personalInfo()?.phone" aria-label="Call phone number">
-                Phone
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="link-group">
-          <h4>Resources</h4>
-          <ul>
-            <li>
-              <a [href]="personalInfo()?.resumeUrl" target="_blank" rel="noopener noreferrer" aria-label="Download resume">
-                Resume
-              </a>
-            </li>
-            <li><a href="#projects" aria-label="View portfolio">Portfolio</a></li>
-            <li><a href="#experience" aria-label="Work experience">Experience</a></li>
-            <li><a href="#skills" aria-label="Technical skills">Skills</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-social">
-        <h4 class="d-flex align-items-center justify-content-center">Follow Me</h4>
-        <div class="social-links">
-          <a 
-            [href]="personalInfo()?.linkedin" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="social-link"
-            aria-label="LinkedIn profile">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-          </a>
-
-          <a 
-            [href]="personalInfo()?.github" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            class="social-link"
-            aria-label="GitHub profile">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-            </svg>
-          </a>
-
-          <a 
-            [href]="'mailto:' + personalInfo()?.email" 
-            class="social-link"
-            aria-label="Send email">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </a>
-
-          <a 
-            [href]="'tel:' + personalInfo()?.phone" 
-            class="social-link"
-            aria-label="Call phone number">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-          </a>
-        </div>
-
-        <!-- <div class="newsletter">
-          <p class="lh-sm">Stay updated with my latest projects and insights</p>
-          <div class="newsletter-form">
-            <input 
-              type="email" 
-              placeholder="Enter your email"
-              class="newsletter-input"
-              [value]="newsletterEmail()"
-              (input)="updateNewsletterEmail($event)"
-              (keyup.enter)="subscribeNewsletter()"
-              aria-label="Email for newsletter">
-            <button 
-              class="newsletter-btn"
-              (click)="subscribeNewsletter()"
-              [disabled]="!isValidEmail(newsletterEmail())"
-              aria-label="Subscribe to newsletter"
-              type="button">
-              Subscribe
-            </button>
+  
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="#about" aria-label="About section">About</a></li>
+              <li><a href="#skills" aria-label="Skills section">Skills</a></li>
+              <li><a href="#experience" aria-label="Experience section">Experience</a></li>
+              <li><a href="#projects" aria-label="Projects section">Projects</a></li>
+              <li><a href="#contact" aria-label="Contact section">Contact</a></li>
+            </ul>
           </div>
-        </div> -->
+  
+          <div class="link-group">
+            <h4>Connect</h4>
+            <ul>
+              <li>
+                <a [href]="personalInfo()?.linkedin" target="_blank" rel="noopener noreferrer"
+                  aria-label="LinkedIn profile">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a [href]="personalInfo()?.github" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a [href]="'mailto:' + personalInfo()?.email" aria-label="Send email">
+                  Email
+                </a>
+              </li>
+              <li>
+                <a [href]="'tel:' + personalInfo()?.phone" aria-label="Call phone number">
+                  Phone
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="link-group">
+            <h4>Resources</h4>
+            <ul>
+              <li>
+                <a [href]="personalInfo()?.resumeUrl" target="_blank" rel="noopener noreferrer"
+                  aria-label="Download resume">
+                  Resume
+                </a>
+              </li>
+              <li><a href="#projects" aria-label="View portfolio">Portfolio</a></li>
+              <li><a href="#experience" aria-label="Work experience">Experience</a></li>
+              <li><a href="#skills" aria-label="Technical skills">Skills</a></li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="footer-social">
+          <h4 class="d-flex align-items-center justify-content-center">Follow Me</h4>
+          <div class="social-links">
+            <a [href]="personalInfo()?.linkedin" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="LinkedIn profile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+  
+            <a [href]="personalInfo()?.github" target="_blank" rel="noopener noreferrer" class="social-link"
+              aria-label="GitHub profile">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+            </a>
+  
+            <a [href]="'mailto:' + personalInfo()?.email" class="social-link" aria-label="Send email">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+  
+            <a [href]="'tel:' + personalInfo()?.phone" class="social-link" aria-label="Call phone number">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </a>
+          </div>
+  
+          <!-- <div class="newsletter">
+            <p class="lh-sm">Stay updated with my latest projects and insights</p>
+            <div class="newsletter-form">
+              <input 
+                type="email" 
+                placeholder="Enter your email"
+                class="newsletter-input"
+                [value]="newsletterEmail()"
+                (input)="updateNewsletterEmail($event)"
+                (keyup.enter)="subscribeNewsletter()"
+                aria-label="Email for newsletter">
+              <button 
+                class="newsletter-btn"
+                (click)="subscribeNewsletter()"
+                [disabled]="!isValidEmail(newsletterEmail())"
+                aria-label="Subscribe to newsletter"
+                type="button">
+                Subscribe
+              </button>
+            </div>
+          </div> -->
+        </div>
       </div>
+  
     </div>
-
+  
+  
     <div class="footer-bottom">
-      <div class="footer-info">
-        <p class="copyright">
-          © {{ currentYear }} {{ personalInfo()?.name }}. All rights reserved.
-        </p>
-        <p class="built-with">
-          Built with ❤️ using Angular {{ angularVersion }} & TypeScript
-        </p>
-      </div>
-
-      <div class="footer-meta">
-        <div class="location">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          <span>{{ personalInfo()?.location }}</span>
-        </div>
-
-        <div class="status">
-          <div class="status-indicator"></div>
-          <span>Available for new opportunities</span>
+      <div class="container px-3">
+        <div class="footer-inner px-3">
+          <div class="footer-info">
+            <p class="copyright">
+              © {{ currentYear }} {{ personalInfo()?.name }}. All rights reserved.
+            </p>
+            <p class="built-with">
+              Built with ❤️ using Angular {{ angularVersion }} & TypeScript
+            </p>
+          </div>
+  
+          <div class="footer-meta">
+            <div class="location">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>{{ personalInfo()?.location }}</span>
+            </div>
+  
+            <div class="status">
+              <div class="status-indicator"></div>
+              <span>Available for new opportunities</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="back-to-top">
-    <button 
-      class="back-to-top-btn"
-      (click)="scrollToTop()"
-      [class.visible]="showBackToTop()"
-      aria-label="Back to top"
-      type="button">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="18,15 12,9 6,15"/>
-      </svg>
-    </button>
-  </div>
-</footer>
+  
+    <div class="back-to-top">
+      <button class="back-to-top-btn" (click)="scrollToTop()" [class.visible]="showBackToTop()" aria-label="Back to top"
+        type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="18,15 12,9 6,15" />
+        </svg>
+      </button>
+    </div>
+  </footer>
+}

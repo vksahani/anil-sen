@@ -54,7 +54,7 @@
       transition: all var(--transition-fast);
       min-height: 42px;
       letter-spacing: 0.2px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 
       &:hover {
         border-color: var(--primary-blue);
@@ -71,7 +71,7 @@
 
       &:focus-visible {
         outline: none;
-        box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
       }
     }
   }
@@ -152,7 +152,7 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0,0,0,0));
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
           display: flex;
           align-items: center;
           justify-content: center;
@@ -178,9 +178,11 @@
               transition: all var(--transition-fast);
               border: 1px solid transparent;
               min-height: 40px;
-              box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 
-              svg { display: block; }
+              svg {
+                display: block;
+              }
 
               &:focus-visible {
                 outline: none;
@@ -372,7 +374,7 @@
 
       &:focus-visible {
         outline: none;
-        box-shadow: 0 0 0 4px rgba(255,255,255,0.6), 0 8px 24px rgba(0,0,0,0.2);
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.6), 0 8px 24px rgba(0, 0, 0, 0.2);
       }
     }
   }
@@ -381,7 +383,7 @@
   @media (max-width: 1024px) {
     .projects-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--spacing-md);
+      gap: var(--spacing-lg);
     }
 
     .section-header .section-title {
@@ -401,19 +403,20 @@
     }
 
     .projects-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       // gap: var(--spacing-xl);
       margin-bottom: var(--spacing-xl);
 
       .project-card {
         .project-image {
           height: 200px;
-          
+
           .project-overlay {
             opacity: 1;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0,0,0,0));
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
           }
         }
+
         .project-content {
           padding: var(--spacing-lg);
 
@@ -463,6 +466,11 @@
   }
 
   @media (max-width: 480px) {
+    .projects-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--spacing-xl);
+    }
+
     .projects-filter {
       flex-wrap: nowrap;
       overflow-x: auto;
@@ -514,7 +522,7 @@
   visibility: hidden;
   transition: all var(--transition-normal);
   padding: var(--spacing-sm);
-  
+
   @media (max-width: 768px) {
     align-items: flex-start;
     padding: 0;
@@ -526,28 +534,31 @@
     visibility: visible;
   }
 
-.modal-content {
-  background: white;
-  border-radius: var(--radius-xl);
-  max-width: 900px;
-  width: 100%;
-  max-height: 90vh;
+  .modal-content {
+    background: white;
+    border-radius: var(--radius-xl);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
 
-  @media (max-width: 768px) {
-    width: 90%;
-    margin: var(--spacing-md) auto;
-    max-height: none;
-    border-radius: var(--radius-lg);
-  }
-  position: relative;
-  box-shadow: var(--shadow-xl);
-  display: flex;
-  flex-direction: column;
+    @media (max-width: 768px) {
+      width: 90%;
+      margin: var(--spacing-md) auto;
+      max-height: none;
+      border-radius: var(--radius-lg);
+    }
 
-  .modal-body {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }    .modal-close {
+    position: relative;
+    box-shadow: var(--shadow-xl);
+    display: flex;
+    flex-direction: column;
+
+    .modal-body {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-close {
       position: absolute;
       top: var(--spacing-lg);
       right: var(--spacing-lg);
@@ -710,42 +721,42 @@
           }
         }
 
-.project-actions-full {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-lg);
+        .project-actions-full {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: var(--spacing-sm);
+          margin-top: var(--spacing-lg);
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-xl);
-  }
-  
-  .modal-link {
+          @media (min-width: 768px) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+          }
+
+          .modal-link {
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: var(--spacing-sm) var(--spacing-lg);
             border-radius: var(--radius-full);
-            background: rgba(59,130,246,0.08);
+            background: rgba(59, 130, 246, 0.08);
             color: var(--primary-blue);
             text-decoration: none;
             font-weight: 600;
-            border: 1px solid rgba(59,130,246,0.25);
+            border: 1px solid rgba(59, 130, 246, 0.25);
             transition: all var(--transition-fast);
             min-height: 44px;
 
             &:hover {
-              background: rgba(59,130,246,0.15);
+              background: rgba(59, 130, 246, 0.15);
               transform: translateY(-1px);
-              box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+              box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
             }
 
             &:focus-visible {
               outline: none;
-              box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+              box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
             }
           }
         }
@@ -772,7 +783,7 @@
         h2 {
           font-size: 1.5rem;
         }
-        
+
         .modal-badges {
           flex-wrap: wrap;
           gap: var(--spacing-sm);
@@ -788,7 +799,7 @@
           .project-actions-full {
             grid-template-columns: repeat(2, 1fr);
             gap: var(--spacing-sm);
-            
+
             .modal-link {
               padding: var(--spacing-sm) var(--spacing-md);
               width: 100%;
@@ -809,4 +820,3 @@
     }
   }
 }
-

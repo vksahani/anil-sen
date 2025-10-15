@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Project } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -13,10 +13,10 @@ import { fadeInUp, staggerAnimation, scaleIn } from '../../../../shared/animatio
   animations: [fadeInUp, staggerAnimation, scaleIn],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProjectsComponent implements OnInit, AfterViewInit {
+export class ProjectsComponent implements AfterViewInit {
   @ViewChild('projectsSection') projectsSection!: ElementRef;
+  @Input() projectData: any;
   
-  private readonly contentService = inject(ContentService);
   private readonly intersectionObserver = inject(IntersectionObserverService);
   private readonly cdr = inject(ChangeDetectorRef);
 
@@ -34,13 +34,12 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.contentService.projects$.subscribe(projects => {
-      if (projects && projects.length > 0) {
-        this.projects.set(projects);
-        this.cdr.detectChanges(); // Trigger change detection
-      }
-    });
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['projectData'] && simples['projectData'].currentValue) {
+      this.projects.set(simples['projectData'].currentValue);
+      console.log('projects:', this.projects());
+      this.cdr.detectChanges(); // Trigger change detection
+    }
   }
 
   ngAfterViewInit(): void {

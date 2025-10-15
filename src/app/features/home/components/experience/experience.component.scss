@@ -53,7 +53,7 @@
   .experience .experience-grid,
   .experience-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: var(--spacing-xl);
     margin: 0 auto var(--spacing-xl);
 
@@ -270,7 +270,7 @@
   .experience-summary {
     .summary-stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr) !important;
       gap: var(--spacing-xl);
       max-width: 800px;
       margin: 0 auto;
@@ -330,12 +330,12 @@
   @media (max-width: 768px) {
     .experience .experience-grid,
     .experience-grid {
-      grid-template-columns: 1fr !important;
-      gap: var(--spacing-md);
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: var(--spacing-lg);
     }
 
     .experience-summary .summary-stats {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr) !important;
       gap: var(--spacing-lg);
 
       .stat-item {
@@ -354,8 +354,13 @@
 
   @media (max-width: 480px) {
     .experience-summary .summary-stats {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr) !important;
       gap: var(--spacing-md);
+    }
+    .experience .experience-grid,
+    .experience-grid {
+      grid-template-columns: repeat(1, 1fr) !important;
+      gap: var(--spacing-lg);
     }
 
     .experience-grid .experience-card {

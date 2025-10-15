@@ -43,6 +43,7 @@
 
       .link-group {
         padding: var(--spacing-md);
+
         h4 {
           font-size: 1.125rem;
           font-weight: 600;
@@ -74,11 +75,13 @@
     }
 
     .footer-social {
+      padding: var(--spacing-md);
+
       h4 {
         font-size: 1.125rem;
         font-weight: 600;
         color: var(--neutral-800);
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
       }
 
       .social-links {
@@ -300,16 +303,16 @@
       }
     }
 
-    .footer-bottom {
-      flex-direction: column;
-      gap: var(--spacing-lg);
-      text-align: center;
+    // .footer-bottom {
+    //   flex-direction: column;
+    //   gap: var(--spacing-lg);
+    //   text-align: center;
 
-      .footer-meta {
-        flex-direction: column;
-        gap: var(--spacing-md);
-      }
-    }
+    //   .footer-meta {
+    //     flex-direction: column;
+    //     gap: var(--spacing-md);
+    //   }
+    // }
 
     .back-to-top {
       bottom: var(--spacing-lg);
@@ -325,7 +328,7 @@
   @media (max-width: 480px) {
     .footer-content {
       .footer-links {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
       }
 
@@ -348,15 +351,56 @@
       }
     }
   }
+
+
+  .footer-bottom .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom .footer-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  /* ✅ Mobile (max 480px) पर column */
+  @media (max-width: 480px) {
+    .footer-bottom .footer-inner {
+      flex-direction: column;
+      gap: var(--spacing-lg);
+      text-align: center;
+    }
+
+    .footer-bottom .footer-meta {
+      flex-direction: column;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .footer-bottom .footer-info .copyright,
+    .footer-bottom .footer-info .built-with {
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom .footer-meta .location,
+    .footer-bottom .footer-meta .status {
+      font-size: 0.9rem;
+    }
+  }
+
 }
 
 // Animations
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
 }
-

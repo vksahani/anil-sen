@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Skill } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -13,10 +13,10 @@ import { fadeInUp, staggerAnimation } from '../../../../shared/animations/animat
   animations: [fadeInUp, staggerAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SkillsComponent implements OnInit, AfterViewInit {
+export class SkillsComponent implements AfterViewInit {
   @ViewChild('skillsSection') skillsSection!: ElementRef;
+  @Input() skillData: any;
 
-  private readonly contentService = inject(ContentService);
   private readonly intersectionObserver = inject(IntersectionObserverService);
   private readonly cdr = inject(ChangeDetectorRef);
 
@@ -33,13 +33,12 @@ export class SkillsComponent implements OnInit, AfterViewInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.contentService.skills$.subscribe(skills => {
-      if (skills && skills.length > 0) {
-        this.skills.set(skills);
-        this.cdr.detectChanges();
-      }
-    });
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['skillData'] && simples['skillData'].currentValue) {
+      this.skills.set(simples['skillData'].currentValue);
+      console.log('skills:', this.skills());
+      this.cdr.detectChanges(); // Trigger change detection
+    }
   }
 
   ngAfterViewInit(): void {

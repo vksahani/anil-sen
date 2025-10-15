@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService, Experience } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -13,27 +13,25 @@ import { fadeInUp, fadeInLeft, fadeInRight, scaleIn } from '../../../../shared/a
   animations: [fadeInUp, fadeInLeft, fadeInRight, scaleIn],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExperienceComponent implements OnInit, AfterViewInit {
+export class ExperienceComponent implements AfterViewInit {
   @ViewChild('experienceSection') experienceSection!: ElementRef;
+  @Input() experienceData: any;
 
   experience = signal<Experience[]>([]);
   isVisible = signal(false);
   expandedItems = signal<Set<string>>(new Set());
   selectedExperience = signal<Experience | null>(null);
-
-  private contentService = inject(ContentService);
   private intersectionObserver = inject(IntersectionObserverService);
   private cdr = inject(ChangeDetectorRef);
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.contentService.experience$.subscribe(experience => {
-      if (experience && experience.length > 0) {
-        this.experience.set(experience);
-        this.cdr.detectChanges(); // Trigger change detection
-      }
-    });
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['experienceData'] && simples['experienceData'].currentValue) {
+      this.experience.set(simples['experienceData'].currentValue);
+      console.log('experience:', this.experience());
+      this.cdr.detectChanges(); // Trigger change detection
+    }
   }
 
   ngAfterViewInit(): void {

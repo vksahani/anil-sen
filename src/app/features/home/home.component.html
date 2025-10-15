@@ -15,13 +15,33 @@
 
 <app-navigation></app-navigation>
 <main>
-  <app-hero id="hero"></app-hero>
-  <app-about id="about"></app-about>
-  <app-skills id="skills"></app-skills>
-  <app-experience id="experience"></app-experience>
-  <app-projects id="projects"></app-projects>
-  <app-education id="education"></app-education>
+  @if(personalData) {
+    <app-hero id="hero" [personalData]="personalData"></app-hero>
+    <app-about id="about" [personalData]="personalData"></app-about>
+  }
+
+  @if(skillData) {
+    <app-skills id="skills" [skillData]="skillData"></app-skills>
+  }
+
+  @if(experienceData) {
+    <app-experience id="experience" [experienceData]="experienceData"></app-experience>
+  }
+
+  @if(projectData) {
+    <app-projects id="projects" [projectData]="projectData"></app-projects>
+  }
+
+  @if(educationData) {
+    <app-education id="education" [educationData]="educationData"></app-education>
+  }
   <!-- <app-resume-invite id="resume"></app-resume-invite> -->
-  <app-contact id="contact"></app-contact>
+
+  @if(personalData) {
+    <app-contact id="contact" [personalData]="personalData" ></app-contact>
+  }
 </main>
-<app-footer></app-footer>
+
+@if(personalData) {
+  <app-footer [personalData]="personalData"></app-footer>
+}
