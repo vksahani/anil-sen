@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, signal, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, signal, AfterViewInit, ElementRef, ViewChild, inject, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations/animations';
@@ -12,22 +12,22 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
   animations: [fadeInUp, fadeInLeft, fadeInRight],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
+export class HeroComponent implements AfterViewInit, OnDestroy {
   @ViewChild('typedElement') typedElement!: ElementRef;
   @ViewChild('heroSection') heroSection!: ElementRef;
+  @Input() personalData: any;
   
   personalInfo = signal<any>(null);
   private typedInstance: any;
   private animationFrameId: number | null = null;
+  private cdr = inject(ChangeDetectorRef);
 
-  constructor(private contentService: ContentService) {
-    this.personalInfo.set(this.contentService.personalInfo);
-  }
-
-  ngOnInit(): void {
-    this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo.set(info);
-    });
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['personalData'] && simples['personalData'].currentValue) {
+      this.personalInfo.set(simples['personalData'].currentValue);
+      console.log('personalInfo:', this.personalInfo());
+      this.cdr.detectChanges(); // Trigger change detection
+    }
   }
 
   ngAfterViewInit(): void {
@@ -95,6 +95,22 @@ export class HeroComponent implements OnInit, AfterViewInit, OnDestroy {
     // Only animate if user hasn't requested reduced motion
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       animate();
+    }
+  }
+
+  scrollToSection(event: Event, sectionId: string): void {
+    event.preventDefault();
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   }
 }

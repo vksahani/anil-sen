@@ -1,0 +1,168 @@
+<section class="projects" #projectsSection>
+    <div class="container px-3 mb-4">
+      <div class="section-header pt-3 mt-5" [@fadeInUp]>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle mt-4">
+          A showcase of my recent work and technical achievements
+        </p>
+      </div>
+  
+      <div class="projects-filter p-2" [@fadeInUp]>
+        @for (category of categories; track category.key) {
+        <button class="filter-btn" [class.active]="activeCategory() === category.key"
+          (click)="setActiveCategory(category.key)" [attr.aria-label]="'Filter by ' + category.label + ' projects'"
+          [attr.aria-pressed]="activeCategory() === category.key" type="button">
+          {{ category.label }}
+        </button>
+        }
+      </div>
+  
+      <div class="projects-grid" [@stagger]>
+        @for (project of filteredProjects(); track project.id) {
+        <div class="project-card" [class.visible]="isVisible()" (click)="openProjectModal(project)" tabindex="0"
+          (keydown.enter)="openProjectModal(project)" role="button"
+          [attr.aria-label]="'Open details for ' + project.title">
+  
+          <div class="project-image">
+            <img *ngIf="project.imageUrl" [src]="project.imageUrl" [alt]="project.title + ' - Project Screenshot'"
+              class="project-img" loading="lazy">
+            <div *ngIf="!project.imageUrl" class="project-img-placeholder">
+              <span>{{ project.title }}</span>
+            </div>
+  
+            <div class="project-overlay">
+  
+              <div class="project-status">
+                <span class="status-badge" [attr.data-status]="project.status">
+                  {{ getStatusLabel(project.status) }}
+                </span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <span class="project-category" [attr.data-category]="project.category">
+                {{ getCategoryLabel(project.category) }}
+              </span>
+            </div>
+  
+            <p class="project-description lh-sm">{{ project.description }}</p>
+  
+            <div class="project-tech">
+              @for (tech of project.technologies.slice(0, 4); track tech) {
+              <span class="tech-tag">{{ tech }}</span>
+              }
+              @if (project.technologies.length > 4) {
+              <span class="tech-more">
+                +{{ project.technologies.length - 4 }} more
+              </span>
+              }
+            </div>
+  
+            <div class="project-highlights">
+              @for (highlight of project.highlights.slice(0, 2); track highlight) {
+              <div class="highlight-item">
+                <span class="highlight-icon">✨</span>
+                <span class="highlight-text">{{ highlight }}</span>
+              </div>
+              }
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+</section>
+
+<!-- Project Modal -->
+@if (selectedProject()) {
+<div class="project-modal" [class.active]="selectedProject()" (click)="closeProjectModal()">
+
+  <div class="modal-content" (click)="$event.stopPropagation()" [@scaleIn]>
+    <button class="modal-close" (click)="closeProjectModal()" aria-label="Close project details" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <div class="modal-header">
+      <h2>{{ selectedProject()?.title }}</h2>
+      <div class="modal-badges">
+        <span class="category-badge" [attr.data-category]="selectedProject()?.category">
+          {{ getCategoryLabel(selectedProject()?.category || []) }}
+        </span>
+        <span class="status-badge" [attr.data-status]="selectedProject()?.status">
+          {{ getStatusLabel(selectedProject()?.status || 'completed') }}
+        </span>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      @if(selectedProject()?.imageUrl) {
+      <div class="modal-image">
+        <img [src]="selectedProject()?.imageUrl" [alt]="selectedProject()?.title + ' - Detailed view'" loading="lazy">
+      </div>
+      }
+
+      <div class="modal-details">
+        <div class="project-description-full">
+          <h3>About This Project</h3>
+          <p class="lh-sm">{{ selectedProject()?.longDescription }}</p>
+        </div>
+
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            @for (feature of selectedProject()?.features; track feature) {
+            <li>{{ feature }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="project-highlights-full">
+          <h3>Project Highlights</h3>
+          <ul>
+            @for (highlight of selectedProject()?.highlights; track highlight) {
+            <li>{{ highlight }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="project-tech-full">
+          <h3>Technologies Used</h3>
+          <div class="tech-grid">
+            @for (tech of selectedProject()?.technologies; track tech) {
+            <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="project-actions-full">
+          @if (selectedProject()?.adminUrl) {
+          <a [href]="selectedProject()?.adminUrl" target="_blank" rel="noopener noreferrer" class="modal-link"
+            title="Admin App">Admin App</a>
+          }
+
+          @if (selectedProject()?.userUrl) {
+          <a [href]="selectedProject()?.userUrl" target="_blank" rel="noopener noreferrer" class="modal-link"
+            title="User App">User App</a>
+          }
+
+          @if (selectedProject()?.playStoreUrl) {
+          <a [href]="selectedProject()?.playStoreUrl" target="_blank" rel="noopener noreferrer" class="modal-link"
+            title="Play Store">Play Store</a>
+          }
+
+          @if (selectedProject()?.appStoreUrl) {
+          <a [href]="selectedProject()?.appStoreUrl" target="_blank" rel="noopener noreferrer" class="modal-link"
+            title="App Store">App Store</a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

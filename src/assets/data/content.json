@@ -2,95 +2,176 @@
   "personalInfo": {
     "name": "Vishal Kumar",
     "title": "Web & Application Developer",
-    "email": "vishal@example.com",
-    "phone": "+91 9876543210",
-    "location": "India",
-    "linkedin": "https://linkedin.com/in/vishalkumar",
-    "github": "https://github.com/vishalkumar",
+    "email": "vishalkumarbanmore@gmail.com",
+    "phone": "+91-8269423244",
+    "location": "Indore (M.P.)",
+    "dateOfBirth": "08-07-1998",
+    "linkedin": "https://www.linkedin.com/in/vishal-kumar-2ab7ab146",
+    "github": "https://github.com/vishal-quadralyst",
     "website": "https://vishalkumar.dev",
-    "bio": "Passionate Web & Application Developer with 5+ years of experience in building scalable web applications using Angular, Ionic, Node.js, and modern web technologies. Specialized in creating user-centric solutions that drive business growth.",
+    "bio": "Results-driven Angular and Ionic Developer with 3 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
     "profileImage": "/assets/images/profile.jpg",
     "resumeUrl": "/assets/documents/vishal-kumar-resume.pdf",
-    "yearsOfExperience": 5
+    "yearsOfExperience": 3,
+    "statistics": {
+      "projectsCompleted": 15,
+      "happyClients": 12,
+      "technologiesMastered": 10
+    }
   },
   "skills": [
     {
       "name": "Angular",
-      "level": 95,
       "category": "frontend",
-      "description": "Expert in Angular framework for building dynamic web applications",
-      "icon": "angular"
+      "description": "Web application framework for building dynamic applications",
+      "icon": "assets/svg/skills/angular.svg"
     },
     {
       "name": "Ionic",
-      "level": 90,
       "category": "frontend",
-      "description": "Proficient in cross-platform mobile app development",
-      "icon": "ionic"
+      "description": "Cross-platform mobile app development framework",
+      "icon": "assets/svg/skills/ionic.svg"
     },
     {
       "name": "TypeScript",
-      "level": 92,
       "category": "frontend",
-      "description": "Strong typing and modern JavaScript features",
-      "icon": "typescript"
+      "description": "Typed JavaScript for better development experience",
+      "icon": "assets/svg/skills/typescript.svg"
     },
     {
       "name": "JavaScript",
-      "level": 88,
       "category": "frontend",
-      "description": "Core language for web development",
-      "icon": "javascript"
+      "description": "Core programming language for web development",
+      "icon": "assets/svg/skills/javascript.svg"
     },
     {
-      "name": "HTML/CSS",
-      "level": 90,
+      "name": "HTML",
       "category": "frontend",
-      "description": "Semantic markup and responsive design",
-      "icon": "html5"
+      "description": "Markup language for web pages",
+      "icon": "assets/svg/skills/html.svg"
     },
     {
-      "name": "Node.js",
-      "level": 85,
-      "category": "backend",
-      "description": "Server-side JavaScript runtime",
-      "icon": "nodejs"
+      "name": "CSS",
+      "category": "frontend",
+      "description": "Styling language for web pages",
+      "icon": "assets/svg/skills/css.svg"
     },
     {
-      "name": "Firebase",
-      "level": 80,
+      "name": "SCSS",
+      "category": "frontend",
+      "description": "CSS preprocessor with enhanced features",
+      "icon": "assets/svg/skills/scss.svg"
+    },
+    {
+      "name": "Bootstrap",
+      "category": "frontend",
+      "description": "CSS framework for responsive design",
+      "icon": "assets/svg/skills/bootstrap.svg"
+    },
+    {
+      "name": "Angular Material",
+      "category": "frontend",
+      "description": "Material Design components for Angular",
+      "icon": "assets/svg/skills/angular-material.svg"
+    },
+    {
+      "name": "NodeJS",
       "category": "backend",
-      "description": "Backend-as-a-Service platform",
-      "icon": "firebase"
+      "description": "Server-side JavaScript runtime environment",
+      "icon": "assets/svg/skills/nodejs.svg"
+    },
+    {
+      "name": "Express",
+      "category": "backend",
+      "description": "Node.js web application framework",
+      "icon": "assets/svg/skills/express.svg"
     },
     {
       "name": "MongoDB",
-      "level": 75,
       "category": "backend",
-      "description": "NoSQL database management",
-      "icon": "mongodb"
+      "description": "NoSQL database for modern applications",
+      "icon": "assets/svg/skills/mongoDb.svg"
     },
     {
-      "name": "RxJS",
-      "level": 88,
-      "category": "frontend",
-      "description": "Reactive programming with observables",
-      "icon": "rxjs"
+      "name": "Mongoose",
+      "category": "backend",
+      "description": "MongoDB object modeling for Node.js",
+      "icon": "assets/svg/skills/mongoDb.svg"
     },
     {
-      "name": "Git",
-      "level": 85,
+      "name": "Firebase",
+      "category": "backend",
+      "description": "Backend-as-a-Service platform",
+      "icon": "assets/svg/skills/firebase.svg"
+    },
+    {
+      "name": "Firebase Cloud",
+      "category": "backend",
+      "description": "Cloud functions and hosting services",
+      "icon": "assets/svg/skills/firebase.svg"
+    },
+    {
+      "name": "JWT",
+      "category": "backend",
+      "description": "JSON Web Tokens for authentication",
+      "icon": "assets/svg/skills/jwt.svg"
+    },
+    {
+      "name": "VS Code",
       "category": "tools",
-      "description": "Version control and collaboration",
-      "icon": "git"
+      "description": "Code editor for development",
+      "icon": "assets/svg/skills/vscode.svg"
+    },
+    {
+      "name": "GitHub",
+      "category": "tools",
+      "description": "Version control and collaboration platform",
+      "icon": "assets/svg/skills/github.svg"
+    },
+    {
+      "name": "Xcode",
+      "category": "tools",
+      "description": "iOS development IDE",
+      "icon": "assets/svg/skills/xcode.svg"
+    },
+    {
+      "name": "Android Studio",
+      "category": "tools",
+      "description": "Android development IDE",
+      "icon": "assets/svg/skills/android-studio.svg"
+    },
+    {
+      "name": "Capacitor",
+      "category": "tools",
+      "description": "Native mobile app runtime",
+      "icon": "assets/svg/skills/capacitor.svg"
+    },
+    {
+      "name": "Cordova",
+      "category": "tools",
+      "description": "Mobile app development platform",
+      "icon": "assets/svg/skills/cordova.svg"
+    },
+    {
+      "name": "JSON Server",
+      "category": "tools",
+      "description": "Mock REST API for development",
+      "icon": "assets/svg/skills/jwt.svg"
+    },
+    {
+      "name": "AnalogJS",
+      "category": "frontend",
+      "description": "Angular meta-framework for full-stack development",
+      "icon": "assets/svg/skills/analogjs.svg"
     }
   ],
   "experience": [
     {
       "id": "1",
-      "company": "Quadralyst Pvt Ltd",
-      "position": "Senior Web Developer",
-      "startDate": "2021-03",
+      "icon": "assets/svg/experience/quadralyst.svg",
+      "company": "Quadralyst Pvt. Ltd.",
+      "position": "Junior Developer",
+      "startDate": "2022-12",
       "endDate": null,
       "description": "Leading frontend development initiatives and mentoring junior developers",
       "responsibilities": [
@@ -104,15 +185,29 @@
         "Successfully delivered 15+ projects on time and within budget",
         "Reduced bug reports by 60% through comprehensive testing strategies"
       ],
-      "technologies": ["Angular", "TypeScript", "RxJS", "Angular Material", "Firebase"],
-      "location": "Remote"
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "Ionic",
+        "Capacitor",
+        "Cordova",
+        "RxJS",
+        "Angular Material",
+        "Firebase",
+        "Firebase Cloud",
+        "Android Studio",
+        "AnalogJS"
+      ],
+      "location": "Indore (M.P.)",
+      "companyUrl": "https://quadralyst.com/"
     },
     {
       "id": "2",
+      "icon": "assets/svg/experience/stepping-stone.png",
       "company": "The Stepping Stone",
       "position": "Frontend Developer",
-      "startDate": "2019-06",
-      "endDate": "2021-02",
+      "startDate": "2022-06",
+      "endDate": "2022-10",
       "description": "Developed user interfaces and enhanced user experience for web applications",
       "responsibilities": [
         "Built responsive web applications using Angular and modern CSS frameworks",
@@ -121,67 +216,418 @@
         "Participated in agile development processes and sprint planning"
       ],
       "achievements": [
-        "Delivered 10+ successful web applications",
         "Improved user engagement by 35% through UX enhancements",
         "Reduced development time by 25% through reusable component library"
       ],
-      "technologies": ["Angular", "JavaScript", "Bootstrap", "SCSS", "Node.js"],
-      "location": "Hybrid"
+      "technologies": [
+        "Angular",
+        "JavaScript",
+        "Bootstrap",
+        "SCSS",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "MVC",
+        "JSON Server"
+      ],
+      "location": "Indore (M.P.)",
+      "companyUrl": "https://steppingstone.in/"
     }
   ],
   "projects": [
     {
       "id": "1",
       "title": "PartyTambola",
-      "description": "Interactive online tambola game platform with real-time multiplayer functionality",
-      "longDescription": "A comprehensive online tambola (bingo) platform that allows users to create and join games, with real-time synchronization and interactive gameplay features.",
-      "technologies": ["Angular", "Socket.io", "Node.js", "MongoDB", "Express"],
-      "features": ["Real-time multiplayer", "Custom game rooms", "Voice chat integration", "Responsive design"],
-      "imageUrl": "/assets/images/projects/partytambola.jpg",
-      "demoUrl": "https://partytambola.com",
-      "githubUrl": "https://github.com/vishalkumar/partytambola",
+      "description": "Mobile app to organize and play Tambola/Housie games with up to 1000 players, for groups, businesses and events, with engagement & rewards",
+      "longDescription": "PartyTambola brings the classic Tambola / Housie game into the digital age. Whether you're organizing for social groups, small businesses, HR teams, influencers, or family & friends, you can setup a game in just minutes, play with up to 1,000 participants in real time, customize game rules, reward participants, engage followers, and even monetize your group with paid entry or sponsored rewards. It’s designed to be easy to use, highly customizable, social-friendly, and scalable.",
+      "technologies": [
+        "Angular",
+        "Android Studio",
+        "XCode",
+        "Ionic",
+        "Firebase",
+        "Firebase Cloud",
+        "Capacitor",
+        "RxJS"
+      ],
+      "features": [
+        "Real-time gameplay with up to 1,000 players",
+        "Customizable game setup (rules, rewards, branding)",
+        "Reward & prize integration",
+        "Supports monetization for organizers (paid entry / sponsorships)",
+        "Engagement tools for social groups, influencers, businesses",
+        "User-friendly interface, mobile app based",
+        "No physical tickets or boards required"
+      ],
+      "imageUrl": "assets/svg/projects/partytambola.webp",
+      "adminUrl": "",
+      "userUrl": "",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.partytambola",
+      "appStoreUrl": "https://apps.apple.com/us/app/party-tambola-housie-game/id1498917095?ls=1",
       "status": "completed",
-      "category": "web",
-      "highlights": ["500+ active users", "Real-time synchronization", "Cross-platform compatibility"]
+      "category": [
+        "mobile"
+      ],
+      "highlights": [
+        "Supports up to 1,000 players in one game",
+        "Ideal for group engagement & events",
+        "Monetization options for organizers",
+        "Highly customizable and scalable",
+        "Rewards & prizes integration",
+        "Easy to set up and play from anywhere"
+      ]
     },
     {
       "id": "2",
       "title": "Durud",
-      "description": "E-commerce platform for local artisans and craftsmen",
-      "longDescription": "A marketplace connecting local artisans with customers, featuring product catalogs, order management, and payment integration.",
-      "technologies": ["Angular", "Ionic", "Firebase", "Stripe"],
-      "features": ["Product catalog", "Order management", "Payment integration", "Vendor dashboard"],
-      "imageUrl": "/assets/images/projects/durud.jpg",
-      "demoUrl": "https://durud.com",
+      "description": "Smart warehouse management system designed to streamline book distribution for schools.",
+      "longDescription": "A specialized warehouse management system that automates and optimizes the storage, tracking, and delivery of educational books to schools. It enables real-time inventory visibility, efficient order processing, and accurate dispatching to ensure schools receive the right books on time, every time.",
+      "technologies": [
+        "Angular",
+        "Angular Material",
+        "TypeScript",
+        "Firebase",
+        "Firebase Cloud",
+        "AnalogJS",
+        "RxJS"
+      ],
+      "features": [
+        "Real-time inventory tracking by title, edition, language, and grade level",
+        "Order management with school profiles and scheduled deliveries",
+        "Batch picking and packing optimizations",
+        "Route planning and logistics integration",
+        "Damage / returns processing",
+        "Barcode / RFID enabled scanning",
+        "Notifications to schools for dispatch and arrival",
+        "Analytics and reporting dashboards (inventory turnover, delivery times, error rates)"
+      ],
+      "imageUrl": "assets/svg/projects/durud.webp",
+      "adminUrl": "https://durud-e7449.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
       "status": "completed",
-      "category": "fullstack",
-      "highlights": ["100+ vendors onboarded", "Mobile-first design", "Secure payment processing"]
+      "category": [
+        "web"
+      ],
+      "highlights": [
+        "Accuracy > 99% in order fulfilment",
+        "Delivery times reduced by 30%",
+        "Support for over 100 schools",
+        "Scalable to 10,000+ book SKUs"
+      ]
     },
     {
       "id": "3",
       "title": "Bhautiki Plus",
+      "description": "Premier EdTech platform offering IIT-JEE, NEET & Foundation courses through disciplined, tech-enabled mentorship with a No-Phone Zone learning environment.",
+      "longDescription": "Bhautiki Plus is a leading education technology company dedicated to shaping future engineers and doctors. It provides structured courses from foundation (classes VIII–X) to IIT-JEE and NEET, with a strong emphasis on discipline, innovation, and mentorship. The ecosystem includes proctored learning devices, 360° monitoring, interactive & live classes, video solutions, frequent assessments, and personalized support to ensure all-round student growth and consistent performance improvement.",
+      "technologies": [
+        "Angular",
+        "Android Studio",
+        "Capacitor",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "Ionic",
+        "TypeScript",
+        "Angular Material"
+      ],
+      "features": [
+        "No-Phone Zone learning environment with proctored devices",
+        "360° mentorship including parent/student/faculty feedback loops",
+        "Daily revision quizzes and homework tracking",
+        "Video solutions and recorded class backups",
+        "Comprehensive Mock Exams & frequent assessments",
+        "Integrated preparation for boards, school, IIT-JEE & NEET"
+      ],
+      "imageUrl": "assets/svg/projects/bhautiki-plus.png",
+      "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
+      "userUrl": "https://student-app-3b632.web.app/",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=in.bhautikiplus.studentapp",
+      "appStoreUrl": "https://apps.apple.com/us/app/bhautiki/id1498917095?ls=1",
+      "status": "completed",
+      "category": [
+        "web",
+        "mobile"
+      ],
+      "highlights": [
+        "Flexible fee refund option based on attendance",
+        "Strict no mobile policy and monitored learning environment",
+        "Dedicated mentor for every student",
+        "Transparent academic tracking with test results & performance analytics",
+        "Multiple success stories with high NEET/IIT-JEE scores"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Quantum Mosaic",
+      "description": "An AI-powered platform to streamline and automate investment deal execution, closing the gap between strategy and execution for LPs, GPs, and investment teams.",
+      "longDescription": "Quantum Mosaic (QM) is a modern platform built for Limited Partners (LPs) and empowering General Partners (GPs). Its mission is to reduce friction between strategic investment planning and operational execution. Leveraging real-time data, predictive analytics, and automation, QM helps investment firms evaluate more deals in less time, improve decision transparency, and optimize workflows to get higher ROI. With QM, investment processes are coordinated by design—minimizing manual overhead, enhancing insights, and enabling teams to spend more time on high-impact tasks rather than repetitive admin work.",
+      "technologies": [
+        "Angular",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "TypeScript",
+        "Angular Material",
+        "GenAI"
+      ],
+      "features": [
+        "Deal evaluation acceleration (evaluate twice as many deals in half the time)",
+        "Predictive & tailored insights for decision-making",
+        "Workflow digitization to reduce manual effort",
+        "Transparency and alignment between LPs and GPs",
+        "Composable & coordinated operations",
+        "Customizable execution models"
+      ],
+      "imageUrl": "",
+      "adminUrl": "https://qm-demo.web.app/",
+      "userUrl": "https://qm-demo.web.app/",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "running",
+      "category": [
+        "web"
+      ],
+      "highlights": [
+        "AI-driven platform built for LPs & empowering GPs",
+        "Helps evaluate more deals faster and reduce manual drag",
+        "Bridges gap between strategy and execution",
+        "Tailored workflow automation for high ROI",
+        "Improves decision making with real-time insights"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Qasper",
+      "description": "AI-powered survey and reporting platform for structured data collection and insights.",
+      "longDescription": "Qasper is a smart survey and reporting solution that enables users to design and schedule surveys with customizable metrics and inputs. Data can be collected on a daily, monthly, quarterly, or yearly basis. The platform automatically generates structured reports in PDF and Excel formats, enhanced with GenAI-driven insights and recommendations for better decision-making.",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "GenAI"
+      ],
+      "features": [
+        "Customizable survey forms with metrics and inputs",
+        "Flexible scheduling (daily, monthly, quarterly, yearly)",
+        "Automated PDF and Excel report generation",
+        "AI-powered report insights and recommendations",
+        "Data visualization and trend analysis",
+        "Secure cloud-based storage"
+      ],
+      "imageUrl": "assets/svg/projects/qasper.png",
+      "adminUrl": "https://qasper-live.web.app/",
+      "userUrl": "https://qasper-live.web.app/",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "completed",
+      "category": [
+        "web"
+      ],
+      "highlights": [
+        "Survey scheduling with recurring intervals",
+        "Exportable PDF and Excel reports",
+        "AI-driven insights for decision-making"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Active Avenue",
       "description": "Educational platform for physics learning with interactive simulations",
       "longDescription": "An educational web application providing interactive physics simulations and learning materials for students.",
-      "technologies": ["Angular", "Three.js", "WebGL", "TypeScript", "Material Design"],
-      "features": ["Interactive simulations", "Progress tracking", "Quiz system", "Responsive design"],
-      "imageUrl": "/assets/images/projects/bhautiki.jpg",
-      "demoUrl": "https://bhautikiplus.com",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "GenAI"
+      ],
+      "features": [
+        "Interactive simulations",
+        "Progress tracking",
+        "Quiz system",
+        "Responsive design"
+      ],
+      "imageUrl": "assets/svg/projects/active-avenue.png",
+      "adminUrl": "https://active-avenue-dev.web.app/",
+      "userUrl": "https://lyvvib-dev.web.app/",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "running",
+      "category": [
+        "web"
+      ],
+      "highlights": [
+        "1000+ students enrolled",
+        "3D physics simulations",
+        "Gamified learning"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "GoWow – The Social Service App",
+      "description": "Platform to connect verified NGOs, volunteers, and donors to make social impact through contributions and rewards",
+      "longDescription": "GoWow is a social service ecosystem that unites three types of users — NGOs, individuals (users), and businesses — to support social causes. Through GoWow, you can discover verified NGO profiles, donate materials, participate in volunteering opportunities, and track impact. The app incentivizes positive action by awarding points and coins, which can be redeemed for rewards. It emphasizes transparency, real needs, and community-engagement to create sustainable social change.",
+      "technologies": [
+        "Angular",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "TypeScript",
+        "Angular Material",
+        "Ionic",
+        "Capacitor",
+        "Android Studio",
+        "XCode"
+      ],
+      "features": [
+        "Verified NGO profiles to ensure real and genuine needs",
+        "Donate materials and support causes",
+        "Volunteer opportunities listing and participation",
+        "Points & coins reward system for contributions",
+        "User-friendly interface with community-building features",
+        "Track verified hours of volunteering or contributions",
+        "Business and NGO collaboration"
+      ],
+      "imageUrl": "assets/svg/projects/gowow.webp",
+      "adminUrl": "",
+      "userUrl": "",
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.quadralyst.GoWow&hl=en_IN",
+      "appStoreUrl": "https://apps.apple.com/us/app/gowow-the-social-service-app/id6745549820",
       "status": "completed",
-      "category": "web",
-      "highlights": ["1000+ students enrolled", "3D physics simulations", "Gamified learning"]
+      "category": [
+        "mobile"
+      ],
+      "highlights": [
+        "Aggregate verified NGOs, volunteers, and donors on one platform",
+        "Earn rewards (points/coins) for social contributions",
+        "Transparent verification for contributions and materials",
+        "Business, user, NGO ecosystem model",
+        "Strong community involvement and impact tracking",
+        "Organises large-scale events like Samaaj Sewa Championship"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Mangosteen",
+      "description": "Stylish cafe offering a blend of global & healthy cuisine with a relaxed, artistic ambiance",
+      "longDescription": "Mangosteen Café is a trendy eatery known for its curated menu featuring healthy-forward dishes, global flavours, and comforting classics. Guests appreciate the inviting, creative design, attentive service, and a calm, photogenic atmosphere ideal for casual meetups, meals at leisure, or catching up with friends. Though service may slow during peak hours, food quality and overall vibe make it a favorite destination.",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "Ionic",
+        "Capacitor",
+        "Android Studio"
+      ],
+      "features": [
+        "Diverse menu with healthy and international options",
+        "Dessert specials like Baklava with ice cream",
+        "Seasonal beverages and unique mocktails",
+        "Attentive staff with good service",
+        "Relaxed, aesthetic atmosphere suited for various group types",
+        "Scenic view during sunset"
+      ],
+      "imageUrl": "assets/svg/projects/mangosteen.jpeg",
+      "adminUrl": "https://mangosteen-cafe.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "running",
+      "category": [
+        "web",
+        "mobile"
+      ],
+      "highlights": [
+        "Rated ~4.5+ with many positive reviews for ambiance and food",
+        "Ideal for casual gatherings or relaxed meals",
+        "Standout menu items like Peri Peri Fries, Aglio Olio Pasta, Pink Sauce Pasta",
+        "Dessert highlight: Baklava with Ice cream",
+        "Welcoming and polite staff"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Taskin",
+      "description": "A work-posting and bidding platform connecting users with service providers.",
+      "longDescription": "Taskin is a mobile and web application that allows users to post domestic chores, personal tasks, or professional work requirements. Service providers or bidders can then place competitive bids with their proposed price and time to complete the task. This creates a transparent and efficient marketplace for getting work done quickly and affordably.",
+      "technologies": [
+        "Angular",
+        "AnalogJS",
+        "Firebase Cloud",
+        "Firebase",
+        "RxJS",
+        "NgRx",
+        "TypeScript",
+        "Angular Material",
+        "Ionic",
+        "Capacitor",
+        "Android Studio"
+      ],
+      "features": [
+        "Post domestic or professional tasks",
+        "Bidding system for service providers",
+        "Real-time notifications for bids and updates",
+        "User profiles with ratings and reviews",
+        "Secure in-app communication",
+        "Cross-platform support"
+      ],
+      "imageUrl": "",
+      "adminUrl": "https://taskindev-69c4f.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
+      "status": "completed",
+      "category": [
+        "web",
+        "mobile"
+      ],
+      "highlights": [
+        "Transparent task bidding system",
+        "Secure and easy-to-use interface",
+        "Cross-platform availability",
+        "Connects users with trusted service providers"
+      ]
     }
   ],
   "education": [
     {
       "id": "1",
-      "institution": "University of Technology",
-      "degree": "Bachelor of Technology",
-      "field": "Computer Science Engineering",
+      "institution": "ShriRam College Of Engineering and Management",
+      "degree": "Bachelor of Engineering",
+      "field": "Mechanical Engineering",
+      "startYear": 2016,
+      "endYear": 2020,
+      "grade": "8.52/10 CGPA",
+      "location": "Banmore"
+    },
+    {
+      "id": "2",
+      "institution": "Bright Convent Higher Secondary School",
+      "degree": "Higher Secondary",
+      "field": "Science",
       "startYear": 2015,
-      "endYear": 2019,
-      "grade": "8.2 CGPA",
-      "coursework": ["Data Structures", "Algorithms", "Web Development", "Database Systems", "Software Engineering"],
-      "honors": ["Dean's List", "Best Project Award"]
+      "endYear": 2016,
+      "grade": "81.2/100",
+      "location": "Banmore"
     }
   ]
 }

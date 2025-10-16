@@ -1,20 +1,22 @@
 .footer {
-  background: var(--neutral-900);
-  color: var(--neutral-300);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(25px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--neutral-700);
   position: relative;
-  padding: var(--spacing-3xl) 0 var(--spacing-xl);
+  padding: var(--spacing-xl) 0 var(--spacing-xl);
 
   .footer-content {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    gap: var(--spacing-3xl);
-    margin-bottom: var(--spacing-3xl);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
 
     .footer-brand {
       .brand-name {
         font-size: 2rem;
         font-weight: 700;
-        color: white;
+        color: var(--neutral-800);
         margin-bottom: var(--spacing-sm);
         background: var(--gradient-primary);
         -webkit-background-clip: text;
@@ -24,14 +26,13 @@
 
       .brand-tagline {
         font-size: 1.125rem;
-        color: var(--primary-blue);
+        color: var(--neutral-700);
         font-weight: 500;
         margin-bottom: var(--spacing-md);
       }
 
       .brand-description {
-        line-height: 1.6;
-        color: var(--neutral-400);
+        color: var(--neutral-600);
       }
     }
 
@@ -41,10 +42,12 @@
       gap: var(--spacing-xl);
 
       .link-group {
+        padding: var(--spacing-md);
+
         h4 {
           font-size: 1.125rem;
           font-weight: 600;
-          color: white;
+          color: var(--neutral-800);
           margin-bottom: var(--spacing-lg);
         }
 
@@ -57,7 +60,7 @@
             margin-bottom: var(--spacing-sm);
 
             a {
-              color: var(--neutral-400);
+              color: var(--neutral-600);
               text-decoration: none;
               transition: color var(--transition-fast);
               font-size: 0.95rem;
@@ -72,11 +75,13 @@
     }
 
     .footer-social {
+      padding: var(--spacing-md);
+
       h4 {
         font-size: 1.125rem;
         font-weight: 600;
-        color: white;
-        margin-bottom: var(--spacing-lg);
+        color: var(--neutral-800);
+        margin-bottom: var(--spacing-xl);
       }
 
       .social-links {
@@ -87,13 +92,13 @@
         .social-link {
           width: 44px;
           height: 44px;
-          background: var(--neutral-800);
-          border: 1px solid var(--neutral-700);
+          background: rgba(0, 0, 0, 0.05);
+          border: 1px solid rgba(0, 0, 0, 0.1);
           border-radius: var(--radius-md);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: var(--neutral-400);
+          color: var(--neutral-600);
           text-decoration: none;
           transition: all var(--transition-fast);
 
@@ -109,9 +114,8 @@
       .newsletter {
         p {
           font-size: 0.95rem;
-          color: var(--neutral-400);
+          color: var(--neutral-600);
           margin-bottom: var(--spacing-md);
-          line-height: 1.5;
         }
 
         .newsletter-form {
@@ -121,10 +125,10 @@
           .newsletter-input {
             flex: 1;
             padding: var(--spacing-sm) var(--spacing-md);
-            background: var(--neutral-800);
-            border: 1px solid var(--neutral-700);
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: var(--radius-md);
-            color: white;
+            color: var(--neutral-800);
             font-size: 0.875rem;
             transition: all var(--transition-fast);
 
@@ -171,18 +175,18 @@
     justify-content: space-between;
     align-items: center;
     padding-top: var(--spacing-xl);
-    border-top: 1px solid var(--neutral-800);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 
     .footer-info {
       .copyright {
         font-size: 0.875rem;
-        color: var(--neutral-500);
+        color: var(--neutral-600);
         margin-bottom: var(--spacing-xs);
       }
 
       .built-with {
         font-size: 0.875rem;
-        color: var(--neutral-600);
+        color: var(--neutral-700);
       }
     }
 
@@ -196,7 +200,7 @@
         align-items: center;
         gap: var(--spacing-sm);
         font-size: 0.875rem;
-        color: var(--neutral-500);
+        color: var(--neutral-600);
 
         svg {
           color: var(--primary-blue);
@@ -208,7 +212,7 @@
         align-items: center;
         gap: var(--spacing-sm);
         font-size: 0.875rem;
-        color: var(--neutral-500);
+        color: var(--neutral-600);
 
         .status-indicator {
           width: 8px;
@@ -280,7 +284,7 @@
 
       .footer-links {
         grid-column: span 1;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: var(--spacing-md);
       }
 
@@ -299,16 +303,16 @@
       }
     }
 
-    .footer-bottom {
-      flex-direction: column;
-      gap: var(--spacing-lg);
-      text-align: center;
+    // .footer-bottom {
+    //   flex-direction: column;
+    //   gap: var(--spacing-lg);
+    //   text-align: center;
 
-      .footer-meta {
-        flex-direction: column;
-        gap: var(--spacing-md);
-      }
-    }
+    //   .footer-meta {
+    //     flex-direction: column;
+    //     gap: var(--spacing-md);
+    //   }
+    // }
 
     .back-to-top {
       bottom: var(--spacing-lg);
@@ -324,8 +328,8 @@
   @media (max-width: 480px) {
     .footer-content {
       .footer-links {
-        grid-template-columns: 1fr;
-        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
       }
 
       .footer-social {
@@ -347,20 +351,56 @@
       }
     }
   }
+
+
+  .footer-bottom .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom .footer-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+  }
+
+  /* ✅ Mobile (max 480px) पर column */
+  @media (max-width: 480px) {
+    .footer-bottom .footer-inner {
+      flex-direction: column;
+      gap: var(--spacing-lg);
+      text-align: center;
+    }
+
+    .footer-bottom .footer-meta {
+      flex-direction: column;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+
+    .footer-bottom .footer-info .copyright,
+    .footer-bottom .footer-info .built-with {
+      font-size: 0.9rem;
+    }
+
+    .footer-bottom .footer-meta .location,
+    .footer-bottom .footer-meta .status {
+      font-size: 0.9rem;
+    }
+  }
+
 }
 
 // Animations
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
-}
-
-// Dark theme adjustments (footer is already dark)
-[data-theme="dark"] .footer {
-  // Footer is already designed for dark theme
-  // Add any specific dark theme overrides here if needed
 }

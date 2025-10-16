@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
@@ -24,7 +24,7 @@ import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
 
             <div class="resume-text">
               <h2>Download My Resume</h2>
-              <p>
+              <p class="lh-sm">
                 Get a comprehensive overview of my professional experience, skills, and achievements. 
                 My resume includes detailed information about my projects, technical expertise, and career progression.
               </p>
@@ -93,24 +93,24 @@ import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
 
           <div class="resume-stats">
             <div class="stat-item">
-              <div class="stat-number">{{ personalInfo()?.yearsOfExperience }}+</div>
+              <div class="stat-number lh-sm">{{ personalInfo()?.yearsOfExperience }}+</div>
               <div class="stat-label">Years Experience</div>
             </div>
             
             <div class="stat-item">
-              <div class="stat-number">15+</div>
+              <div class="stat-number lh-sm">15+</div>
               <div class="stat-label">Projects Completed</div>
             </div>
             
             <div class="stat-item">
-              <div class="stat-number">10+</div>
+              <div class="stat-number lh-sm">10+</div>
               <div class="stat-label">Technologies</div>
             </div>
           </div>
         </div>
 
         <div class="resume-testimonial" [@fadeInUp]>
-          <blockquote>
+          <blockquote class="lh-sm">
             "{{ personalInfo()?.name }} is a highly skilled developer with exceptional problem-solving abilities 
             and a keen eye for detail. His technical expertise and collaborative approach make him 
             an invaluable team member."
@@ -127,13 +127,19 @@ import { fadeInUp, scaleIn } from '../../../../shared/animations/animations';
 export class ResumeInviteComponent implements OnInit {
   personalInfo = signal<any>(null);
 
-  constructor(private contentService: ContentService) {
+  private contentService = inject(ContentService);
+  private cdr = inject(ChangeDetectorRef);
+
+  constructor() {
     this.personalInfo.set(this.contentService.personalInfo);
   }
 
   ngOnInit(): void {
     this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo.set(info);
+      if (info) {
+        this.personalInfo.set(info);
+        this.cdr.detectChanges(); // Trigger change detection
+      }
     });
   }
 

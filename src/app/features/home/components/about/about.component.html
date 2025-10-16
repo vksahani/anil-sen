@@ -1,106 +1,107 @@
-<section class="about section" #aboutSection>
-  <div class="container">
-    <div class="section-header" [@fadeInUp]>
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">Get to know more about my background and expertise</p>
-    </div>
+@if(personalInfo()) {
+  <section class="about pt-4 mb-5" #aboutSection>
+    <div class="container px-3">
+      <div class="section-header py-3" [@fadeInUp]>
+        <h2 class="section-title ">About Me</h2>
+        <p class="section-subtitle mt-4">Get to know more about my background and expertise</p>
+      </div>
+  
+      <div class="card-brooklyn p-4">
+        <div class="card-content">
+          <div class="about-content">
+            <div class="about-image" [@fadeInLeft]>
+              <div class="image-wrapper">
+                <div class="image-overlay">
+                  <div class="experience-badge">
+                    <span class="experience-number lh-sm">{{ personalInfo()?.yearsOfExperience }}+</span>
+                    <span class="experience-text">Years Experience</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="about-text" [@fadeInRight]>
+              <div class="about-description p-md-3">
+                <p class="lh-sm">{{ personalInfo()?.bio }}</p>
+  
+                <div class="highlights">
+                  <h3 class="mb-4">Key Highlights</h3>
+                  <ul class="highlights-list">
+                    <li class="highlight-item" [class.visible]="isVisible()">
+                      <div class="highlight-icon">🚀</div>
+                      <div class="highlight-content">
+                        <strong>{{ personalInfo()?.yearsOfExperience }} Years of Experience</strong>
+                        <span>Building scalable web and mobile applications</span>
+                      </div>
+                    </li>
+  
+                    <li class="highlight-item" [class.visible]="isVisible()">
+                      <div class="highlight-icon">💼</div>
+                      <div class="highlight-content">
+                        <strong>Full-Stack Development</strong>
+                        <span>Angular, Ionic, Node.js, and modern web technologies</span>
+                      </div>
+                    </li>
+  
+                    <li class="highlight-item" [class.visible]="isVisible()">
+                      <div class="highlight-icon">🎯</div>
+                      <div class="highlight-content">
+                        <strong>User-Centric Approach</strong>
+                        <span>Creating intuitive and accessible user experiences</span>
+                      </div>
+                    </li>
+  
+                    <li class="highlight-item" [class.visible]="isVisible()">
+                      <div class="highlight-icon">⚡</div>
+                      <div class="highlight-content">
+                        <strong>Performance Optimization</strong>
+                        <span>Delivering fast, efficient, and scalable solutions</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+  
+                <div class="stats-grid mb-0">
+                  <div class="stat-item" [class.visible]="isVisible()">
+                    <div class="stat-number lh-sm" [attr.data-target]="statistics()?.projectsCompleted">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                  </div>
 
-    <div class="about-content">
-      <div class="about-image" [@fadeInLeft]>
-        <div class="image-wrapper">
-          <img 
-            [src]="personalInfo()?.profileImage" 
-            [alt]="personalInfo()?.name + ' - About Picture'"
-            class="about-img"
-            loading="lazy">
-          <div class="image-overlay">
-            <div class="experience-badge">
-              <span class="experience-number">{{ personalInfo()?.yearsOfExperience }}+</span>
-              <span class="experience-text">Years Experience</span>
+                  <div class="stat-item" [class.visible]="isVisible()">
+                    <div class="stat-number lh-sm" [attr.data-target]="statistics()?.happyClients">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                  </div>
+
+                  <div class="stat-item" [class.visible]="isVisible()">
+                    <div class="stat-number lh-sm" [attr.data-target]="statistics()?.technologiesMastered">0</div>
+                    <div class="stat-label">Technologies</div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- <div class="about-actions mb-3">
+                <a [href]="personalInfo()?.resumeUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary text-light"
+                  aria-label="Download my resume">
+                  <span class="text-light">Download Resume</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7,10 12,15 17,10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </a>
+  
+                <a href="#contact" class="btn btn-secondary" aria-label="Get in touch">
+                  <span>Get In Touch</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </a>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
-
-      <div class="about-text" [@fadeInRight]>
-        <div class="about-description">
-          <p>{{ personalInfo()?.bio }}</p>
-          
-          <div class="highlights">
-            <h3>Key Highlights</h3>
-            <ul class="highlights-list">
-              <li class="highlight-item" [class.visible]="isVisible()">
-                <div class="highlight-icon">🚀</div>
-                <div class="highlight-content">
-                  <strong>{{ personalInfo()?.yearsOfExperience }}+ Years of Experience</strong>
-                  <span>Building scalable web and mobile applications</span>
-                </div>
-              </li>
-              
-              <li class="highlight-item" [class.visible]="isVisible()">
-                <div class="highlight-icon">💼</div>
-                <div class="highlight-content">
-                  <strong>Full-Stack Development</strong>
-                  <span>Angular, Ionic, Node.js, and modern web technologies</span>
-                </div>
-              </li>
-              
-              <li class="highlight-item" [class.visible]="isVisible()">
-                <div class="highlight-icon">🎯</div>
-                <div class="highlight-content">
-                  <strong>User-Centric Approach</strong>
-                  <span>Creating intuitive and accessible user experiences</span>
-                </div>
-              </li>
-              
-              <li class="highlight-item" [class.visible]="isVisible()">
-                <div class="highlight-icon">⚡</div>
-                <div class="highlight-content">
-                  <strong>Performance Optimization</strong>
-                  <span>Delivering fast, efficient, and scalable solutions</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="stats-grid">
-            <div class="stat-item" [class.visible]="isVisible()">
-              <div class="stat-number" [attr.data-target]="15">0</div>
-              <div class="stat-label">Projects Completed</div>
-            </div>
-            
-            <div class="stat-item" [class.visible]="isVisible()">
-              <div class="stat-number" [attr.data-target]="500">0</div>
-              <div class="stat-label">Happy Clients</div>
-            </div>
-            
-            <div class="stat-item" [class.visible]="isVisible()">
-              <div class="stat-number" [attr.data-target]="10">0</div>
-              <div class="stat-label">Technologies</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-actions">
-          <a [href]="personalInfo()?.resumeUrl" target="_blank" rel="noopener noreferrer" 
-             class="btn btn-primary" aria-label="Download my resume">
-            <span>Download Resume</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7,10 12,15 17,10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-          </a>
-          
-          <a href="#contact" class="btn btn-secondary" aria-label="Get in touch">
-            <span>Get In Touch</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
+}

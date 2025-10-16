@@ -1,11 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
+import { PerformanceService } from './core/services/performance.service';
+import { PerformanceMonitorComponent } from './shared/components/performance-monitor/performance-monitor.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, PerformanceMonitorComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -13,11 +15,13 @@ import { Title } from '@angular/platform-browser';
 export class App implements OnInit {
   title = 'Vishal Kumar - Web & Application Developer';
 
-  constructor(
-    private titleService: Title
-  ) {}
+  private titleService = inject(Title);
+  private performanceService = inject(PerformanceService);
+
+  constructor() {}
 
   ngOnInit(): void {
     this.titleService.setTitle(this.title);
+    this.performanceService.optimizeForDevice();
   }
 }

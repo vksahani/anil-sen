@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, signal, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, signal, ElementRef, ViewChild, AfterViewInit, inject, SimpleChanges, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../../../core/services/content.service';
 import { IntersectionObserverService } from '../../../../core/services/intersection-observer.service';
@@ -11,31 +11,35 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   animations: [fadeInUp, fadeInLeft, fadeInRight],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AboutComponent implements OnInit, AfterViewInit {
+export class AboutComponent implements AfterViewInit {
   @ViewChild('aboutSection') aboutSection!: ElementRef;
-  
+  @Input() personalData: any;
+  @Input() statisticsData: any;
+
   personalInfo = signal<any>(null);
+  statistics = signal<any>(null);
   isVisible = signal(false);
   private hasAnimated = false;
+  private intersectionObserver = inject(IntersectionObserverService);
+  private cdr = inject(ChangeDetectorRef);
 
-  constructor(
-    private contentService: ContentService,
-    private intersectionObserver: IntersectionObserverService
-  ) {
-    this.personalInfo.set(this.contentService.personalInfo);
-  }
+  ngOnChanges(simples: SimpleChanges) {
+    if (simples['personalData'] && simples['personalData'].currentValue) {
+      this.personalInfo.set(simples['personalData'].currentValue);
+      this.cdr.detectChanges();
+    }
 
-  ngOnInit(): void {
-    this.contentService.personalInfo$.subscribe(info => {
-      this.personalInfo.set(info);
-    });
+    if (simples['statisticsData'] && simples['statisticsData'].currentValue) {
+      this.statistics.set(simples['statisticsData'].currentValue);
+      this.cdr.detectChanges();
+    }
   }
 
   ngAfterViewInit(): void {
-    this.intersectionObserver.observe(this.aboutSection).subscribe(entries => {
-      entries.forEach(entry => {
+    this.intersectionObserver.observe(this.aboutSection).subscribe((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
           this.isVisible.set(true);
           if (!this.hasAnimated) {
@@ -49,7 +53,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
   private animateCounters(): void {
     const statNumbers = this.aboutSection.nativeElement.querySelectorAll('.stat-number');
-    
+
     statNumbers.forEach((element: HTMLElement) => {
       const target = parseInt(element.getAttribute('data-target') || '0');
       const duration = 2000; // 2 seconds
