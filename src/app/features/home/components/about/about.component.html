@@ -61,27 +61,22 @@
                   </ul>
                 </div>
   
-                <!-- @if(statisticsData()) { -->
-                  <div class="stats-grid mb-0">
-                    <div class="stat-item" [class.visible]="isVisible()">
-                      <!-- <div class="stat-number lh-sm"> {{statisticsData().projectsCompleted}} </div> -->
-                      <div class="stat-number lh-sm"> 15 </div>
-                      <div class="stat-label">Projects Completed</div>
-                    </div>
-    
-                    <div class="stat-item" [class.visible]="isVisible()">
-                      <!-- <div class="stat-number lh-sm"> {{statisticsData().happyClients}} </div> -->
-                      <div class="stat-number lh-sm"> 12 </div>
-                      <div class="stat-label">Happy Clients</div>
-                    </div>
-    
-                    <div class="stat-item" [class.visible]="isVisible()">
-                      <!-- <div class="stat-number lh-sm"> {{statisticsData().technologiesMastered}} </div> -->
-                      <div class="stat-number lh-sm"> 10 </div>
-                      <div class="stat-label">Technologies</div>
-                    </div>
+                <div class="stats-grid mb-0">
+                  <div class="stat-item" [class.visible]="isVisible()">
+                    <div class="stat-number lh-sm" [attr.data-target]="statistics()?.projectsCompleted">0</div>
+                    <div class="stat-label">Projects Completed</div>
                   </div>
-                <!-- } -->
+
+                  <div class="stat-item" [class.visible]="isVisible()">
+                    <div class="stat-number lh-sm" [attr.data-target]="statistics()?.happyClients">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                  </div>
+
+                  <div class="stat-item" [class.visible]="isVisible()">
+                    <div class="stat-number lh-sm" [attr.data-target]="statistics()?.technologiesMastered">0</div>
+                    <div class="stat-label">Technologies</div>
+                  </div>
+                </div>
               </div>
   
               <!-- <div class="about-actions mb-3">

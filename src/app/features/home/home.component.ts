@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private cdr = inject(ChangeDetectorRef);
   private destroy$ = new Subject<void>();
   public personalData: any;
+  public statisticsData: any;
   public skillData: any;
   public experienceData: any;
   public projectData: any;
@@ -65,6 +66,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy$))
     .subscribe(([personalData, skillData, experienceData, projectData, educationData]) => {
       this.personalData = personalData;
+      
+      if(this.personalData && this.personalData?.statistics) {
+        this.statisticsData = this.personalData?.statistics;
+      }
+
       this.skillData = skillData;
       this.experienceData = experienceData;
       this.projectData = projectData;

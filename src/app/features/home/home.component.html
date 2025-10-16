@@ -17,7 +17,7 @@
 <main>
   @if(personalData) {
     <app-hero id="hero" [personalData]="personalData"></app-hero>
-    <app-about id="about" [personalData]="personalData"></app-about>
+    <app-about id="about" [personalData]="personalData" [statisticsData]="statisticsData"></app-about>
   }
 
   @if(skillData) {

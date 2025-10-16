@@ -16,9 +16,10 @@ import { fadeInUp, fadeInLeft, fadeInRight } from '../../../../shared/animations
 export class AboutComponent implements AfterViewInit {
   @ViewChild('aboutSection') aboutSection!: ElementRef;
   @Input() personalData: any;
+  @Input() statisticsData: any;
 
   personalInfo = signal<any>(null);
-  statisticsData = signal<any>({projectsCompleted: 15, happyClients: 12, technologiesMastered: 10});
+  statistics = signal<any>(null);
   isVisible = signal(false);
   private hasAnimated = false;
   private intersectionObserver = inject(IntersectionObserverService);
@@ -27,15 +28,12 @@ export class AboutComponent implements AfterViewInit {
   ngOnChanges(simples: SimpleChanges) {
     if (simples['personalData'] && simples['personalData'].currentValue) {
       this.personalInfo.set(simples['personalData'].currentValue);
+      this.cdr.detectChanges();
+    }
 
-      if(this.personalInfo().statistics) {
-        // this.statisticsData.set(this.personalInfo().statistics);
-        this.statisticsData.set({projectsCompleted: 15, happyClients: 12, technologiesMastered: 10});
-      } else {
-        this.statisticsData.set({projectsCompleted: 15, happyClients: 12, technologiesMastered: 10});
-      }
-      
-      console.log('personalInfo:', this.personalInfo());
+    if (simples['statisticsData'] && simples['statisticsData'].currentValue) {
+      this.statistics.set(simples['statisticsData'].currentValue);
+      this.cdr.detectChanges();
     }
   }
 
