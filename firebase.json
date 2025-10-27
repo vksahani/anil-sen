@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "staff-management-system-c9a6b",
+    "site": "anil-sen",
     "public": "dist/anil-portfolio/browser",
     "ignore": [
       "firebase.json",
