@@ -61,7 +61,10 @@ jspm_packages/
 *.launch
 .settings/
 *.sublime-workspace
+<<<<<<< HEAD
 *.sublime-project
+=======
+>>>>>>> 077a1c0a61e9b5319f1cb65f86ec384ed2fb932d
 
 # Visual Studio Code
 .vscode/*
@@ -71,6 +74,7 @@ jspm_packages/
 !.vscode/extensions.json
 .history/*
 
+<<<<<<< HEAD
 # WebStorm
 .idea/
 
@@ -148,3 +152,17 @@ local.properties
 
 # Kiro IDE (optional - uncomment if you don't want to track Kiro settings)
 # .kiro/
+=======
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+>>>>>>> 077a1c0a61e9b5319f1cb65f86ec384ed2fb932d
