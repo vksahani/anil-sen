@@ -1,20 +1,20 @@
 {
   "personalInfo": {
-    "name": "Vishal Kumar",
-    "title": "Web & Application Developer",
-    "email": "vishalkumarbanmore@gmail.com",
-    "phone": "+91-8269423244",
+    "name": "Anil Sen",
+    "title": "UI/UX and Web Developer",
+    "email": "senanil9998@gmail.com",
+    "phone": "+91-9993768668",
     "location": "Indore (M.P.)",
-    "dateOfBirth": "08-07-1998",
-    "linkedin": "https://www.linkedin.com/in/vishal-kumar-2ab7ab146",
-    "github": "https://github.com/vishal-quadralyst",
-    "website": "https://vishalkumar.dev",
-    "bio": "Results-driven Angular and Ionic Developer with 3 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Expertise in Angular, Ionic, Node.js, MongoDB, Firebase (including Cloud Functions), and RxJS. Proven ability to architect responsive UI/UX, implement scalable backend solutions, and integrate RESTful APIs. Strong problem-solver and collaborative team player committed to writing clean, maintainable code. Successfully delivered four end-to-end projects on schedule. Seeking to leverage technical proficiency and agile methodologies to drive innovation and excellence in dynamic development teams.",
-    "profileImage": "/assets/images/profile.jpg",
-    "resumeUrl": "/assets/documents/vishal-kumar-resume.pdf",
-    "yearsOfExperience": 3,
+    "dateOfBirth": "11-11-1998",
+    "linkedin": "https://linkedin.com/in/anil-sen-118b9a177",
+    "github": "https://github.com/anilQuadralyst",
+    "website": "https://anil-sen.web.app/",
+    "bio": "Results-driven UI/UX and Web Developer with 2 years of hands-on experience designing, developing, and deploying high-quality web and mobile applications. Skilled in Angular, Ionic, TypeScript, HTML, CSS, Bootstrap, Figma, Penpot, Node.js, Firebase (including Cloud Functions), and RxJS. Experienced in architecting responsive UI/UX, implementing scalable backend solutions, and integrating RESTful APIs. Strong problem-solver and collaborative team player with a commitment to writing clean, maintainable code. Successfully delivered multiple end-to-end projects on schedule. Seeking to leverage technical expertise and agile development practices to drive innovation and excellence in dynamic development teams.",
+    "profileImage": "/assets/images/Anil_logo.png",
+    "resumeUrl": "/assets/documents/Anil_Sen_Resume_(2025).pdf",
+    "yearsOfExperience": 2,
     "statistics": {
-      "projectsCompleted": 15,
+      "projectsCompleted": 13,
       "happyClients": 12,
       "technologiesMastered": 10
     }
@@ -81,21 +81,9 @@
       "icon": "assets/svg/skills/nodejs.svg"
     },
     {
-      "name": "Express",
-      "category": "backend",
-      "description": "Node.js web application framework",
-      "icon": "assets/svg/skills/express.svg"
-    },
-    {
       "name": "MongoDB",
       "category": "backend",
       "description": "NoSQL database for modern applications",
-      "icon": "assets/svg/skills/mongoDb.svg"
-    },
-    {
-      "name": "Mongoose",
-      "category": "backend",
-      "description": "MongoDB object modeling for Node.js",
       "icon": "assets/svg/skills/mongoDb.svg"
     },
     {
@@ -111,12 +99,6 @@
       "icon": "assets/svg/skills/firebase.svg"
     },
     {
-      "name": "JWT",
-      "category": "backend",
-      "description": "JSON Web Tokens for authentication",
-      "icon": "assets/svg/skills/jwt.svg"
-    },
-    {
       "name": "VS Code",
       "category": "tools",
       "description": "Code editor for development",
@@ -129,28 +111,10 @@
       "icon": "assets/svg/skills/github.svg"
     },
     {
-      "name": "Xcode",
-      "category": "tools",
-      "description": "iOS development IDE",
-      "icon": "assets/svg/skills/xcode.svg"
-    },
-    {
       "name": "Android Studio",
       "category": "tools",
       "description": "Android development IDE",
       "icon": "assets/svg/skills/android-studio.svg"
-    },
-    {
-      "name": "Capacitor",
-      "category": "tools",
-      "description": "Native mobile app runtime",
-      "icon": "assets/svg/skills/capacitor.svg"
-    },
-    {
-      "name": "Cordova",
-      "category": "tools",
-      "description": "Mobile app development platform",
-      "icon": "assets/svg/skills/cordova.svg"
     },
     {
       "name": "JSON Server",
@@ -170,32 +134,38 @@
       "id": "1",
       "icon": "assets/svg/experience/quadralyst.svg",
       "company": "Quadralyst Pvt. Ltd.",
-      "position": "Junior Developer",
-      "startDate": "2022-12",
+      "position": "UI/UX And Web Developer",
+      "startDate": "2024-08",
       "endDate": null,
-      "description": "Leading frontend development initiatives and mentoring junior developers",
+      "description": "Developing responsive web and mobile applications using Angular, Ionic, HTML, CSS, Bootstrap, and Firebase, with expertise in UI/UX design, wireframing, and prototyping using Figma and Penpot",
       "responsibilities": [
-        "Architected and developed scalable web applications using Angular and TypeScript",
-        "Implemented responsive designs and optimized application performance",
-        "Collaborated with cross-functional teams to deliver high-quality solutions",
-        "Mentored junior developers and conducted code reviews"
+        "Designed and developed scalable web and mobile applications using Angular, Ionic, and TypeScript",
+        "Implemented pixel-perfect responsive designs and optimized application performance across devices",
+        "Integrated RESTful APIs and Firebase services for authentication, storage, and real-time updates",
+        "Collaborated with cross-functional teams including designers, QA, and backend developers to deliver high-quality solutions",
+        "Conducted code reviews, shared best practices, and mentored junior developers to improve team productivity"
       ],
       "achievements": [
-        "Improved application performance by 40% through optimization techniques",
-        "Successfully delivered 15+ projects on time and within budget",
-        "Reduced bug reports by 60% through comprehensive testing strategies"
+        "Enhanced application performance by up to 40% through code optimization and efficient state management (RxJS)",
+        "Successfully delivered 13+ end-to-end projects within deadlines and aligned with client expectations",
+        "Reduced bug reports by 60% by implementing robust testing, debugging, and error-handling strategies",
+        "Built reusable UI components and templates that improved development speed by 30%"
       ],
       "technologies": [
         "Angular",
         "TypeScript",
         "Ionic",
-        "Capacitor",
-        "Cordova",
+        "HTML",
+        "CSS",
+        "Bootstrap",
         "RxJS",
         "Angular Material",
         "Firebase",
-        "Firebase Cloud",
+        "Firebase Cloud Functions",
         "Android Studio",
+        "Figma",
+        "Penpot",
+        "Git",
         "AnalogJS"
       ],
       "location": "Indore (M.P.)",
@@ -203,12 +173,12 @@
     },
     {
       "id": "2",
-      "icon": "assets/svg/experience/stepping-stone.png",
-      "company": "The Stepping Stone",
-      "position": "Frontend Developer",
-      "startDate": "2022-06",
-      "endDate": "2022-10",
-      "description": "Developed user interfaces and enhanced user experience for web applications",
+      "icon": "assets/svg/experience/Mordern.png",
+      "company": "Modern Technology Pvt. Ltd.",
+      "position": "UI/UX And Web Developer",
+      "startDate": "2023-06",
+      "endDate": "2024-06",
+      "description": "Developing responsive web and mobile applications using HTML, CSS, Bootstrap, JavaScript, PHP, MySQL, React, WordPress, and Laravel, with expertise in UI/UX design and performance optimization",
       "responsibilities": [
         "Built responsive web applications using Angular and modern CSS frameworks",
         "Integrated RESTful APIs and managed application state",
@@ -216,24 +186,26 @@
         "Participated in agile development processes and sprint planning"
       ],
       "achievements": [
-        "Improved user engagement by 35% through UX enhancements",
-        "Reduced development time by 25% through reusable component library"
+        "Demonstrated strong commitment to delivering high-quality, user-centric web solutions, resulting in a 35% increase in overall user engagement",
+        "Proactively developed a reusable component library that reduced development time by 25% and improved project scalability",
+        "Took ownership of multiple end-to-end web projects, ensuring timely delivery and alignment with client objectives",
+        "Consistently implemented modern UI/UX practices that enhanced usability, visual appeal, and brand identity across all platforms"
       ],
       "technologies": [
-        "Angular",
+        "PHP",
         "JavaScript",
+        "HTML",
+        "CSS",
         "Bootstrap",
         "SCSS",
         "Node.js",
-        "Express",
-        "MongoDB",
-        "Mongoose",
-        "JWT",
-        "MVC",
+        "Laravel",
+        "MySQL",
+        "React",
         "JSON Server"
       ],
       "location": "Indore (M.P.)",
-      "companyUrl": "https://steppingstone.in/"
+      "companyUrl": "https://mitsafe.com/"
     }
   ],
   "projects": [
@@ -281,30 +253,31 @@
     },
     {
       "id": "2",
-      "title": "Durud",
-      "description": "Smart warehouse management system designed to streamline book distribution for schools.",
-      "longDescription": "A specialized warehouse management system that automates and optimizes the storage, tracking, and delivery of educational books to schools. It enables real-time inventory visibility, efficient order processing, and accurate dispatching to ensure schools receive the right books on time, every time.",
+      "title": "HitMVP",
+      "description": "Hit MVP is a free tool to help you get your app idea across to developers.",
+      "longDescription": "It helps you break down your vision into clear requirements - user roles, features, screens, everything - fast. You’ll get ballpark cost and time estimates and a complete project plan that any developer can understand. It also has a complete project management system that will help track the development and avoid the painful planning and development mistakes that cost real time and money.",
       "technologies": [
         "Angular",
         "Angular Material",
         "TypeScript",
+        "HTML",
+        "Bootstrap",
+        "CSS",
         "Firebase",
         "Firebase Cloud",
         "AnalogJS",
         "RxJS"
       ],
       "features": [
-        "Real-time inventory tracking by title, edition, language, and grade level",
-        "Order management with school profiles and scheduled deliveries",
-        "Batch picking and packing optimizations",
-        "Route planning and logistics integration",
-        "Damage / returns processing",
-        "Barcode / RFID enabled scanning",
-        "Notifications to schools for dispatch and arrival",
-        "Analytics and reporting dashboards (inventory turnover, delivery times, error rates)"
+        "Automatic User Role Generation - Identify and define all necessary user roles for the application",
+        "Intelligent Feature Identification - Analyze app concept to determine essential functionalities",
+        "Screen Flow & Design Planning - Visualize screens and user journeys for better UI/UX",
+        "Task Management - Organize tasks and track development progress efficiently",
+        "Real-time Progress Tracking - Monitor milestones and overall project status",
+        "Cost & Time Estimation - Generate instant estimates for development timeline and budget"
       ],
-      "imageUrl": "assets/svg/projects/durud.webp",
-      "adminUrl": "https://durud-e7449.web.app/",
+      "imageUrl": "assets/svg/projects/HitMVP.png",
+      "adminUrl": "https://hitmvp.com/",
       "userUrl": "",
       "playStoreUrl": "",
       "appStoreUrl": "",
@@ -321,33 +294,34 @@
     },
     {
       "id": "3",
-      "title": "Bhautiki Plus",
-      "description": "Premier EdTech platform offering IIT-JEE, NEET & Foundation courses through disciplined, tech-enabled mentorship with a No-Phone Zone learning environment.",
-      "longDescription": "Bhautiki Plus is a leading education technology company dedicated to shaping future engineers and doctors. It provides structured courses from foundation (classes VIII–X) to IIT-JEE and NEET, with a strong emphasis on discipline, innovation, and mentorship. The ecosystem includes proctored learning devices, 360° monitoring, interactive & live classes, video solutions, frequent assessments, and personalized support to ensure all-round student growth and consistent performance improvement.",
+      "title": "Aircrew",
+      "description": "This is an Aircrew job interview training platform that prepares users (aspiring pilots/candidates) for Airlines and Military aviation interviews.",
+      "longDescription": "Aircrew Training System, explaining its purpose, features, and learning ecosystem. It highlights how the platform prepares candidates for Airline and Military interviews through mentorship, proctored devices, live classes, video solutions, and frequent assessments. I implemented this section to be responsive, well-structured, and easy to read, enabling users to understand the platform’s benefits, daily quizzes, mock exams, and integrated preparation for school, IIT-JEE, and NEET. My work ensures that the content clearly communicates the platform's value while enhancing user engagement and accessibility.",
       "technologies": [
         "Angular",
-        "Android Studio",
-        "Capacitor",
-        "Firebase Cloud",
-        "Firebase",
-        "RxJS",
-        "Ionic",
+        "Angular Material",
         "TypeScript",
-        "Angular Material"
+        "HTML",
+        "Bootstrap",
+        "CSS",
+        "Firebase",
+        "Firebase Cloud",
+        "AnalogJS",
+        "RxJS"
       ],
       "features": [
-        "No-Phone Zone learning environment with proctored devices",
-        "360° mentorship including parent/student/faculty feedback loops",
-        "Daily revision quizzes and homework tracking",
+        "Practice Mode: Users receive questions in text form and can practice answering at their own pace.",
+        "Simulator Mode: Questions are delivered verbally via avatars, and users can record their answers via selfie video.",
+        "Feedback / Analysis: Users can analyze their body language, confidence, and verbal delivery.",
         "Video solutions and recorded class backups",
         "Comprehensive Mock Exams & frequent assessments",
-        "Integrated preparation for boards, school, IIT-JEE & NEET"
+        "Question Bank: Over 1,600 questions across multiple domains, delivered randomly"
       ],
-      "imageUrl": "assets/svg/projects/bhautiki-plus.png",
-      "adminUrl": "https://bhautiki-dev.firebaseapp.com/",
-      "userUrl": "https://student-app-3b632.web.app/",
-      "playStoreUrl": "https://play.google.com/store/apps/details?id=in.bhautikiplus.studentapp",
-      "appStoreUrl": "https://apps.apple.com/us/app/bhautiki/id1498917095?ls=1",
+      "imageUrl": "assets/svg/projects/Aircrew.png",
+      "adminUrl": "https://aircrew-mockups.web.app/",
+      "userUrl": "",
+      "playStoreUrl": "",
+      "appStoreUrl": "",
       "status": "completed",
       "category": [
         "web",
@@ -358,7 +332,7 @@
         "Strict no mobile policy and monitored learning environment",
         "Dedicated mentor for every student",
         "Transparent academic tracking with test results & performance analytics",
-        "Multiple success stories with high NEET/IIT-JEE scores"
+        "Multiple success stories with high Aircrew job interview training platform"
       ]
     },
     {
@@ -368,12 +342,15 @@
       "longDescription": "Quantum Mosaic (QM) is a modern platform built for Limited Partners (LPs) and empowering General Partners (GPs). Its mission is to reduce friction between strategic investment planning and operational execution. Leveraging real-time data, predictive analytics, and automation, QM helps investment firms evaluate more deals in less time, improve decision transparency, and optimize workflows to get higher ROI. With QM, investment processes are coordinated by design—minimizing manual overhead, enhancing insights, and enabling teams to spend more time on high-impact tasks rather than repetitive admin work.",
       "technologies": [
         "Angular",
-        "Firebase Cloud",
-        "Firebase",
-        "RxJS",
-        "TypeScript",
         "Angular Material",
-        "GenAI"
+        "TypeScript",
+        "HTML",
+        "Bootstrap",
+        "CSS",
+        "Firebase",
+        "Firebase Cloud",
+        "AnalogJS",
+        "RxJS"
       ],
       "features": [
         "Deal evaluation acceleration (evaluate twice as many deals in half the time)",
@@ -611,23 +588,33 @@
   "education": [
     {
       "id": "1",
-      "institution": "ShriRam College Of Engineering and Management",
-      "degree": "Bachelor of Engineering",
-      "field": "Mechanical Engineering",
-      "startYear": 2016,
-      "endYear": 2020,
-      "grade": "8.52/10 CGPA",
-      "location": "Banmore"
+      "institution": "Patel College of Science & Technology, Indore",
+      "degree": "Master Of Technology",
+      "field": "Information Technology (IT)",
+      "startYear": 2021,
+      "endYear": 2023,
+      "grade": "8.0/10 CGPA",
+      "location": "Indore"
     },
     {
       "id": "2",
-      "institution": "Bright Convent Higher Secondary School",
-      "degree": "Higher Secondary",
-      "field": "Science",
+      "institution": "IES , IPS Academy Indore",
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science Engineering ( CSE )",
+      "startYear": 2018,
+      "endYear": 2021,
+      "grade": "7.3/10 CGPA",
+      "location": "Indore"
+    },
+    {
+      "id": "3",
+      "institution": "Govt. Polytechnic College , Sanawad",
+      "degree": "Diploma",
+      "field": "Computer Science Engineering ( CSE )",
       "startYear": 2015,
-      "endYear": 2016,
-      "grade": "81.2/100",
-      "location": "Banmore"
+      "endYear": 2018,
+      "grade": "6.5/10 CGPA",
+      "location": "Sanawad"
     }
   ]
 }

@@ -38,7 +38,7 @@
 
     .footer-links {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-xl);
 
       .link-group {
@@ -271,7 +271,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 6.8in) {
     padding: var(--spacing-xl) 0;
 
     .footer-content {
@@ -290,7 +290,7 @@
 
       .footer-social {
         .social-links {
-          justify-content: center;
+          justify-content: start;
         }
 
         .newsletter .newsletter-form {
@@ -325,7 +325,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 6.8in) {
     .footer-content {
       .footer-links {
         grid-template-columns: repeat(2, 1fr);
@@ -336,7 +336,7 @@
         text-align: center;
 
         .social-links {
-          justify-content: center;
+          justify-content: start;
         }
       }
     }
@@ -366,7 +366,7 @@
   }
 
   /* ✅ Mobile (max 480px) पर column */
-  @media (max-width: 480px) {
+  @media (max-width: 6.8in) {
     .footer-bottom .footer-inner {
       flex-direction: column;
       gap: var(--spacing-lg);

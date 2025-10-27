@@ -89,7 +89,7 @@
     </button>
 
     <div class="modal-header">
-      <h2>{{ selectedProject()?.title }}</h2>
+      <h4 class="mb-3">{{ selectedProject()?.title }}</h4>
       <div class="modal-badges">
         <span class="category-badge" [attr.data-category]="selectedProject()?.category">
           {{ getCategoryLabel(selectedProject()?.category || []) }}

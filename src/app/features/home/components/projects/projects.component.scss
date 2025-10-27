@@ -124,11 +124,18 @@
         position: relative;
         height: 240px;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         .project-img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          max-width: 130px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          object-fit: contain;
           transition: transform var(--transition-slow);
         }
 
@@ -140,7 +147,7 @@
           justify-content: center;
           background-color: var(--neutral-200);
           color: var(--neutral-600);
-          font-size: 3rem;
+          font-size: 2.5rem;
           font-weight: 600;
           text-align: center;
           padding: var(--spacing-md);
@@ -391,7 +398,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 6.8in) {
     .projects-filter {
       gap: var(--spacing-xs);
       margin-bottom: var(--spacing-xl);
@@ -513,7 +520,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -524,9 +531,21 @@
   padding: var(--spacing-sm);
 
   @media (max-width: 768px) {
-    align-items: flex-start;
+    align-items: center;
     padding: 0;
     overflow-y: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+
+    .modal-content {
+      background: white;
+      border-radius: var(--radius-xl);
+      max-width: 750px;
+      width: 100%;
+      max-height: 80vh;
+    }
   }
 
   &.active {
@@ -537,12 +556,12 @@
   .modal-content {
     background: white;
     border-radius: var(--radius-xl);
-    max-width: 900px;
+    max-width: 750px;
     width: 100%;
-    max-height: 90vh;
+    max-height: 80vh;
 
-    @media (max-width: 768px) {
-      width: 90%;
+    @media (max-width: 6.8in) {
+      // width: 90%;
       margin: var(--spacing-md) auto;
       max-height: none;
       border-radius: var(--radius-lg);
@@ -583,7 +602,7 @@
       padding: var(--spacing-xl);
       border-bottom: 1px solid var(--neutral-200);
 
-      @media (max-width: 768px) {
+      @media (max-width: 6.8in) {
         padding: var(--spacing-lg) var(--spacing-md);
         text-align: center;
       }
@@ -594,7 +613,7 @@
         color: var(--neutral-900);
         margin-bottom: var(--spacing-md);
 
-        @media (max-width: 768px) {
+        @media (max-width: 6.8in) {
           font-size: 1.5rem;
         }
       }
@@ -603,7 +622,7 @@
         display: flex;
         gap: var(--spacing-md);
 
-        @media (max-width: 768px) {
+        @media (max-width: 6.8in) {
           justify-content: center;
         }
 
@@ -661,8 +680,8 @@
 
         img {
           width: 100%;
-          height: 300px;
-          object-fit: cover;
+          height: 170px;
+          object-fit: contain;
           border-radius: var(--radius-lg);
         }
       }
@@ -727,8 +746,8 @@
           gap: var(--spacing-sm);
           margin-top: var(--spacing-lg);
 
-          @media (min-width: 768px) {
-            grid-template-columns: repeat(4, 1fr);
+          @media (min-width: 6.8in) {
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--spacing-md);
             margin-top: var(--spacing-xl);
           }
@@ -764,14 +783,38 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .modal {
+      display: flex;
+      align-items: center;
+      /* vertical center */
+      justify-content: center;
+      /* horizontal center */
+      padding: 10vh 5vw;
+      min-height: 100vh;
+      /* पूरी screen height लेगा */
+      box-sizing: border-box;
+    }
+
+    .modal-content {
+      margin: 0;
+      width: 100%;
+      max-width: 600px;
+      /* tablet पर 600px तक */
+      max-height: 75vh;
+      /* height limit */
+      border-radius: var(--radius-lg);
+    }
+  }
+
+  @media (max-width: 6.8in) {
     padding: 10vh 5vw;
     align-items: center;
 
     .modal-content {
       margin: 0;
       max-height: 80vh;
-      max-width: 90vw;
+      // max-width: 900px;
       border-radius: var(--radius-lg);
 
       .modal-header,

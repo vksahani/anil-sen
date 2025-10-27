@@ -45,8 +45,9 @@
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
     
-    @media (max-width: 768px) {
+    @media (max-width: 6.8in) {
       justify-content: flex-start;
       padding-left: var(--spacing-md);
       padding-right: var(--spacing-md);
@@ -69,6 +70,7 @@
       transition: all var(--transition-fast);
       white-space: nowrap;
       flex: 0 0 auto;
+      scroll-snap-align: start;
 
       &:hover {
         border-color: var(--primary-blue);
@@ -161,7 +163,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 6.8in) {
     .skills-filter {
       gap: var(--spacing-sm);
 
@@ -196,7 +198,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 6.8in) {
     .skills-filter {
       justify-content: center;
       gap: var(--spacing-sm);
@@ -238,7 +240,7 @@
     }
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 6.8in) {
     .skills-grid {
       grid-template-columns: repeat(3, 1fr);
 

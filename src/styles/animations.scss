@@ -251,7 +251,7 @@
 }
 
 // Performance optimizations for mobile and low-end devices
-@media (max-width: 768px) {
+@media (max-width: 6.8in) {
   .floating-shape {
     // Reduce animation complexity on mobile
     animation-duration: calc(var(--shape-duration) * 1.5);

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "vishal-portfolio": {
+    "anil-portfolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "vishal-portfolio:build:production"
+              "buildTarget": "anil-portfolio:build:production"
             },
             "development": {
-              "buildTarget": "vishal-portfolio:build:development"
+              "buildTarget": "anil-portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"

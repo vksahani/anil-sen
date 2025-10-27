@@ -1,8 +1,8 @@
 {
-  "name": "vishal-portfolio",
+  "name": "anil-portfolio",
   "version": "1.0.0",
-  "description": "Professional portfolio website for Vishal Kumar - Web & Application Developer",
-  "author": "Vishal Kumar",
+  "description": "Professional portfolio website for Anil Sen - Web & Application Developer",
+  "author": "Anil Sen",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +11,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "serve:ssr": "node dist/vishal-portfolio/server/server.mjs",
+    "serve:ssr": "node dist/anil-portfolio/server/server.mjs",
     "build:ssr": "ng build --configuration production",
     "hosting": "ng build && firebase deploy --only hosting"
   },

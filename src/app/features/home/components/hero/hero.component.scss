@@ -1,12 +1,16 @@
 .hero {
-  min-height: 80vh;
+ min-height: 80vh;
 
   @media (max-width: 1024px) {
     min-height: 70vh;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 6.8in) {
     min-height: 120vh;
+  }
+
+  @media (max-width: 400px) {
+    min-height: 154vh;
   }
 
   display: flex;
@@ -176,8 +180,8 @@
           box-shadow: var(--shadow-lg);
 
           &:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
           }
         }
 
@@ -190,12 +194,13 @@
           &:hover {
             background: rgba(255, 255, 255, 0.95);
             border-color: var(--primary-blue);
+            color: var(--primary-blue);
           }
         }
 
         &.btn-accent {
           background: transparent;
-          color: white;
+          color: #f97316;
           border-color: var(--accent-coral);
 
           &:hover {
@@ -360,7 +365,7 @@
   }
 
   // Responsive design
-  @media (max-width: 1024px) {
+  @media (max-width: 6.8in) {
     .hero-content {
       gap: var(--spacing-xl);
     }
@@ -375,7 +380,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 6.8in) {
     .hero-content {
       flex-direction: column;
       gap: var(--spacing-xl);
@@ -408,7 +413,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 6.8in) {
     .hero-text {
       .hero-title .name {
         font-size: 2rem;
@@ -452,7 +457,7 @@
   }
 
   // Mobile overrides (≤768px)
-  @media (max-width: 768px) {
+  @media (max-width: 6.8in) {
     .hero-text {
       .hero-actions {
         .btn.btn-accent {

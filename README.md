@@ -1,4 +1,4 @@
-# Vishal Kumar - Portfolio Website
+# Anil Sen - Portfolio Website
 
 A modern, responsive, and accessible portfolio website built with Angular 20, showcasing professional experience, skills, and projects. Features smooth animations, dark/light theme support, and optimized performance.
 
@@ -60,7 +60,7 @@ npm start
 
 ```bash
 npm run build:prod
-# Output in dist/vishal-portfolio/
+# Output in dist/anil-portfolio/
 ```
 
 ## 📜 Available Scripts
@@ -139,7 +139,7 @@ Edit `src/app/core/services/content.service.ts`:
 npm run build:prod
 
 # Deploy (using Netlify CLI)
-netlify deploy --prod --dir=dist/vishal-portfolio
+netlify deploy --prod --dir=dist/anil-portfolio
 ```
 
 Configuration in `netlify.toml` includes:
@@ -174,10 +174,10 @@ firebase deploy
 
 ```bash
 # Build image
-docker build -t vishal-portfolio .
+docker build -t anil-portfolio .
 
 # Run container
-docker run -p 8080:8080 vishal-portfolio
+docker run -p 8080:8080 anil-portfolio
 ```
 
 ## 🔧 Environment Variables
@@ -311,7 +311,7 @@ npm install
 
 1. Check the [Issues](https://github.com/vishalkumar/portfolio/issues) page
 2. Review the troubleshooting section
-3. Contact: [vishal@example.com](mailto:vishal@example.com)
+3. Contact: [anil@example.com](mailto:anil@example.com)
 
 ## 📄 License
 
@@ -327,8 +327,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Vishal Kumar**
-- Email: [vishal@example.com](mailto:vishal@example.com)
+**Anil Sen**
+- Email: [anil@example.com](mailto:anil@example.com)
 - LinkedIn: [linkedin.com/in/vishalkumar](https://linkedin.com/in/vishalkumar)
 - GitHub: [github.com/vishalkumar](https://github.com/vishalkumar)
 - Website: [vishalkumar.dev](https://vishalkumar.dev)

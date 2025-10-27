@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "staff-management-system-c9a6b",
-    "public": "dist/vishal-portfolio/browser",
+    "public": "dist/anil-portfolio/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -13,7 +13,7 @@ import { PerformanceMonitorComponent } from './shared/components/performance-mon
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App implements OnInit {
-  title = 'Vishal Kumar - Web & Application Developer';
+  title = 'Anil Sen';
 
   private titleService = inject(Title);
   private performanceService = inject(PerformanceService);

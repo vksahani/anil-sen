@@ -190,7 +190,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 6.8in) {
     .contact-info {
       .contact-intro h3 {
         font-size: 1.5rem;
@@ -226,7 +226,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 6.8in) {
     .contact-methods {
       grid-template-columns: repeat(1, 1fr) !important;
       gap: var(--spacing-md) !important;

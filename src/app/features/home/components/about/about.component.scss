@@ -342,7 +342,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 6.8in) {
     .about-content {
       grid-template-columns: 1fr;
       gap: var(--spacing-xl);
@@ -405,7 +405,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 6.8in) {
     .about-text {
       .about-description {
         .highlights .highlights-list .highlight-item {

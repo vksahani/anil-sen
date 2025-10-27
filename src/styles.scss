@@ -1181,7 +1181,7 @@ Example: --gradient-background: var(--gradient-option-3);
  }
 
  // Mobile devices
- @media (max-width: 768px) {
+ @media (max-width: 6.8in) {
    h1 { font-size: 2.25rem; }
    h2 { font-size: 1.875rem; }
    h3 { font-size: 1.5rem; }
@@ -1235,7 +1235,7 @@ Example: --gradient-background: var(--gradient-option-3);
  }
 
  // Small mobile tweaks
- @media (max-width: 480px) {
+ @media (max-width: 6.8in) {
    .section {
      padding: var(--spacing-lg) 0;
    }
